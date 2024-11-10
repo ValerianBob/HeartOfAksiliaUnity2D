@@ -36,6 +36,7 @@ public class InGameMenuController : MonoBehaviour
         back.onClick.AddListener(BackFromOptions);
         chooseYes.onClick.AddListener(BackToMainMenu);
         chooseNo.onClick.AddListener(BackToGame);
+        Debug.Log(OptionsConfig.Instance.cameraSize);
     }
 
     void Update()

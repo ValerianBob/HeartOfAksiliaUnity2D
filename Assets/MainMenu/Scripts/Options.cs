@@ -20,8 +20,6 @@ public class Options : MonoBehaviour
 
     public Button applyAll;
 
-    public float inputCameraSizeValue = 5;
-
     void Start()
     {
         applyAll.onClick.AddListener(ApplyAll);
@@ -34,18 +32,19 @@ public class Options : MonoBehaviour
 
     public void SoundSlider()
     {
-        if (sliderAudio.value != audioButtonSource.volume)
+        if (sliderAudio.value != OptionsConfig.Instance.sound)
         {
             textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value*100)) + " %";
-            audioButtonSource.volume = sliderAudio.value;
+            OptionsConfig.Instance.sound = sliderAudio.value;
+            audioButtonSource.volume = OptionsConfig.Instance.sound;
         }
     }
 
     public void ChangeCameraSize()
     {
-        if (float.TryParse(inputCameraSize.text, out inputCameraSizeValue) && inputCameraSizeValue != mainCamera.orthographicSize && inputCameraSizeValue > 0 && inputCameraSizeValue <= 15f)
+        if (float.TryParse(inputCameraSize.text, out OptionsConfig.Instance.cameraSize) && OptionsConfig.Instance.cameraSize != mainCamera.orthographicSize && OptionsConfig.Instance.cameraSize > 0 && OptionsConfig.Instance.cameraSize <= 15f)
         {
-            mainCamera.orthographicSize = inputCameraSizeValue;
+            mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
         }
     }
 
