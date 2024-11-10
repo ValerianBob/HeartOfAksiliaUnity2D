@@ -10,7 +10,9 @@ public class MainMenuController : MonoBehaviour
 {
     private AudioSource buttonSounds;
 
-    public TextMeshProUGUI MainMenuTitle;
+    public TextMeshProUGUI mainMenuTitle;
+    public TextMeshProUGUI optionsTitle;
+    public TextMeshProUGUI resultTitle;
 
     public GameObject mainMenuButtons;
     public GameObject optionsMenu;
@@ -47,8 +49,8 @@ public class MainMenuController : MonoBehaviour
     {
         buttonSounds.Play();
         mainMenuButtons.SetActive(false);
-        MainMenuTitle.transform.localPosition = Vector3.zero;
-        MainMenuTitle.text = "Loading...";
+        mainMenuTitle.transform.localPosition = Vector3.zero;
+        mainMenuTitle.text = "Loading...";
         StartCoroutine(WaitForLoading(0.25f));
     }
 
@@ -56,7 +58,7 @@ public class MainMenuController : MonoBehaviour
     {
         buttonSounds.Play();
         isOptions = true;
-        MainMenuTitle.text = "Options";
+        mainMenuTitle.text = "";
         mainMenuButtons.SetActive(!isOptions);
         optionsMenu.SetActive(isOptions);
         Debug.Log("Options");
@@ -66,7 +68,7 @@ public class MainMenuController : MonoBehaviour
     {
         buttonSounds.Play();
         isResults = true;
-        MainMenuTitle.text = "Results";
+        mainMenuTitle.text = "";
         mainMenuButtons.SetActive(!isResults);
         resultsMenu.SetActive(isResults);
         Debug.Log("Results");
@@ -78,14 +80,14 @@ public class MainMenuController : MonoBehaviour
         isChoose = true;
         mainMenuButtons.SetActive(!isChoose);
         chooseQuitMenu.SetActive(isChoose);
-        MainMenuTitle.text = "";
+        mainMenuTitle.text = "";
     }
 
     public void BackFromOptions()
     {
         buttonSounds.Play();
         isOptions = false;
-        MainMenuTitle.text = "Heart Of Aksilia";
+        mainMenuTitle.text = "Heart Of Aksilia";
         optionsMenu.SetActive(isOptions);
         mainMenuButtons.SetActive(!isOptions);
     }
@@ -94,7 +96,7 @@ public class MainMenuController : MonoBehaviour
     {
         buttonSounds.Play();
         isResults = false;
-        MainMenuTitle.text = "Heart Of Aksilia";
+        mainMenuTitle.text = "Heart Of Aksilia";
         resultsMenu.SetActive(isResults);
         mainMenuButtons.SetActive(!isResults);
     }
@@ -111,7 +113,7 @@ public class MainMenuController : MonoBehaviour
         buttonSounds.Play();
         isChoose = false;
         chooseQuitMenu.SetActive(isChoose);
-        MainMenuTitle.text = "Heart Of Aksilia";
+        mainMenuTitle.text = "Heart Of Aksilia";
         mainMenuButtons.SetActive(!isChoose);
     }
 
