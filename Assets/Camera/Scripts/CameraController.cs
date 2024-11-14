@@ -6,6 +6,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private Transform player;
+
     private float followSpeed = 10f;
 
     private Vector3 offset;
@@ -13,8 +14,13 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player").transform.GetChild(0).GetComponent<Transform>();
+        player = GameObject.Find("Kaylo").GetComponent<Transform>();
         offset = transform.position - player.position;
+    }
+
+    private void Update()
+    {
+        
     }
 
     void LateUpdate()
@@ -23,4 +29,3 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
     }
 }
-
