@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player").transform.GetChild(0);
+        player = GameObject.Find("Kaylo").transform.GetChild(0);
 
         pastX = transform.position.x;
         enemyScale = transform.localScale.x;
