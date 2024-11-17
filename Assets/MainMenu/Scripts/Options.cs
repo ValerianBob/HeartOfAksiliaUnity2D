@@ -23,6 +23,8 @@ public class Options : MonoBehaviour
 
     public TextMeshProUGUI placeholderText;
 
+    public float cameraSizeOut;
+
     void Start()
     {
         applyAll.onClick.AddListener(ApplyAll);
@@ -45,9 +47,10 @@ public class Options : MonoBehaviour
 
     public void ChangeCameraSize()
     {
-        if (float.TryParse(inputCameraSize.text, out OptionsConfig.Instance.cameraSize) && OptionsConfig.Instance.cameraSize != mainCamera.orthographicSize && OptionsConfig.Instance.cameraSize > 0 && OptionsConfig.Instance.cameraSize <= 20f)
+        if (float.TryParse(inputCameraSize.text, out cameraSizeOut) && cameraSizeOut != mainCamera.orthographicSize && cameraSizeOut > 0 && cameraSizeOut <= 20f)
         {
-            mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
+            mainCamera.orthographicSize = cameraSizeOut;
+            OptionsConfig.Instance.cameraSize = cameraSizeOut;
         }
     }
 
@@ -63,6 +66,7 @@ public class Options : MonoBehaviour
         sliderAudio.value = OptionsConfig.Instance.sound;
         textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
         placeholderText = inputCameraSize.placeholder.GetComponent<TextMeshProUGUI>();
+        inputCameraSize.text = OptionsConfig.Instance.cameraSize.ToString();
         placeholderText.text = Convert.ToString(OptionsConfig.Instance.cameraSize);
         mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
     }
