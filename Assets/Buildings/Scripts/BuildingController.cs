@@ -31,8 +31,6 @@ public class BuildingController : MonoBehaviour
         if (buildsShop.isBuying && !buildingMode)
         {
             buildingMode = true;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
 
             newBuild = Instantiate(buildsShop.chosenBuild, new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, -1),
                 buildsShop.chosenBuild.transform.rotation);
@@ -51,9 +49,6 @@ public class BuildingController : MonoBehaviour
         {
             buildingMode = false;
             buildsShop.isBuying = false;
-
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

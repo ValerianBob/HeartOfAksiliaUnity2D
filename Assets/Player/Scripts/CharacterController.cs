@@ -11,12 +11,6 @@ public class CharacterController : MonoBehaviour
     private Vector3 movement;
     private Vector3 currentPosition;
 
-    void Start()
-    {
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-    }
-
     private void Update()
     {
         CharacterMovement();

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class InGameMenuController : MonoBehaviour
 {
+    private ShopController _shopController;
+
     private AudioSource buttonSounds;
 
     public TextMeshProUGUI textOfChose;
@@ -29,6 +31,8 @@ public class InGameMenuController : MonoBehaviour
 
     void Start()
     {
+        _shopController = GetComponent<ShopController>();
+
         buttonSounds = GetComponent<AudioSource>();
         resume.onClick.AddListener(Resume);
         options.onClick.AddListener(Options);
@@ -50,10 +54,14 @@ public class InGameMenuController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 isPause = true;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
                 Time.timeScale = 0;
                 panel.SetActive(isPause);
+
+                if (_shopController.isOpened)
+                {
+                    _shopController.isOpened = false;
+                    _shopController.shopMenu.SetActive(false);
+                }
             }
         }
     }
@@ -64,8 +72,6 @@ public class InGameMenuController : MonoBehaviour
         isPause = false;
         isOptions = false;
         isChoose = false;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         panel.SetActive(isPause);
         inGameMenuButtons.SetActive(true);
