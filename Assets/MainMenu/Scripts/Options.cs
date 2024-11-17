@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
@@ -20,6 +21,8 @@ public class Options : MonoBehaviour
 
     public Button applyAll;
 
+    public TextMeshProUGUI placeholderText;
+
     void Start()
     {
         applyAll.onClick.AddListener(ApplyAll);
@@ -34,7 +37,7 @@ public class Options : MonoBehaviour
     {
         if (sliderAudio.value != OptionsConfig.Instance.sound)
         {
-            textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value*100)) + " %";
+            textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
             OptionsConfig.Instance.sound = sliderAudio.value;
             audioButtonSource.volume = OptionsConfig.Instance.sound;
         }
@@ -42,7 +45,7 @@ public class Options : MonoBehaviour
 
     public void ChangeCameraSize()
     {
-        if (float.TryParse(inputCameraSize.text, out OptionsConfig.Instance.cameraSize) && OptionsConfig.Instance.cameraSize != mainCamera.orthographicSize && OptionsConfig.Instance.cameraSize > 0 && OptionsConfig.Instance.cameraSize <= 15f)
+        if (float.TryParse(inputCameraSize.text, out OptionsConfig.Instance.cameraSize) && OptionsConfig.Instance.cameraSize != mainCamera.orthographicSize && OptionsConfig.Instance.cameraSize > 0 && OptionsConfig.Instance.cameraSize <= 20f)
         {
             mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
         }
@@ -52,5 +55,15 @@ public class Options : MonoBehaviour
     {
         SoundSlider();
         ChangeCameraSize();
+    }
+
+    public void ExecConfig()
+    {
+        audioButtonSource.volume = OptionsConfig.Instance.sound;
+        sliderAudio.value = OptionsConfig.Instance.sound;
+        textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
+        placeholderText = inputCameraSize.placeholder.GetComponent<TextMeshProUGUI>();
+        placeholderText.text = Convert.ToString(OptionsConfig.Instance.cameraSize);
+        mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
     }
 }
