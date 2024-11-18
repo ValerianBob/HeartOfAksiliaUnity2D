@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
+    private InGameMenuController _inGameMenuController;
+
     public GameObject player;
 
     private Vector3 difference;
@@ -15,32 +17,37 @@ public class HandController : MonoBehaviour
     private void Start()
     {
         playerScale = player.transform.localScale.x;
+
+        _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
     }
 
     private void Update()
     {
-        difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.Normalize();
-
-        rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-
-        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-
-        playrLocalScale = player.transform.localScale;
-
-        if (rotationZ < -90 || rotationZ > 90)
+        if (!_inGameMenuController.isPause)
         {
-            Debug.Log("Left");
+            difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            difference.Normalize();
 
-            playrLocalScale.x = -playerScale;
-            transform.localScale = new Vector3(-1, -1, 1);
-        }
-        else
-        {
-            playrLocalScale.x = playerScale;
-            transform.localScale = new Vector3(1, 1, 1);
-        }
+            rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-        player.transform.localScale = playrLocalScale;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+
+            playrLocalScale = player.transform.localScale;
+
+            if (rotationZ < -90 || rotationZ > 90)
+            {
+                Debug.Log("Left");
+
+                playrLocalScale.x = -playerScale;
+                transform.localScale = new Vector3(-1, -1, 1);
+            }
+            else
+            {
+                playrLocalScale.x = playerScale;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+
+            player.transform.localScale = playrLocalScale;
+        }
     }
 }

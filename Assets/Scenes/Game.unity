@@ -3196,6 +3196,8 @@ MonoBehaviour:
   inputCameraSize: {fileID: 1845326463}
   textAudioPercent: {fileID: 285354060}
   applyAll: {fileID: 1225842558}
+  placeholderText: {fileID: 0}
+  cameraSizeOut: 0
 --- !u!114 &877468698
 MonoBehaviour:
   m_ObjectHideFlags: 0
