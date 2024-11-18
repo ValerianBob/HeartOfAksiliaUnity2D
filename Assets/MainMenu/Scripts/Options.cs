@@ -21,6 +21,8 @@ public class Options : MonoBehaviour
 
     public Button applyAll;
 
+    public Button resetAll;
+
     public TextMeshProUGUI placeholderText;
 
     public float cameraSizeOut;
@@ -28,6 +30,7 @@ public class Options : MonoBehaviour
     void Start()
     {
         applyAll.onClick.AddListener(ApplyAll);
+        resetAll.onClick.AddListener(ResetAll);
     }
 
     void Update()
@@ -58,6 +61,13 @@ public class Options : MonoBehaviour
     {
         SoundSlider();
         ChangeCameraSize();
+    }
+
+    public void ResetAll()
+    {
+        OptionsConfig.Instance.sound = 0.5f;
+        OptionsConfig.Instance.cameraSize = 10;
+        ExecConfig();
     }
 
     public void ExecConfig()
