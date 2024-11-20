@@ -7,7 +7,10 @@ public class HandController : MonoBehaviour
     private InGameMenuController _inGameMenuController;
 
     public GameObject player;
-
+    public GameObject bulletPrefab; // Префаб пули
+    public float weaponLength = 2f; // Длина оружия
+    public float bulletSpeed = 100f;
+    
     private Vector3 difference;
     private Vector3 playrLocalScale;
 
@@ -17,7 +20,7 @@ public class HandController : MonoBehaviour
     private void Start()
     {
         playerScale = player.transform.localScale.x;
-
+        Physics2D.IgnoreCollision(bulletPrefab.GetComponent<Collider2D>(), player.GetComponent<Collider2D>(), true);
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
     }
 
@@ -48,6 +51,26 @@ public class HandController : MonoBehaviour
             }
 
             player.transform.localScale = playrLocalScale;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
+
         }
+    }
+
+    private void Shoot()
+    {
+         // Вычисляем позицию конца оружия (или руки) с помощью transform.right
+        Vector2 direction = transform.localScale.x > 0 ? transform.right : -transform.right;
+        Vector2 gunEndPosition = (Vector2)transform.position + direction * weaponLength; // Точка вылета пули
+
+        // Создаём пулю
+        GameObject bullet = Instantiate(bulletPrefab, gunEndPosition, transform.rotation);
+
+        // Направляем пулю в зависимости от направления оружия
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.velocity = direction * bulletSpeed; // Направление и скорость пули
     }
 }

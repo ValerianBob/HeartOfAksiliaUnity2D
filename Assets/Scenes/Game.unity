@@ -7869,10 +7869,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2849207678914019010, guid: a9bab7080defe6845a1c1326addfc4d0, type: 3}
+      propertyPath: m_Size.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849207678914019010, guid: a9bab7080defe6845a1c1326addfc4d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5251614289537299427, guid: a9bab7080defe6845a1c1326addfc4d0, type: 3}
       propertyPath: m_Name
       value: Kaylo
       objectReference: {fileID: 0}
+    - target: {fileID: 6175514735151157445, guid: a9bab7080defe6845a1c1326addfc4d0, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5115355390687863313, guid: 5b55c7f58a132e9459132ce8224171ec, type: 3}
     - target: {fileID: 8915880033730666457, guid: a9bab7080defe6845a1c1326addfc4d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

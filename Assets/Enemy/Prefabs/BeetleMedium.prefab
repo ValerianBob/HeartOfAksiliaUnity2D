@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeetleMedium
       objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 59a42ec8854c894459f86dc0b8b4eeb2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 59a42ec8854c894459f86dc0b8b4eeb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
