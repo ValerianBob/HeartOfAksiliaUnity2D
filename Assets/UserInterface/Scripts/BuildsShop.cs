@@ -10,8 +10,7 @@ public class BuildsShop : MonoBehaviour
     public GameObject[] builds;
     public GameObject chosenBuild;
 
-    public Button buyTurel;
-    public Button buyRedTurel;
+    public Button buySimpleTurel;
 
     public bool isBuying = false;
 
@@ -19,22 +18,12 @@ public class BuildsShop : MonoBehaviour
     {
         shopController = GetComponent<ShopController>();
 
-        buyTurel.onClick.AddListener(BuyTurel);
-        buyRedTurel.onClick.AddListener(BuyRedTurel);
+        buySimpleTurel.onClick.AddListener(BuyTurel);
     }
 
     private void BuyTurel()
     {
         chosenBuild = builds[0];
-        isBuying = true;
-
-        shopController.isOpened = !shopController.isOpened;
-        shopController.shopMenu.SetActive(false);
-    }
-
-    private void BuyRedTurel()
-    {
-        chosenBuild = builds[1];
         isBuying = true;
 
         shopController.isOpened = !shopController.isOpened;
