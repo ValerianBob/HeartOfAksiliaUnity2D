@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     private Transform player;
 
+    public GameObject _bloodPrefab;
+
     private Vector3 playerDirection;
     private Vector3 localScale;
 
@@ -13,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private float pastX;
     private float currentX;
     private float enemyScale;
+    private float enemyHealth = 2f;
 
     private bool enemyLookAt = false;
 
@@ -54,5 +57,20 @@ public class EnemyController : MonoBehaviour
         transform.localScale = localScale;
 
         pastX = currentX;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BerretBullet"))
+        {
+            Destroy(collision.gameObject);
+            enemyHealth -= 1f;
+
+            if (enemyHealth <= 0)
+            {
+                Destroy(gameObject);
+                Instantiate(_bloodPrefab, transform.position, _bloodPrefab.transform.rotation);
+            }
+        }
     }
 }

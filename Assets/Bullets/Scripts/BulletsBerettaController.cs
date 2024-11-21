@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class BulletsBerettaController : MonoBehaviour
 {
-    public float speed = 100f; 
-    public float lifetime = 5f; 
+    private Rigidbody2D _bulletRigidBody;
 
-    private Rigidbody2D rb;
+    private float speed = 55f; 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed; 
-        Destroy(gameObject, lifetime);
+        _bulletRigidBody = GetComponent<Rigidbody2D>();
+        _bulletRigidBody.velocity = transform.right * speed; 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Enemy")) 
+        DeleteBulletOutOfGameField();
+    }
+
+    private void DeleteBulletOutOfGameField()
+    {
+        if (transform.position.x > 75 || transform.position.x < -75)
         {
-            Destroy(collision.gameObject); // ”ничтожаем цель
-            Destroy(gameObject); // ”ничтожаем пулю
+            Destroy(gameObject);
+        }
+        else if (transform.position.y > 75 || transform.position.y < -75)
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -7,12 +7,14 @@ public class HandController : MonoBehaviour
     private InGameMenuController _inGameMenuController;
 
     public GameObject player;
-    public GameObject bulletPrefab; // Префаб пули
-    public float weaponLength = 2f; // Длина оружия
-    public float bulletSpeed = 100f;
-    
+    public GameObject bulletPrefab;
+    private GameObject bullet;
+
     private Vector3 difference;
     private Vector3 playrLocalScale;
+    private Vector3 bulletColibration = new Vector3(0f, -0.3f, 0f);
+
+    Vector2 newBulletDirection;
 
     private float rotationZ;
     private float playerScale;
@@ -20,7 +22,6 @@ public class HandController : MonoBehaviour
     private void Start()
     {
         playerScale = player.transform.localScale.x;
-        Physics2D.IgnoreCollision(bulletPrefab.GetComponent<Collider2D>(), player.GetComponent<Collider2D>(), true);
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
     }
 
@@ -28,49 +29,45 @@ public class HandController : MonoBehaviour
     {
         if (!_inGameMenuController.isPause)
         {
-            difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            difference.Normalize();
-
-            rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-
-            transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-
-            playrLocalScale = player.transform.localScale;
-
-            if (rotationZ < -90 || rotationZ > 90)
-            {
-                Debug.Log("Left");
-
-                playrLocalScale.x = -playerScale;
-                transform.localScale = new Vector3(-1, -1, 1);
-            }
-            else
-            {
-                playrLocalScale.x = playerScale;
-                transform.localScale = new Vector3(1, 1, 1);
-            }
-
-            player.transform.localScale = playrLocalScale;
+            HandMovement();
 
             if (Input.GetMouseButtonDown(0))
             {
                 Shoot();
             }
-
         }
+    }
+
+    private void HandMovement()
+    {
+        difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        difference.Normalize();
+
+        rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+
+        playrLocalScale = player.transform.localScale;
+
+        if (rotationZ < -90 || rotationZ > 90)
+        {
+            Debug.Log("Left");
+
+            playrLocalScale.x = -playerScale;
+            transform.localScale = new Vector3(-1, -1, 1);
+        }
+        else
+        {
+            playrLocalScale.x = playerScale;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        player.transform.localScale = playrLocalScale;
     }
 
     private void Shoot()
     {
-         // Вычисляем позицию конца оружия (или руки) с помощью transform.right
-        Vector2 direction = transform.localScale.x > 0 ? transform.right : -transform.right;
-        Vector2 gunEndPosition = (Vector2)transform.position + direction * weaponLength; // Точка вылета пули
-
-        // Создаём пулю
-        GameObject bullet = Instantiate(bulletPrefab, gunEndPosition, transform.rotation);
-
-        // Направляем пулю в зависимости от направления оружия
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = direction * bulletSpeed; // Направление и скорость пули
+        newBulletDirection = transform.position + difference + bulletColibration;
+        bullet = Instantiate(bulletPrefab, newBulletDirection, transform.rotation);
     }
 }
