@@ -6,7 +6,7 @@ public class SimpleTuretBulletController : MonoBehaviour
 {
     private Rigidbody2D _bulletRigidBody;
 
-    private float speed = 10f;
+    private float speed = 60f;
 
     void Start()
     {

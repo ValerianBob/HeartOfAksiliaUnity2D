@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine("EnemySpawnerCoroutine");
+        StartCoroutine("EnemySpawnerCoroutine");
     }
 
     private IEnumerator EnemySpawnerCoroutine()

@@ -13,6 +13,10 @@ PrefabInstance:
       value: SimpleTuret
       objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: c457aec4312384a4c918d600845f07ce, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: c457aec4312384a4c918d600845f07ce, type: 3}
       propertyPath: m_TagString
       value: Build
       objectReference: {fileID: 0}
@@ -182,6 +186,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleTuretTower
       objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 44f6f03a08cc3744b98e327c17980b9b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 44f6f03a08cc3744b98e327c17980b9b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 44f6f03a08cc3744b98e327c17980b9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.142
@@ -228,9 +240,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -3888481672020999207, guid: 44f6f03a08cc3744b98e327c17980b9b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 215924454482759894}
-    - targetCorrespondingSourceObject: {fileID: -3888481672020999207, guid: 44f6f03a08cc3744b98e327c17980b9b, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4002175101562046958}
   m_SourcePrefab: {fileID: 7243324766535440047, guid: 44f6f03a08cc3744b98e327c17980b9b, type: 3}
 --- !u!4 &4698490307484872430 stripped
@@ -243,41 +252,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -3888481672020999207, guid: 44f6f03a08cc3744b98e327c17980b9b, type: 3}
   m_PrefabInstance: {fileID: 4064455193103548685}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &215924454482759894
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8245685145344901844}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10
 --- !u!114 &4002175101562046958
 MonoBehaviour:
   m_ObjectHideFlags: 0

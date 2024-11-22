@@ -28,6 +28,7 @@ public class BuildingBlock : MonoBehaviour
 
         _renderer = GetComponent<Renderer>();
         ChangeBuildBlockColor(canBuildColor, transparency);
+
     }
 
     private void Update()

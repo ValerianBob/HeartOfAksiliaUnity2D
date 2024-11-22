@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class SimpleTuretController : MonoBehaviour
 {
+    private BuildingController _buildingController;
+
     public GameObject turetBullet;
 
-    private Transform enemy;
+    private Transform targetEnemy;
+    private Transform firePoint;
 
     private Vector3 directionFromTurretToEnemy;
 
@@ -14,48 +20,58 @@ public class SimpleTuretController : MonoBehaviour
 
     private float rotationSpeed = 10f;
     private float angleNeededToLook;
+    private float detectionRadius = 10f;
+    private float nextFireTime;
+    private float fireRate = 0.3f;
 
-    private bool turetSeeEnemy = false;
-
-    void Update()
+    private void Start()
     {
-        if (enemy != null)
+        _buildingController = GameObject.Find("Builds").transform.GetChild(0).GetComponent<BuildingController>();
+    }
+
+    private void Update()
+    {
+        FindTarget();
+        RotateTurret();
+        Shoot();
+    }
+
+    private void Shoot()
+    {
+        if (targetEnemy != null && Time.time >= nextFireTime)
         {
-            directionFromTurretToEnemy = (enemy.position - transform.position).normalized;
+            Debug.Log("Fire !!!");
+            nextFireTime = Time.time + fireRate;
+
+            Instantiate(turetBullet, transform.position, transform.rotation);
+        }
+    }
+    
+    private void RotateTurret()
+    {
+        if (targetEnemy != null)
+        {
+            directionFromTurretToEnemy = (targetEnemy.position - transform.position).normalized;
 
             angleNeededToLook = Mathf.Atan2(directionFromTurretToEnemy.y, directionFromTurretToEnemy.x) * Mathf.Rad2Deg;
 
             smoothlyRotation = Quaternion.Euler(new Vector3(0, 0, angleNeededToLook));
             transform.rotation = Quaternion.Slerp(transform.rotation, smoothlyRotation, rotationSpeed * Time.deltaTime);
-        
-            if (!turetSeeEnemy)
-            {
-                StartCoroutine("TuretOpenFire");
-                turetSeeEnemy = true;
-            }
-        }
-        else
-        {
-            turetSeeEnemy = false;
         }
     }
-
-    private IEnumerator TuretOpenFire()
+    private void FindTarget()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(1f);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-            Instantiate(turetBullet, transform.position + directionFromTurretToEnemy, turetBullet.transform.rotation);
-        }
+        targetEnemy = enemies
+            .Select(enemy => enemy.transform)
+            .Where(enemy => Vector2.Distance(transform.position, enemy.position) <= detectionRadius)
+            .OrderBy(enemy => Vector2.Distance(transform.position, enemy.position))
+            .FirstOrDefault();
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            enemy = collision.GetComponent<Transform>();
-            Debug.Log("Turet see enemy !!!");
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }
