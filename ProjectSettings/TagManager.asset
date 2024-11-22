@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - BerretBullet
   - BorderWall
+  - Build
+  - Kaylo
+  - MainBase
   layers:
   - Default
   - TransparentFX

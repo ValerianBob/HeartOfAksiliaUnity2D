@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
+    private ShopController _shopController;
     private InGameMenuController _inGameMenuController;
 
     public GameObject player;
@@ -23,6 +24,7 @@ public class HandController : MonoBehaviour
     {
         playerScale = player.transform.localScale.x;
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
+        _shopController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<ShopController>();
     }
 
     private void Update()
@@ -31,7 +33,7 @@ public class HandController : MonoBehaviour
         {
             HandMovement();
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !_shopController.isOpened)
             {
                 Shoot();
             }

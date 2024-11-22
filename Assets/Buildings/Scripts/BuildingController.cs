@@ -9,10 +9,13 @@ public class BuildingController : MonoBehaviour
     private GameObject arrayOfAllBuildingsInGame;
     private GameObject newBuild;
 
+    private Collider2D newBuildCollider;
+
     Vector3 mouseScreenPosition;
     Vector3 mouseWorldPosition;
 
-    private bool buildingMode = false;
+    public bool buildingMode = false;
+    public bool canNotBuildHere = false;
 
     private int buildsCount = 0;
 
@@ -35,6 +38,8 @@ public class BuildingController : MonoBehaviour
             newBuild = Instantiate(buildsShop.chosenBuild, new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, -1),
                 buildsShop.chosenBuild.transform.rotation);
 
+            newBuildCollider = newBuild.GetComponent<Collider2D>();
+
             newBuild.name += buildsCount++.ToString();
 
             newBuild.transform.SetParent(arrayOfAllBuildingsInGame.transform);
@@ -45,10 +50,11 @@ public class BuildingController : MonoBehaviour
             newBuild.transform.position = new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, -1);
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !canNotBuildHere)
         {
             buildingMode = false;
             buildsShop.isBuying = false;
+            newBuildCollider.isTrigger = false;
         }
     }
 }
