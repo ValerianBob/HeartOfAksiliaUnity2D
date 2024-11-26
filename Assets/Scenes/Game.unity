@@ -2605,7 +2605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &611325990
 Transform:
   m_ObjectHideFlags: 0
@@ -3729,7 +3729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78c14c9edba5c9459f1f86831378958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioButtonSource: {fileID: 0}
   mainCamera: {fileID: 519420031}
   sliderAudio: {fileID: 225392493}
   inputCameraSize: {fileID: 1845326463}
