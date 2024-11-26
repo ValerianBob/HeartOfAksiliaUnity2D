@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
-    public AudioSource audioButtonSource;
+   // public AudioSource audioButtonSource;
 
     public Camera mainCamera;
 
@@ -40,12 +40,12 @@ public class Options : MonoBehaviour
 
     public void SoundSlider()
     {
-        if (sliderAudio.value != OptionsConfig.Instance.sound)
-        {
-            textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
-            OptionsConfig.Instance.sound = sliderAudio.value;
-            audioButtonSource.volume = OptionsConfig.Instance.sound;
-        }
+       // if (sliderAudio.value != OptionsConfig.Instance.sound)
+       // {
+       //     textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
+       //     OptionsConfig.Instance.sound = sliderAudio.value;
+       //     audioButtonSource.volume = OptionsConfig.Instance.sound;
+       //}
     }
 
     public void ChangeCameraSize()
@@ -72,8 +72,8 @@ public class Options : MonoBehaviour
 
     public void ExecConfig()
     {
-        audioButtonSource.volume = OptionsConfig.Instance.sound;
-        sliderAudio.value = OptionsConfig.Instance.sound;
+       // audioButtonSource.volume = OptionsConfig.Instance.sound;
+      //  sliderAudio.value = OptionsConfig.Instance.sound;
         textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
         placeholderText = inputCameraSize.placeholder.GetComponent<TextMeshProUGUI>();
         inputCameraSize.text = OptionsConfig.Instance.cameraSize.ToString();

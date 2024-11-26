@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BuildsShop : MonoBehaviour
 {
     private ShopController shopController;
+    private SoundsController _soundController;
 
     public GameObject[] builds;
     public GameObject chosenBuild;
@@ -16,17 +17,19 @@ public class BuildsShop : MonoBehaviour
 
     void Start()
     {
+        _soundController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         shopController = GetComponent<ShopController>();
 
-        buySimpleTurel.onClick.AddListener(BuyTurel);
+        buySimpleTurel.onClick.AddListener(BuySimpleTurel);
     }
 
-    private void BuyTurel()
+    private void BuySimpleTurel()
     {
         chosenBuild = builds[0];
         isBuying = true;
 
         shopController.isOpened = !shopController.isOpened;
         shopController.shopMenu.SetActive(false);
+        _soundController.PlayShopsSound(0);
     }
 }

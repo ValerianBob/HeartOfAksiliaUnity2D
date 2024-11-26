@@ -5,13 +5,16 @@ using UnityEngine;
 public class BulletsBerettaController : MonoBehaviour
 {
     private Rigidbody2D _bulletRigidBody;
+    private SoundsController _soundsController;
 
     private float speed = 55f; 
 
     void Start()
     {
+        _soundsController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         _bulletRigidBody = GetComponent<Rigidbody2D>();
-        _bulletRigidBody.velocity = transform.right * speed; 
+        _bulletRigidBody.velocity = transform.right * speed;
+        _soundsController.PlayGunSound(0);
     }
 
     private void Update()
