@@ -8,9 +8,9 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    private AudioSource buttonSounds;
+    private AudioSource _buttonSounds;
 
-    public TextMeshProUGUI mainMenuTitle;
+    public TextMeshProUGUI loadingText;
     public TextMeshProUGUI optionsTitle;
     public TextMeshProUGUI resultTitle;
 
@@ -18,6 +18,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject resultsMenu;
     public GameObject chooseQuitMenu;
+    public GameObject gameTitle;
 
     public Button newGame;
     public Button options;
@@ -34,7 +35,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Start()
     {
-        buttonSounds = GetComponent<AudioSource>();
+        _buttonSounds = GetComponent<AudioSource>();
         newGame.onClick.AddListener(NewGame);
         options.onClick.AddListener(Options);
         results.onClick.AddListener(Results);
@@ -47,18 +48,18 @@ public class MainMenuController : MonoBehaviour
 
     public void NewGame()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
+        gameTitle.SetActive(false);
         mainMenuButtons.SetActive(false);
-        mainMenuTitle.transform.localPosition = Vector3.zero;
-        mainMenuTitle.text = "Loading...";
+        loadingText.transform.localPosition = Vector3.zero;
+        loadingText.text = "Loading...";
         StartCoroutine(WaitForLoading(0.25f));
     }
 
     public void Options()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
         isOptions = true;
-        mainMenuTitle.text = "";
         mainMenuButtons.SetActive(!isOptions);
         optionsMenu.SetActive(isOptions);
         Debug.Log("Options");
@@ -66,9 +67,8 @@ public class MainMenuController : MonoBehaviour
 
     public void Results()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
         isResults = true;
-        mainMenuTitle.text = "";
         mainMenuButtons.SetActive(!isResults);
         resultsMenu.SetActive(isResults);
         Debug.Log("Results");
@@ -76,44 +76,40 @@ public class MainMenuController : MonoBehaviour
 
     public void Quit()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
         isChoose = true;
         mainMenuButtons.SetActive(!isChoose);
         chooseQuitMenu.SetActive(isChoose);
-        mainMenuTitle.text = "";
     }
 
     public void BackFromOptions()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
         isOptions = false;
-        mainMenuTitle.text = "Heart Of Aksilia";
         optionsMenu.SetActive(isOptions);
         mainMenuButtons.SetActive(!isOptions);
     }
 
     public void BackFromResults()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
         isResults = false;
-        mainMenuTitle.text = "Heart Of Aksilia";
         resultsMenu.SetActive(isResults);
         mainMenuButtons.SetActive(!isResults);
     }
 
     public void QuitFromGame()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
         Debug.Log("QUIT!!!");
         Application.Quit();
     }
 
     public void BackToMainMenu()
     {
-        buttonSounds.Play();
+        _buttonSounds.Play();
         isChoose = false;
         chooseQuitMenu.SetActive(isChoose);
-        mainMenuTitle.text = "Heart Of Aksilia";
         mainMenuButtons.SetActive(!isChoose);
     }
 
