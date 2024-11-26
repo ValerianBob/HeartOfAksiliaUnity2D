@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ShopController : MonoBehaviour
 {
     private InGameMenuController _inGameMenuController;
+    private SoundsController _soundsController;
 
     private BuildsShop buildsShop;
 
@@ -27,6 +28,7 @@ public class ShopController : MonoBehaviour
 
     private void Start()
     {
+        _soundsController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         _inGameMenuController = GetComponent<InGameMenuController>();
 
         buildsButton.onClick.AddListener(OpenBuildsList);
@@ -85,6 +87,8 @@ public class ShopController : MonoBehaviour
         buildsActive = true;
         gunsActive = false;
         superWeaponsActive = false;
+
+        _soundsController.PlayShopsSound(1);
     }
     private void OpenGunsList()
     {
@@ -95,6 +99,8 @@ public class ShopController : MonoBehaviour
         buildsActive = false;
         gunsActive = true;
         superWeaponsActive = false;
+
+        _soundsController.PlayShopsSound(1);
     }
     private void OpenSuperWeaponsList()
     {
@@ -105,5 +111,7 @@ public class ShopController : MonoBehaviour
         buildsActive = false;
         gunsActive = false;
         superWeaponsActive = true;
+
+        _soundsController.PlayShopsSound(1);
     }
 }

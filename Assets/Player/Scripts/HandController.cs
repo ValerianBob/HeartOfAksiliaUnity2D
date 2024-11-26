@@ -23,6 +23,7 @@ public class HandController : MonoBehaviour
     private void Start()
     {
         playerScale = player.transform.localScale.x;
+
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
         _shopController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<ShopController>();
     }
@@ -70,6 +71,6 @@ public class HandController : MonoBehaviour
     private void Shoot()
     {
         newBulletDirection = transform.position + difference + bulletColibration;
-        bullet = Instantiate(bulletPrefab, newBulletDirection, transform.rotation);
+        bullet = Instantiate(bulletPrefab, newBulletDirection, transform.rotation);    
     }
 }

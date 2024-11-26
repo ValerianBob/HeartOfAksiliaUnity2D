@@ -7,12 +7,9 @@ using static UnityEngine.GraphicsBuffer;
 
 public class SimpleTuretController : MonoBehaviour
 {
-    private BuildingController _buildingController;
-
     public GameObject turetBullet;
 
     private Transform targetEnemy;
-    private Transform firePoint;
 
     private Vector3 directionFromTurretToEnemy;
 
@@ -26,7 +23,7 @@ public class SimpleTuretController : MonoBehaviour
 
     private void Start()
     {
-        _buildingController = GameObject.Find("Builds").transform.GetChild(0).GetComponent<BuildingController>();
+       
     }
 
     private void Update()

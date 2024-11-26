@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class InGameMenuController : MonoBehaviour
 {
     private ShopController _shopController;
+    private SoundsController _soundsController;
 
     private AudioSource buttonSounds;
 
@@ -31,6 +32,7 @@ public class InGameMenuController : MonoBehaviour
 
     void Start()
     {
+        _soundsController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         _shopController = GetComponent<ShopController>();
 
         buttonSounds = GetComponent<AudioSource>();
@@ -68,7 +70,6 @@ public class InGameMenuController : MonoBehaviour
 
     public void Resume()
     {
-        buttonSounds.Play();
         isPause = false;
         isOptions = false;
         isChoose = false;
@@ -77,35 +78,38 @@ public class InGameMenuController : MonoBehaviour
         inGameMenuButtons.SetActive(true);
         optionsMenu.SetActive(isOptions);
         chooseMainMenu.SetActive(isChoose);
+
+        _soundsController.PlayInGameMenuSound(0);
     }
 
     public void MainMenu()
     {
-        buttonSounds.Play();
         isChoose = true;
         inGameMenuButtons.SetActive(!isChoose);
         chooseMainMenu.SetActive(isChoose);
+
     }
 
     public void Options()
     {
-        buttonSounds.Play();
         isOptions = true;
         inGameMenuButtons.SetActive(!isOptions);
         optionsMenu.SetActive(isOptions);
+
+        _soundsController.PlayInGameMenuSound(1);
     }
 
     public void BackFromOptions()
     {
-        buttonSounds.Play();
         isOptions = false;
         optionsMenu.SetActive(isOptions);
         inGameMenuButtons.SetActive(!isOptions);
+
+        _soundsController.PlayInGameMenuSound(0);
     }
 
     public void BackToMainMenu()
     {
-        buttonSounds.Play();
         isChoose = false;
         chooseYes.transform.position = new Vector3(-1000f, -1000f, 0f);
         chooseNo.transform.position = new Vector3(-1000f, -1000f, 0f); 
@@ -114,14 +118,17 @@ public class InGameMenuController : MonoBehaviour
         StartCoroutine(WaitForLoading(0.25f));
         isPause = false;
         Time.timeScale = 1;
+
+        _soundsController.PlayInGameMenuSound(0);
     }
 
     public void BackToGame()
     {
-        buttonSounds.Play();
         isChoose = false;
         chooseMainMenu.SetActive(isChoose);
         inGameMenuButtons.SetActive(!isChoose);
+
+        _soundsController.PlayInGameMenuSound(0);
     }
 
     IEnumerator WaitForLoading(float seconds)

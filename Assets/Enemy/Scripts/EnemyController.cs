@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private Transform player;
+    private SoundsController _soundController;
 
     public GameObject _bloodPrefab;
 
@@ -17,10 +19,9 @@ public class EnemyController : MonoBehaviour
     private float enemyScale;
     private float enemyHealth = 2f;
 
-    private bool enemyLookAt = false;
-
     void Start()
     {
+        _soundController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         player = GameObject.Find("Kaylo").transform.GetChild(0);
 
         pastX = transform.position.x;
@@ -69,7 +70,9 @@ public class EnemyController : MonoBehaviour
             if (enemyHealth <= 0)
             {
                 Destroy(gameObject);
+                _soundController.PlayEnemyDeathSound(0);
                 Instantiate(_bloodPrefab, transform.position, _bloodPrefab.transform.rotation);
+
             }
         }
     }
