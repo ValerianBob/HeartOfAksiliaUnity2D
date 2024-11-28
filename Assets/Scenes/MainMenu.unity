@@ -4005,6 +4005,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c6b0bfcfaf59e794a94ff0b8f74e3192, type: 3}
   PressButton:
   - {fileID: 8300000, guid: 2f037631789fb3848a9072088ebb1477, type: 3}
+  TurretShots:
+  - {fileID: 8300000, guid: 815786e4d231b1247a51cba6a7c2026a, type: 3}
 --- !u!82 &1607631694
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4017,7 +4019,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.032
+  m_Volume: 0.351
   m_Pitch: 1
   Loop: 0
   Mute: 0

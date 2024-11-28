@@ -41,6 +41,7 @@ public class SimpleTuretController : MonoBehaviour
             nextFireTime = Time.time + fireRate;
 
             Instantiate(turetBullet, transform.position, transform.rotation);
+            SoundsController.Instance.PlayTurretShots(0);
         }
     }
     
