@@ -71,8 +71,7 @@ public class EnemyController : MonoBehaviour
             {
                 Destroy(gameObject);
                 _soundController.PlayEnemyDeathSound(0);
-                Instantiate(_bloodPrefab, transform.position, _bloodPrefab.transform.rotation);
-
+                Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
             }
         }
     }
