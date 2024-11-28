@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    private AudioSource _buttonSounds;
-
     public TextMeshProUGUI loadingText;
     public TextMeshProUGUI optionsTitle;
     public TextMeshProUGUI resultTitle;
@@ -35,7 +33,6 @@ public class MainMenuController : MonoBehaviour
 
     public void Start()
     {
-        _buttonSounds = GetComponent<AudioSource>();
         newGame.onClick.AddListener(NewGame);
         options.onClick.AddListener(Options);
         results.onClick.AddListener(Results);
@@ -48,7 +45,7 @@ public class MainMenuController : MonoBehaviour
 
     public void NewGame()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         gameTitle.SetActive(false);
         mainMenuButtons.SetActive(false);
         loadingText.transform.localPosition = Vector3.zero;
@@ -58,7 +55,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Options()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         isOptions = true;
         mainMenuButtons.SetActive(!isOptions);
         optionsMenu.SetActive(isOptions);
@@ -67,7 +64,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Results()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         isResults = true;
         mainMenuButtons.SetActive(!isResults);
         resultsMenu.SetActive(isResults);
@@ -76,7 +73,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Quit()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         isChoose = true;
         mainMenuButtons.SetActive(!isChoose);
         chooseQuitMenu.SetActive(isChoose);
@@ -84,7 +81,7 @@ public class MainMenuController : MonoBehaviour
 
     public void BackFromOptions()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         isOptions = false;
         optionsMenu.SetActive(isOptions);
         mainMenuButtons.SetActive(!isOptions);
@@ -92,7 +89,7 @@ public class MainMenuController : MonoBehaviour
 
     public void BackFromResults()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         isResults = false;
         resultsMenu.SetActive(isResults);
         mainMenuButtons.SetActive(!isResults);
@@ -100,14 +97,14 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitFromGame()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         Debug.Log("QUIT!!!");
         Application.Quit();
     }
 
     public void BackToMainMenu()
     {
-        _buttonSounds.Play();
+        SoundsController.Instance.PlayPressTheButton(0);
         isChoose = false;
         chooseQuitMenu.SetActive(isChoose);
         mainMenuButtons.SetActive(!isChoose);

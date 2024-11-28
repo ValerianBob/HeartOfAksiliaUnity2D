@@ -15,7 +15,7 @@ public class SoundsController : MonoBehaviour
     public AudioClip[] PressButton;
     public AudioClip[] TurretShots;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -32,6 +32,11 @@ public class SoundsController : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
         }
     }
 
