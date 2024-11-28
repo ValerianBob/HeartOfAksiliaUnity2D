@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private Transform player;
-    private SoundsController _soundController;
+    
 
     public GameObject _bloodPrefab;
 
@@ -21,7 +21,6 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        _soundController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         player = GameObject.Find("Kaylo").transform.GetChild(0);
 
         pastX = transform.position.x;
@@ -70,7 +69,7 @@ public class EnemyController : MonoBehaviour
             if (enemyHealth <= 0)
             {
                 Destroy(gameObject);
-                _soundController.PlayEnemyDeathSound(0);
+                SoundsController.Instance.PlayEnemyDeathSound(0);
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
             }
         }

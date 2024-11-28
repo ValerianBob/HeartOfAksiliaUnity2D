@@ -5,7 +5,6 @@ using UnityEngine;
 public class BuildingController : MonoBehaviour
 {
     private BuildsShop buildsShop;
-    private SoundsController _soundController;
 
     private GameObject arrayOfAllBuildingsInGame;
     private GameObject newBuild;
@@ -22,7 +21,6 @@ public class BuildingController : MonoBehaviour
 
     private void Start()
     {
-        _soundController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         arrayOfAllBuildingsInGame = GameObject.Find("Buildings");
         buildsShop = GetComponent<BuildsShop>();
     }
@@ -57,7 +55,7 @@ public class BuildingController : MonoBehaviour
             buildingMode = false;
             buildsShop.isBuying = false;
             newBuildCollider.isTrigger = false;
-            _soundController.PlayBuildsSound(0);
+            SoundsController.Instance.PlayBuildsSound(0);
         }
     }
 }

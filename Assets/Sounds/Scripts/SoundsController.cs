@@ -5,17 +5,33 @@ using UnityEngine;
 
 public class SoundsController : MonoBehaviour
 {
+    public static SoundsController Instance;
+
     public AudioClip[] GunSounds; 
     public AudioClip[] EnemyDeathSounds;
     public AudioClip[] ShopsSounds;
     public AudioClip[] BuildsSounds;
     public AudioClip[] InGameMenuSound;
+    public AudioClip[] PressButton;
 
     private AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void PlayGunSound(int index)
@@ -41,6 +57,11 @@ public class SoundsController : MonoBehaviour
     public void PlayInGameMenuSound(int index)
     {
         audioSource.PlayOneShot(InGameMenuSound[index]);
+    }
+
+    public void PlayPressTheButton(int index)
+    {
+        audioSource.PlayOneShot(PressButton[index]);
     }
 }
 // audioSource.clip = GunSounds[index];

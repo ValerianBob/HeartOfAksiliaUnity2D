@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class InGameMenuController : MonoBehaviour
 {
     private ShopController _shopController;
-    private SoundsController _soundsController;
 
     private AudioSource buttonSounds;
 
@@ -32,7 +31,6 @@ public class InGameMenuController : MonoBehaviour
 
     void Start()
     {
-        _soundsController = GameObject.Find("SoundsManager").GetComponent<SoundsController>();
         _shopController = GetComponent<ShopController>();
 
         buttonSounds = GetComponent<AudioSource>();
@@ -79,7 +77,7 @@ public class InGameMenuController : MonoBehaviour
         optionsMenu.SetActive(isOptions);
         chooseMainMenu.SetActive(isChoose);
 
-        _soundsController.PlayInGameMenuSound(0);
+        SoundsController.Instance.PlayInGameMenuSound(0);
     }
 
     public void MainMenu()
@@ -96,7 +94,7 @@ public class InGameMenuController : MonoBehaviour
         inGameMenuButtons.SetActive(!isOptions);
         optionsMenu.SetActive(isOptions);
 
-        _soundsController.PlayInGameMenuSound(1);
+        SoundsController.Instance.PlayInGameMenuSound(1);
     }
 
     public void BackFromOptions()
@@ -105,7 +103,7 @@ public class InGameMenuController : MonoBehaviour
         optionsMenu.SetActive(isOptions);
         inGameMenuButtons.SetActive(!isOptions);
 
-        _soundsController.PlayInGameMenuSound(0);
+        SoundsController.Instance.PlayInGameMenuSound(0);
     }
 
     public void BackToMainMenu()
@@ -119,7 +117,7 @@ public class InGameMenuController : MonoBehaviour
         isPause = false;
         Time.timeScale = 1;
 
-        _soundsController.PlayInGameMenuSound(0);
+        SoundsController.Instance.PlayInGameMenuSound(0);
     }
 
     public void BackToGame()
@@ -128,7 +126,7 @@ public class InGameMenuController : MonoBehaviour
         chooseMainMenu.SetActive(isChoose);
         inGameMenuButtons.SetActive(!isChoose);
 
-        _soundsController.PlayInGameMenuSound(0);
+        SoundsController.Instance.PlayInGameMenuSound(0);
     }
 
     IEnumerator WaitForLoading(float seconds)
