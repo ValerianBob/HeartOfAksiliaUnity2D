@@ -45,7 +45,7 @@ public class MainMenuController : MonoBehaviour
 
     public void NewGame()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(1);
         gameTitle.SetActive(false);
         mainMenuButtons.SetActive(false);
         loadingText.transform.localPosition = Vector3.zero;
@@ -55,7 +55,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Options()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(1);
         isOptions = true;
         mainMenuButtons.SetActive(!isOptions);
         optionsMenu.SetActive(isOptions);
@@ -64,7 +64,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Results()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(1);
         isResults = true;
         mainMenuButtons.SetActive(!isResults);
         resultsMenu.SetActive(isResults);
@@ -73,7 +73,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Quit()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(1);
         isChoose = true;
         mainMenuButtons.SetActive(!isChoose);
         chooseQuitMenu.SetActive(isChoose);
@@ -81,7 +81,7 @@ public class MainMenuController : MonoBehaviour
 
     public void BackFromOptions()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(0);
         isOptions = false;
         optionsMenu.SetActive(isOptions);
         mainMenuButtons.SetActive(!isOptions);
@@ -89,7 +89,7 @@ public class MainMenuController : MonoBehaviour
 
     public void BackFromResults()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(0);
         isResults = false;
         resultsMenu.SetActive(isResults);
         mainMenuButtons.SetActive(!isResults);
@@ -97,14 +97,14 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitFromGame()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(1);
         Debug.Log("QUIT!!!");
         Application.Quit();
     }
 
     public void BackToMainMenu()
     {
-        SoundsController.Instance.PlayPressTheButton(0);
+        SoundsController.Instance.PlayInGameMenuSound(0);
         isChoose = false;
         chooseQuitMenu.SetActive(isChoose);
         mainMenuButtons.SetActive(!isChoose);

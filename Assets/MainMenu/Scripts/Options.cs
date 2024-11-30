@@ -59,10 +59,12 @@ public class Options : MonoBehaviour
     {
         SoundSlider();
         ChangeCameraSize();
+        SoundsController.Instance.PlayInGameMenuSound(1);
     }
 
     public void ResetAll()
     {
+        SoundsController.Instance.PlayInGameMenuSound(1);
         OptionsConfig.Instance.sound = 0.5f;
         OptionsConfig.Instance.cameraSize = 10;
         ExecConfig();

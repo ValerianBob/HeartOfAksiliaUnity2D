@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crystals: 0
+  orangeCrystals: 0
 --- !u!114 &1273047963365868518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crystalsText: {fileID: 0}
+  orangeCrystalsText: {fileID: 0}
   crystalImage: {fileID: 0}
   crystalsLen: 1
 --- !u!114 &3602393498978055043
@@ -340,14 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68b244c9d1aefc48a7e1befa1924526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  buyAirStrikeButton: {fileID: 0}
 --- !u!222 &1528107768061603800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -368,6 +362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0514a4d143deb8479cf4b626825255f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allGunsPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  buyShotGun: {fileID: 0}
 --- !u!1001 &6596987462812290920
 PrefabInstance:
   m_ObjectHideFlags: 0

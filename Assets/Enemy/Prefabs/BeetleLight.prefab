@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bloodPrefab: {fileID: 7121561308081327540, guid: ee618e6108ff9cc4d8bb1b0d17671815, type: 3}
-  _OrangeCrystall: {fileID: 8791610185492017794, guid: f38cb501ee6363844900bce5117135c6, type: 3}
+  _OrangeCrystall: {fileID: 7538372884535361891, guid: f38cb501ee6363844900bce5117135c6, type: 3}
 --- !u!95 &5011390483229162806
 Animator:
   serializedVersion: 5

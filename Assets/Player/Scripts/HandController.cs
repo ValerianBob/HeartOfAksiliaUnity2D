@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HandController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class HandController : MonoBehaviour
     public List<GameObject> allGunsInStock = new List<GameObject>();
     private GameObject spawnBullet;
 
+    public Image[] gunsImages;
+
     private Vector3 difference;
     private Vector3 playrLocalScale;
     private Vector3 bulletColibration = new Vector3(0f, -0.3f, 0f);
@@ -23,6 +26,8 @@ public class HandController : MonoBehaviour
     private float playerScale;
 
     private int currentGun;
+
+    private string activeGun;
 
     private void Start()
     {
@@ -113,6 +118,17 @@ public class HandController : MonoBehaviour
             if (i == currentGun)
             {
                 allGunsInStock[i].gameObject.SetActive(true);
+                activeGun = allGunsInStock[i].gameObject.name;
+            }
+        }
+
+        for (int i = 0; i < gunsImages.Length; i++)
+        {
+            gunsImages[i].gameObject.SetActive(false);
+
+            if (activeGun + "Image" == gunsImages[i].gameObject.name)
+            {
+                gunsImages[i].gameObject.SetActive(true);
             }
         }
     }

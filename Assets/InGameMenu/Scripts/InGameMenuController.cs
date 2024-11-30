@@ -61,6 +61,8 @@ public class InGameMenuController : MonoBehaviour
                     _shopController.isOpened = false;
                     _shopController.shopMenu.SetActive(false);
                 }
+
+                SoundsController.Instance.PlayInGameMenuSound(1);
             }
         }
     }
@@ -85,6 +87,7 @@ public class InGameMenuController : MonoBehaviour
         inGameMenuButtons.SetActive(!isChoose);
         chooseMainMenu.SetActive(isChoose);
 
+        SoundsController.Instance.PlayInGameMenuSound(1);
     }
 
     public void Options()

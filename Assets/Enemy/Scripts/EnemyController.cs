@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -19,9 +20,13 @@ public class EnemyController : MonoBehaviour
     private float enemyScale;
     private float enemyHealth = 2f;
 
+    private TextMeshProUGUI OrangeCrystallCountForKill;
+
     void Start()
     {
         player = GameObject.Find("Kaylo").transform.GetChild(0);
+
+        OrangeCrystallCountForKill = _OrangeCrystall.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 
         pastX = transform.position.x;
         enemyScale = transform.localScale.x;
@@ -70,6 +75,11 @@ public class EnemyController : MonoBehaviour
             {
                 Destroy(gameObject);
                 SoundsController.Instance.PlayEnemyDeathSound(0);
+
+                CrystalsController.Instance.orangeCrystals += 1;
+
+                OrangeCrystallCountForKill.text = "+" + 1;
+
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
             }

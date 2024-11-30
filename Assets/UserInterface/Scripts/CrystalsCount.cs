@@ -7,9 +7,11 @@ using UnityEngine;
 public class CrystalsCount : MonoBehaviour
 {
     public TextMeshProUGUI crystalsText;
+    public TextMeshProUGUI orangeCrystalsText;
+
     public GameObject crystalImage;
     public int crystalsLen = 1;
-    
+
     private void Start()
     {
         StartCoroutine("CountCrystals");
@@ -18,6 +20,8 @@ public class CrystalsCount : MonoBehaviour
     private void Update()
     {
         crystalsText.text = CrystalsController.Instance.crystals.ToString();
+        orangeCrystalsText.text = CrystalsController.Instance.orangeCrystals.ToString();
+
         if (crystalsText.text.Length > crystalsLen)
         {
             crystalsLen += 1;
