@@ -9,7 +9,6 @@ public class CrystalsCount : MonoBehaviour
     public TextMeshProUGUI crystalsText;
     public GameObject crystalImage;
     public int crystalsLen = 1;
- 
     
     private void Start()
     {
@@ -22,7 +21,6 @@ public class CrystalsCount : MonoBehaviour
         if (crystalsText.text.Length > crystalsLen)
         {
             crystalsLen += 1;
-            Debug.Log(crystalsLen + " SDVIG");
             crystalImage.transform.localPosition = new Vector3(crystalsText.transform.localPosition.x + 25 * crystalsLen,crystalImage.transform.localPosition.y,crystalImage.transform.localPosition.z);
         } 
     }

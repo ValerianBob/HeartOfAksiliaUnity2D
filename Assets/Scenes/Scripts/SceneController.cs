@@ -20,7 +20,6 @@ public class SceneController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log($"Scene {scene.name} loaded!");
         options.ExecConfig();
     }
 }

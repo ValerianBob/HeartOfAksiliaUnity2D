@@ -6,19 +6,23 @@ public class HandController : MonoBehaviour
 {
     private ShopController _shopController;
     private InGameMenuController _inGameMenuController;
+    private GunsShop gunsShop;
 
     public GameObject player;
-    public GameObject bulletPrefab;
-    private GameObject bullet;
+    public GameObject[] bulletPrefabs;
+    public List<GameObject> allGunsInStock = new List<GameObject>();
+    private GameObject spawnBullet;
 
     private Vector3 difference;
     private Vector3 playrLocalScale;
     private Vector3 bulletColibration = new Vector3(0f, -0.3f, 0f);
 
-    Vector2 newBulletDirection;
+    private Vector2 newBulletDirection;
 
     private float rotationZ;
     private float playerScale;
+
+    private int currentGun;
 
     private void Start()
     {
@@ -26,6 +30,11 @@ public class HandController : MonoBehaviour
 
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
         _shopController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<ShopController>();
+        gunsShop = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<GunsShop>();
+
+        allGunsInStock.Add(gunsShop.allGunsPrefabs[0]);
+
+        currentGun = 0;
     }
 
     private void Update()
@@ -38,6 +47,8 @@ public class HandController : MonoBehaviour
             {
                 Shoot();
             }
+
+            ChooseGun();
         }
     }
 
@@ -54,8 +65,6 @@ public class HandController : MonoBehaviour
 
         if (rotationZ < -90 || rotationZ > 90)
         {
-            Debug.Log("Left");
-
             playrLocalScale.x = -playerScale;
             transform.localScale = new Vector3(-1, -1, 1);
         }
@@ -71,6 +80,40 @@ public class HandController : MonoBehaviour
     private void Shoot()
     {
         newBulletDirection = transform.position + difference + bulletColibration;
-        bullet = Instantiate(bulletPrefab, newBulletDirection, transform.rotation);    
+        spawnBullet = Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation);    
+    }
+
+    private void ChooseGun()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (currentGun > 0)
+            {
+                currentGun -= 1;
+            }
+            else
+            {
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (currentGun < allGunsInStock.Count - 1)
+            {
+                currentGun += 1;
+            }
+            else
+            {
+            }
+        }
+
+        for (int i = 0; i <  allGunsInStock.Count; i++)
+        {
+            allGunsInStock[i].gameObject.SetActive(false);
+
+            if (i == currentGun)
+            {
+                allGunsInStock[i].gameObject.SetActive(true);
+            }
+        }
     }
 }
