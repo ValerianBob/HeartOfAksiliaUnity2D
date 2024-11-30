@@ -7,8 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     private Transform player;
     
-
     public GameObject _bloodPrefab;
+    public GameObject _OrangeCrystall;
 
     private Vector3 playerDirection;
     private Vector3 localScale;
@@ -71,6 +71,7 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject);
                 SoundsController.Instance.PlayEnemyDeathSound(0);
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
+                Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
             }
         }
     }

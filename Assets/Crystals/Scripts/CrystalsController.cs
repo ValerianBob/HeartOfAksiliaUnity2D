@@ -7,6 +7,7 @@ public class CrystalsController : MonoBehaviour
     public static CrystalsController Instance { get; private set; }
 
     public int crystals;
+    public int orangeCrystals;
 
     private void Awake()
     {
