@@ -6,21 +6,28 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     private BuildingController _buildingController;
+    public HealthBarController healthBarUI;
+
+    private Animator animator;
+
+    private Vector3 movement;
+    private Vector3 currentPosition;
 
     private float moveInputHorizontal;
     private float moveInputVertical;
     public float moveSpeed;
 
-    private Vector3 movement;
-    private Vector3 currentPosition;
-
-    private Animator animator;
+    public int MaxHealth = 100;
+    public int currentHealth;
 
     private void Start()
     {
         _buildingController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<BuildingController>();
 
         animator = GetComponent<Animator>();
+
+        currentHealth = MaxHealth;
+        healthBarUI.SetMaxHealth(MaxHealth);
     }
 
     private void Update()
@@ -30,6 +37,12 @@ public class CharacterController : MonoBehaviour
         currentPosition = transform.position;
         currentPosition.z = -1;
         transform.position = currentPosition;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentHealth -= 5;
+            healthBarUI.SetHealth(currentHealth);
+        }
     }
 
     private void CharacterMovement()
