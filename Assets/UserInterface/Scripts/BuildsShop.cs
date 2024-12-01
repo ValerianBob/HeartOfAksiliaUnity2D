@@ -10,6 +10,7 @@ public class BuildsShop : MonoBehaviour
     public GameObject[] builds;
     public GameObject chosenBuild;
 
+    public Button[] showBuildsInfoButtons;
     public Button buySimpleTurel;
 
     public bool isBuying = false;

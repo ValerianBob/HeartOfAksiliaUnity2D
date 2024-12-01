@@ -21,5 +21,6 @@ public class SceneController : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         options.ExecConfig();
+        Time.timeScale = 1;
     }
 }

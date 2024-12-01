@@ -44,7 +44,7 @@ public class HandController : MonoBehaviour
 
     private void Update()
     {
-        if (!_inGameMenuController.isPause)
+        if (!_inGameMenuController.isPause && !GameOver.Instance.gameOver)
         {
             HandMovement();
 

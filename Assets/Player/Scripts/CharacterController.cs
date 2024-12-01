@@ -43,6 +43,11 @@ public class CharacterController : MonoBehaviour
             currentHealth -= 5;
             healthBarUI.SetHealth(currentHealth);
         }
+
+        if (currentHealth <= 0)
+        {
+            GameOver.Instance.gameOver = true;
+        }
     }
 
     private void CharacterMovement()

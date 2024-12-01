@@ -1464,7 +1464,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 2095902461
   m_SortingOrder: 2
@@ -1916,8 +1916,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294572032
-  m_fontColor: {r: 0, g: 0.972549, b: 0.9764706, a: 1}
+    rgba: 4294953003
+  m_fontColor: {r: 0.16862746, g: 0.78431374, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3910,6 +3910,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f037631789fb3848a9072088ebb1477, type: 3}
   TurretShots:
   - {fileID: 8300000, guid: 815786e4d231b1247a51cba6a7c2026a, type: 3}
+  audioSource: {fileID: 0}
 --- !u!82 &1607631694
 AudioSource:
   m_ObjectHideFlags: 0

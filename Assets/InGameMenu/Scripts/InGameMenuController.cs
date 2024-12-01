@@ -50,7 +50,7 @@ public class InGameMenuController : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && !GameOver.Instance.gameOver)
             {
                 isPause = true;
                 Time.timeScale = 0;

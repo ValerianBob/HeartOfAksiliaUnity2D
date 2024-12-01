@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 456373601651138052}
   - component: {fileID: 1528107768061603800}
   - component: {fileID: 1441809471310605851}
+  - component: {fileID: 1609910682207668314}
   m_Layer: 0
   m_Name: MainBase
   m_TagString: Build
@@ -302,8 +303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crystalsText: {fileID: 0}
   orangeCrystalsText: {fileID: 0}
-  crystalImage: {fileID: 0}
-  crystalsLen: 1
 --- !u!114 &3602393498978055043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +365,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   buyShotGun: {fileID: 0}
+--- !u!114 &1609910682207668314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4467364044916312430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffdcf3dafaef734bb6e49ba0285d481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: 0
 --- !u!1001 &6596987462812290920
 PrefabInstance:
   m_ObjectHideFlags: 0
