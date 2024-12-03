@@ -6,7 +6,7 @@ public class ShotGunBulletController : MonoBehaviour
 {
     private Rigidbody2D _bulletRigidBody;
 
-    private float speed = 75f; 
+    private float speed = 55f; 
 
     void Start()
     {

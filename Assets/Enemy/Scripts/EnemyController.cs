@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     private float pastX;
     private float currentX;
     private float enemyScale;
-    private float enemyHealth = 2f;
+    private float enemyHealth = 3f;
 
     private TextMeshProUGUI OrangeCrystallCountForKill;
 

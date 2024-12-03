@@ -84,8 +84,14 @@ public class HandController : MonoBehaviour
 
     private void Shoot()
     {
-        newBulletDirection = transform.position + difference + bulletColibration;
-        spawnBullet = Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation);    
+        if (activeGun == "Berreta")
+        {
+            BerretaShot();
+        } 
+        else if (activeGun == "ShotGun")
+        {
+            ShotGunShot();
+        }
     }
 
     private void ChooseGun()
@@ -131,5 +137,25 @@ public class HandController : MonoBehaviour
                 gunsImages[i].gameObject.SetActive(true);
             }
         }
+    }
+
+    private void BerretaShot()
+    {
+        newBulletDirection = transform.position + difference + bulletColibration;
+
+        spawnBullet = Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation);
+    }
+
+    private void ShotGunShot()
+    {
+        newBulletDirection = transform.position + difference + bulletColibration;
+
+        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 5f));
+        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 10f));
+        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 15f));
+        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation);
+        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -5f));
+        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -10f));
+        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -15f));
     }
 }
