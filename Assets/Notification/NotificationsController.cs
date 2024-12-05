@@ -9,6 +9,8 @@ public class NotificationsController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _notificationText;
 
+    public GameObject notification;
+
     private Image image;
 
     private Queue<string> _notifications = new Queue<string>();
@@ -20,7 +22,7 @@ public class NotificationsController : MonoBehaviour
 
     private void Start()
     {
-        image = GetComponent<Image>();
+        image = notification.GetComponent<Image>();
         AddNewMessage("Game Start!!!", "green");
     }
 

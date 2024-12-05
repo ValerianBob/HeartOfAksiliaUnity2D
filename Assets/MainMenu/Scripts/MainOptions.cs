@@ -7,8 +7,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Options : MonoBehaviour
+public class MainOptions : MonoBehaviour
 {
+    private string _currentSceneName;
+
     public Camera mainCamera;
 
     public Slider sliderAudio;
@@ -19,6 +21,10 @@ public class Options : MonoBehaviour
 
     public Button applyAll;
 
+    public GameObject notificationsSystem;
+
+    public Toggle notificationsToggle;
+
     public Button resetAll;
 
     public TextMeshProUGUI placeholderText;
@@ -27,6 +33,7 @@ public class Options : MonoBehaviour
 
     void Start()
     {
+        _currentSceneName = SceneManager.GetActiveScene().name;
         applyAll.onClick.AddListener(ApplyAll);
         resetAll.onClick.AddListener(ResetAll);
     }
@@ -58,6 +65,7 @@ public class Options : MonoBehaviour
     public void ApplyAll()
     {
         SoundSlider();
+        NotificationSystem();
         ChangeCameraSize();
         SoundsController.Instance.PlayInGameMenuSound(1);
     }
@@ -70,6 +78,18 @@ public class Options : MonoBehaviour
         ExecConfig();
     }
 
+    public void NotificationSystem()
+    {
+        OptionsConfig.Instance.notificationsSystem = notificationsToggle.isOn;
+
+        if (notificationsSystem != null)
+        {
+            Debug.Log("Invisible notification" + $" {OptionsConfig.Instance.notificationsSystem}");
+
+            notificationsSystem.SetActive(OptionsConfig.Instance.notificationsSystem);
+        }
+    }
+
     public void ExecConfig()
     {
         SoundsController.Instance.audioSource.volume = OptionsConfig.Instance.sound;
@@ -79,5 +99,13 @@ public class Options : MonoBehaviour
         inputCameraSize.text = OptionsConfig.Instance.cameraSize.ToString();
         placeholderText.text = Convert.ToString(OptionsConfig.Instance.cameraSize);
         mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
+        notificationsToggle.isOn = OptionsConfig.Instance.notificationsSystem;
+        if (_currentSceneName == "Game")
+        {
+            Debug.Log(_currentSceneName);
+            notificationsSystem.SetActive(OptionsConfig.Instance.notificationsSystem);
+        }
+        ApplyAll();
+        
     }
 }
