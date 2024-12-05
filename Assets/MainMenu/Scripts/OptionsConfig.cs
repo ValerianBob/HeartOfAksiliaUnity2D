@@ -8,6 +8,7 @@ public class OptionsConfig : MonoBehaviour
 
     public float sound = 0.5f;
     public float cameraSize = 10f;
+    public bool notificationsSystem = false;
 
     private void Awake()
     {

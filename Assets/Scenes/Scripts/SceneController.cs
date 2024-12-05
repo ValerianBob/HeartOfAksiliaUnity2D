@@ -4,9 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour
+public class SceneController : MonoBehaviour 
 {
-    public Options options;
+    public MainOptions options;
 
     void OnEnable()
     {
@@ -21,6 +21,8 @@ public class SceneController : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         options.ExecConfig();
+
+        
         Time.timeScale = 1;
     }
 }
