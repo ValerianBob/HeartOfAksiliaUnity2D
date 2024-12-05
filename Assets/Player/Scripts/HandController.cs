@@ -157,5 +157,7 @@ public class HandController : MonoBehaviour
         Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -5f));
         Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -10f));
         Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -15f));
+
+        SoundsController.Instance.PlayGunSound(1);
     }
 }
