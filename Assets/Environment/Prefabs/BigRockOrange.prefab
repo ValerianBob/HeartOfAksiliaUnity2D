@@ -1,0 +1,285 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5487713808803982545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5120231501032159480}
+  m_Layer: 0
+  m_Name: BigRockOrange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5120231501032159480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5487713808803982545}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35.61, y: -45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3425716890067906854}
+  - {fileID: 8369532609289372850}
+  - {fileID: 6191197596591857046}
+  - {fileID: 687722598533863997}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1555043509124118083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5120231501032159480}
+    m_Modifications:
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_Name
+      value: CrystalsOrangeRock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.060001373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+--- !u!4 &3425716890067906854 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+  m_PrefabInstance: {fileID: 1555043509124118083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3716948012196273496
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5120231501032159480}
+    m_Modifications:
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_Name
+      value: CrystalsOrangeRock (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2200012
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5600014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+--- !u!4 &687722598533863997 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+  m_PrefabInstance: {fileID: 3716948012196273496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5636401279810847703
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5120231501032159480}
+    m_Modifications:
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_Name
+      value: CrystalsOrangeRock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0299988
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.33955765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+--- !u!4 &8369532609289372850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+  m_PrefabInstance: {fileID: 5636401279810847703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8067501505580571379
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5120231501032159480}
+    m_Modifications:
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_Name
+      value: CrystalsOrangeRock (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.579998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12056732
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+--- !u!4 &6191197596591857046 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+  m_PrefabInstance: {fileID: 8067501505580571379}
+  m_PrefabAsset: {fileID: 0}

@@ -11,6 +11,8 @@ TagManager:
   - Kaylo
   - MainBase
   - SimpleTuretBullet
+  - Rock
+  - Bush
   layers:
   - Default
   - TransparentFX
