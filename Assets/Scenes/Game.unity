@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -411,6 +415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsBlueRock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -459,6 +467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -480,6 +492,10 @@ PrefabInstance:
     - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_Name
       value: CrystalsBlueRock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
@@ -527,6 +543,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1422,6 +1442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1792,6 +1816,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -1838,6 +1866,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3275,6 +3307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4411,6 +4447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -4457,6 +4497,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5315,6 +5359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsBlueRock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -5361,6 +5409,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6000,6 +6052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -6046,6 +6102,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7665,6 +7725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8055,6 +8119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -8103,6 +8171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8124,6 +8196,10 @@ PrefabInstance:
     - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_Name
       value: BigRock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x
@@ -9704,6 +9780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9997,6 +10077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsBlueRock
       objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -10043,6 +10127,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10704,6 +10792,10 @@ PrefabInstance:
     - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_Name
       value: BigRock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x
@@ -12145,6 +12237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -12704,6 +12800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -12750,6 +12850,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13930,6 +14034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14628,6 +14736,10 @@ PrefabInstance:
     - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
       propertyPath: m_Name
       value: BigRockOrange (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15564,6 +15676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsBlueRock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -15610,6 +15726,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17565,7 +17685,6 @@ Transform:
   - {fileID: 68819459}
   - {fileID: 520017013}
   - {fileID: 621982639}
-  - {fileID: 2049889388}
   - {fileID: 2036087411}
   - {fileID: 890890498}
   - {fileID: 458778361}
@@ -17586,6 +17705,7 @@ Transform:
   - {fileID: 306244235}
   - {fileID: 306727568}
   - {fileID: 737554203}
+  - {fileID: 2049889388}
   - {fileID: 45048456}
   - {fileID: 251508799}
   - {fileID: 788824961}
@@ -18234,6 +18354,10 @@ PrefabInstance:
     - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_Name
       value: BigRock (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x
@@ -19770,6 +19894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20235,6 +20363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20674,6 +20806,10 @@ PrefabInstance:
     - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_Name
       value: BigRock (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x
@@ -21544,6 +21680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsBlueRock (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -21590,6 +21730,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22646,6 +22790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsBlueRock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -22692,6 +22840,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22845,6 +22997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsBlueRock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037795959851667536, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -22891,6 +23047,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3394973431661378666, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717940992915310139, guid: 231f42e502dc60341a8fc581dc6e14d0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -23853,6 +24013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -23899,6 +24063,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24431,6 +24599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -24477,6 +24649,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -25430,6 +25606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRock (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -26081,6 +26261,10 @@ PrefabInstance:
     - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
       propertyPath: m_Name
       value: BigRockOrange (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27121,6 +27305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalsOrangeRock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 667907619208096607, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0066666664
@@ -27167,6 +27355,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187794089582987109, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312025928256975528, guid: 1fc4c57054ebe894380bc69c13065977, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -28548,6 +28740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28836,6 +29032,10 @@ PrefabInstance:
       propertyPath: bulletPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 2546146162279681414, guid: cbbb81f6ba7412248ae7ec1bdb74b5f5, type: 3}
+    - target: {fileID: 6813312131901204016, guid: a9bab7080defe6845a1c1326addfc4d0, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8915880033730666457, guid: a9bab7080defe6845a1c1326addfc4d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -29640,6 +29840,10 @@ PrefabInstance:
     - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
       propertyPath: m_Name
       value: BigRockOrange (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31050,6 +31254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRockOrange
       objectReference: {fileID: 0}
+    - target: {fileID: 5487713808803982545, guid: dbf0e84338e8a9c4f942d48bfff50720, type: 3}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31066,6 +31274,10 @@ PrefabInstance:
     - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_Name
       value: BigRock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993359188060271276, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
+      propertyPath: m_TagString
+      value: Rock
       objectReference: {fileID: 0}
     - target: {fileID: 4236358621265862011, guid: ca079c8cdaa07d0459e98a3a5ecce029, type: 3}
       propertyPath: m_LocalScale.x

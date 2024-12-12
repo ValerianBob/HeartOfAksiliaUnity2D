@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.35
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bloodPrefab: {fileID: 7121561308081327540, guid: ee618e6108ff9cc4d8bb1b0d17671815, type: 3}
   _OrangeCrystall: {fileID: 7538372884535361891, guid: f38cb501ee6363844900bce5117135c6, type: 3}
+  avoidSpeedMultiplier: 2
 --- !u!95 &3403472867806817897
 Animator:
   serializedVersion: 5

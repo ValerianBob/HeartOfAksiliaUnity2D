@@ -13,8 +13,13 @@ public class EnemyController : MonoBehaviour
 
     private Vector3 playerDirection;
     private Vector3 localScale;
+    private Vector3 obstacleAvoidDirection; 
+
+    private bool isAvoidingObstacle = false;
 
     private float enemySpeed = 9f;
+    public float avoidSpeedMultiplier = 2f; 
+
     private float pastX;
     private float currentX;
     private float enemyScale;
@@ -40,7 +45,10 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyMovement()
     {
-        playerDirection = (player.transform.position - transform.position).normalized;
+        if (!isAvoidingObstacle) 
+        {
+            playerDirection = (player.transform.position - transform.position).normalized;
+        }
         transform.Translate(playerDirection * enemySpeed * Time.deltaTime);
     }
 
@@ -84,5 +92,26 @@ public class EnemyController : MonoBehaviour
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            Debug.Log("Collision");
+            Vector2 collisionNormal = collision.contacts[0].normal;
+            obstacleAvoidDirection = (Vector3)collisionNormal;
+
+            Vector3 avoidDirection = new Vector3(-obstacleAvoidDirection.y, obstacleAvoidDirection.x, 0);
+
+            isAvoidingObstacle = true;
+
+            Invoke("ResetAvoidObstacle", 0.3f); 
+        }
+    }
+
+    private void ResetAvoidObstacle()
+    {
+        isAvoidingObstacle = false;
     }
 }
