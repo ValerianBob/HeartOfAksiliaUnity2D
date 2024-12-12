@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 1528107768061603800}
   - component: {fileID: 1441809471310605851}
   - component: {fileID: 1609910682207668314}
+  - component: {fileID: 3477884767027764834}
   m_Layer: 0
   m_Name: MainBase
   m_TagString: Build
@@ -273,6 +274,7 @@ MonoBehaviour:
   builds:
   - {fileID: 8889877485415706556, guid: 378a202cf778a004dbdec4f5f8c0449a, type: 3}
   chosenBuild: {fileID: 0}
+  showBuildsInfoButtons: []
   buySimpleTurel: {fileID: 0}
   isBuying: 0
 --- !u!114 &3779941115269654130
@@ -364,7 +366,9 @@ MonoBehaviour:
   allGunsPrefabs:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   buyShotGun: {fileID: 0}
+  buyMac10: {fileID: 0}
 --- !u!114 &1609910682207668314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +381,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffdcf3dafaef734bb6e49ba0285d481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverWindow: {fileID: 0}
+  timeResult: {fileID: 0}
+  InMainMenu: {fileID: 0}
   gameOver: 0
+--- !u!114 &3477884767027764834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4467364044916312430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da71bb716533f5548aee9bf5b7ac8827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notificationText: {fileID: 0}
+  notification: {fileID: 0}
 --- !u!1001 &6596987462812290920
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,17 +10,12 @@ public class HandController : MonoBehaviour
     private GunsShop gunsShop;
 
     public GameObject player;
-    public GameObject[] bulletPrefabs;
     public List<GameObject> allGunsInStock = new List<GameObject>();
-    private GameObject spawnBullet;
 
     public Image[] gunsImages;
 
-    private Vector3 difference;
+    public Vector3 difference;
     private Vector3 playrLocalScale;
-    private Vector3 bulletColibration = new Vector3(0f, -0.3f, 0f);
-
-    private Vector2 newBulletDirection;
 
     private float rotationZ;
     private float playerScale;
@@ -47,11 +42,6 @@ public class HandController : MonoBehaviour
         if (!_inGameMenuController.isPause && !GameOver.Instance.gameOver)
         {
             HandMovement();
-
-            if (Input.GetMouseButtonDown(0) && !_shopController.isOpened)
-            {
-                Shoot();
-            }
 
             ChooseGun();
         }
@@ -80,18 +70,6 @@ public class HandController : MonoBehaviour
         }
 
         player.transform.localScale = playrLocalScale;
-    }
-
-    private void Shoot()
-    {
-        if (activeGun == "Berreta")
-        {
-            BerretaShot();
-        } 
-        else if (activeGun == "ShotGun")
-        {
-            ShotGunShot();
-        }
     }
 
     private void ChooseGun()
@@ -137,27 +115,5 @@ public class HandController : MonoBehaviour
                 gunsImages[i].gameObject.SetActive(true);
             }
         }
-    }
-
-    private void BerretaShot()
-    {
-        newBulletDirection = transform.position + difference + bulletColibration;
-
-        spawnBullet = Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation);
-    }
-
-    private void ShotGunShot()
-    {
-        newBulletDirection = transform.position + difference + bulletColibration;
-
-        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 5f));
-        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 10f));
-        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 15f));
-        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation);
-        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -5f));
-        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -10f));
-        Instantiate(bulletPrefabs[currentGun], newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -15f));
-
-        SoundsController.Instance.PlayGunSound(1);
     }
 }
