@@ -4453,7 +4453,7 @@ MonoBehaviour:
   GunSounds:
   - {fileID: 8300000, guid: 29fb74df3f8458f4499249acb4d8e1fd, type: 3}
   - {fileID: 8300000, guid: 519ac394e47c8534b95defeb8effa10e, type: 3}
-  - {fileID: 8300000, guid: a34a7d7ea86548f47bdac084c2e1772b, type: 3}
+  - {fileID: 8300000, guid: 15115c567a09a5d4d8bf8aa51527d0cd, type: 3}
   EnemyDeathSounds:
   - {fileID: 8300000, guid: 00efead016a0812479a4c93a608e4848, type: 3}
   ShopsSounds:
