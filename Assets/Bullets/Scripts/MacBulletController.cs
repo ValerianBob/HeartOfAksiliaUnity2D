@@ -12,7 +12,6 @@ public class MacController : MonoBehaviour
     {
         _bulletRigidBody = GetComponent<Rigidbody2D>();
         _bulletRigidBody.velocity = transform.right * speed;
-        SoundsController.Instance.PlayGunSound(0);
     }
 
     private void Update()

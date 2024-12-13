@@ -29,6 +29,7 @@ public class GunsShop : MonoBehaviour
         {
             handController.allGunsInStock.Add(allGunsPrefabs[1]);
             shotGunHasBought = true;
+            SoundsController.Instance.PlayShopsSound(0);
         }
     }
 
@@ -38,6 +39,7 @@ public class GunsShop : MonoBehaviour
         {
             handController.allGunsInStock.Add(allGunsPrefabs[2]);
             mac10HasBought = true;
+            SoundsController.Instance.PlayShopsSound(0);
         }
     }
 }
