@@ -25,6 +25,7 @@ public class GunsShop : MonoBehaviour
     
     private void BuyShotGun()
     {
+        buyShotGun.interactable = false;
         if (!shotGunHasBought)
         {
             handController.allGunsInStock.Add(allGunsPrefabs[1]);
@@ -35,6 +36,7 @@ public class GunsShop : MonoBehaviour
 
     private void BuyMac10()
     {
+        buyMac10.interactable = false;
         if (!mac10HasBought)
         {
             handController.allGunsInStock.Add(allGunsPrefabs[2]);

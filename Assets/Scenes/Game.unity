@@ -13791,7 +13791,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 2110597320163794a980ba68da99f894, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 3e5ac196f2eb5ef4da37b880cb704339, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -15908,7 +15908,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 2110597320163794a980ba68da99f894, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 3e5ac196f2eb5ef4da37b880cb704339, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -21756,6 +21756,14 @@ PrefabInstance:
     - target: {fileID: 4467364044916312430, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
       propertyPath: m_Name
       value: MainBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562062598830382938, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562062598830382938, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5643820601985375125, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
       propertyPath: buySimpleTurel
