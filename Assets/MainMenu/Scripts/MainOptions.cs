@@ -116,6 +116,8 @@ public class MainOptions : MonoBehaviour
 
     public void ExecConfig()
     {
+        _currentSceneName = SceneManager.GetActiveScene().name;
+
         SoundsController.Instance.audioSource.volume = OptionsConfig.Instance.sound;
         sliderSound.value = OptionsConfig.Instance.sound;
         textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderSound.value * 100)) + " %";
@@ -124,22 +126,20 @@ public class MainOptions : MonoBehaviour
         placeholderText.text = Convert.ToString(OptionsConfig.Instance.cameraSize);
         mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
         notificationsToggle.isOn = OptionsConfig.Instance.notificationsSystem;
-
         sliderMusic.value = OptionsConfig.Instance.music;
         textMusicPercent.text = Convert.ToString(Convert.ToInt32(sliderMusic.value * 100)) + " %";
 
+        Debug.Log("Scene name : " + _currentSceneName);
+
         if (_currentSceneName == "Game")
         {
-            Debug.Log(_currentSceneName);
             notificationsSystem.SetActive(OptionsConfig.Instance.notificationsSystem);
         }
-        if (_currentSceneName == "MainMenu")
+        else if (_currentSceneName == "MainMenu")
         {
-            Debug.Log(_currentSceneName);    
             audioSourceMusic.volume = OptionsConfig.Instance.music;
         }
-        
+
         ApplyAll();
-        
     }
 }
