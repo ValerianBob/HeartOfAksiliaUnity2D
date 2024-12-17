@@ -13,11 +13,17 @@ public class MainOptions : MonoBehaviour
 
     public Camera mainCamera;
 
-    public Slider sliderAudio;
+    public AudioSource audioSourceMusic;
+
+    public Slider sliderMusic;
+
+    public Slider sliderSound;
 
     public TMP_InputField inputCameraSize;
 
     public TextMeshProUGUI textAudioPercent;
+
+    public TextMeshProUGUI textMusicPercent;
 
     public Button applyAll;
 
@@ -40,15 +46,30 @@ public class MainOptions : MonoBehaviour
 
     void Update()
     {
+        MusicSlider();
         SoundSlider();
+    }
+
+    public void MusicSlider()
+    {
+        if (sliderMusic.value != OptionsConfig.Instance.music)
+        {
+            textMusicPercent.text = Convert.ToString(Convert.ToInt32(sliderMusic.value * 100)) + " %";
+            OptionsConfig.Instance.music = sliderMusic.value;  
+            if (audioSourceMusic != null)
+            {
+                audioSourceMusic.volume = OptionsConfig.Instance.music;
+            }
+        }
+        
     }
 
     public void SoundSlider()
     {
-       if (sliderAudio.value != OptionsConfig.Instance.sound)
+       if (sliderSound.value != OptionsConfig.Instance.sound)
        {
-            textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
-            OptionsConfig.Instance.sound = sliderAudio.value;
+            textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderSound.value * 100)) + " %";
+            OptionsConfig.Instance.sound = sliderSound.value;
             SoundsController.Instance.audioSource.volume = OptionsConfig.Instance.sound;
        }
     }
@@ -64,6 +85,7 @@ public class MainOptions : MonoBehaviour
 
     public void ApplyAll()
     {
+        MusicSlider();
         SoundSlider();
         NotificationSystem();
         ChangeCameraSize();
@@ -73,8 +95,10 @@ public class MainOptions : MonoBehaviour
     public void ResetAll()
     {
         SoundsController.Instance.PlayInGameMenuSound(1);
+        OptionsConfig.Instance.music = 0.5f;
         OptionsConfig.Instance.sound = 0.5f;
         OptionsConfig.Instance.cameraSize = 10;
+        OptionsConfig.Instance.notificationsSystem = false;
         ExecConfig();
     }
 
@@ -93,18 +117,28 @@ public class MainOptions : MonoBehaviour
     public void ExecConfig()
     {
         SoundsController.Instance.audioSource.volume = OptionsConfig.Instance.sound;
-        sliderAudio.value = OptionsConfig.Instance.sound;
-        textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderAudio.value * 100)) + " %";
+        sliderSound.value = OptionsConfig.Instance.sound;
+        textAudioPercent.text = Convert.ToString(Convert.ToInt32(sliderSound.value * 100)) + " %";
         placeholderText = inputCameraSize.placeholder.GetComponent<TextMeshProUGUI>();
         inputCameraSize.text = OptionsConfig.Instance.cameraSize.ToString();
         placeholderText.text = Convert.ToString(OptionsConfig.Instance.cameraSize);
         mainCamera.orthographicSize = OptionsConfig.Instance.cameraSize;
         notificationsToggle.isOn = OptionsConfig.Instance.notificationsSystem;
+
+        sliderMusic.value = OptionsConfig.Instance.music;
+        textMusicPercent.text = Convert.ToString(Convert.ToInt32(sliderMusic.value * 100)) + " %";
+
         if (_currentSceneName == "Game")
         {
             Debug.Log(_currentSceneName);
             notificationsSystem.SetActive(OptionsConfig.Instance.notificationsSystem);
         }
+        if (_currentSceneName == "MainMenu")
+        {
+            Debug.Log(_currentSceneName);    
+            audioSourceMusic.volume = OptionsConfig.Instance.music;
+        }
+        
         ApplyAll();
         
     }
