@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 6936463223352835694}
   - component: {fileID: 3068926185436497350}
   - component: {fileID: 6052150450512445317}
-  - component: {fileID: 8347432941984384930}
+  - component: {fileID: 3911296252304181233}
   - component: {fileID: 8081366495876631477}
   - component: {fileID: 4828489587849448165}
   - component: {fileID: 2974721028428467835}
@@ -288,7 +288,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &8347432941984384930
+--- !u!114 &3911296252304181233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,11 +297,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4467364044916312430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5378e6a5e3fc47245bf5add26ee5d1fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 61f3066810ea07b428a71d89a7ff59f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainBaseHealthBar: {fileID: 6183688227683957210}
-  maxHealth: 1000
+  healthBar: {fileID: 6183688227683957210}
   currentHealth: 0
 --- !u!114 &8081366495876631477
 MonoBehaviour:
@@ -317,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingMode: 0
   canNotBuildHere: 0
+  buildsCount: 0
 --- !u!114 &4828489587849448165
 MonoBehaviour:
   m_ObjectHideFlags: 0

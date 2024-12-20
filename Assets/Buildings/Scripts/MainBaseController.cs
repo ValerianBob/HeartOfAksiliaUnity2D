@@ -24,4 +24,10 @@ public class MainBaseController : MonoBehaviour
             mainBaseHealthBar.SetHealth(currentHealth);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        mainBaseHealthBar.SetHealth(currentHealth);
+    }
 }

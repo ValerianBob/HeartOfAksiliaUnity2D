@@ -46,7 +46,7 @@ public class CharacterController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            GameOver.Instance.gameOver = true;
+            //GameOver.Instance.gameOver = true;
         }
     }
 
@@ -67,5 +67,11 @@ public class CharacterController : MonoBehaviour
         }
 
         transform.Translate(movement);
+    }
+
+    public void TakingDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBarUI.SetHealth(currentHealth);
     }
 }

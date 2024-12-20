@@ -14,6 +14,8 @@ public class BuildingBlock : MonoBehaviour
 
     private GameObject[] childGameObjects;
 
+    public GameObject canvasHealthBar;
+
     public Color canNotBuildBlockColor;
     public Color canBuildColor;
 
@@ -36,6 +38,7 @@ public class BuildingBlock : MonoBehaviour
         if (!_buildingController.buildingMode)
         {
             ChangeBuildBlockColor(canBuildColor, 1f);
+            canvasHealthBar.SetActive(true);
             Destroy(_buildingBlock);
         }
     }

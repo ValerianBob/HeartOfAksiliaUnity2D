@@ -17,7 +17,7 @@ public class BuildingController : MonoBehaviour
     public bool buildingMode = false;
     public bool canNotBuildHere = false;
 
-    private int buildsCount = 0;
+    public int buildsCount = 0;
 
     private void Start()
     {
@@ -40,7 +40,7 @@ public class BuildingController : MonoBehaviour
 
             newBuildCollider = newBuild.GetComponent<Collider2D>();
 
-            newBuild.name += buildsCount++.ToString();
+            newBuild.name += buildsCount.ToString();
 
             newBuild.transform.SetParent(arrayOfAllBuildingsInGame.transform);
         }
@@ -52,6 +52,7 @@ public class BuildingController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && !canNotBuildHere)
         {
+            buildsCount += 1;
             buildingMode = false;
             buildsShop.isBuying = false;
             newBuildCollider.isTrigger = false;
