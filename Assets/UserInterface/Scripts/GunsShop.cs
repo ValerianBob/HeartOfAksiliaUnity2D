@@ -22,12 +22,30 @@ public class GunsShop : MonoBehaviour
         buyShotGun.onClick.AddListener(BuyShotGun);
         buyMac10.onClick.AddListener(BuyMac10);
     }
-    
+
+    private void Update()
+    {
+        if (CrystalsController.Instance.orangeCrystals >= 100 && !mac10HasBought)
+        {
+            buyMac10.interactable = true;
+        }
+        else if (CrystalsController.Instance.orangeCrystals >= 200 && !shotGunHasBought)
+        {
+            buyShotGun.interactable = true;
+        }
+        else
+        {
+            buyMac10.interactable = false;
+            buyShotGun.interactable = false;
+        }
+    }
+
     private void BuyShotGun()
     {
         buyShotGun.interactable = false;
         if (!shotGunHasBought)
         {
+            CrystalsController.Instance.orangeCrystals -= 200;
             handController.allGunsInStock.Add(allGunsPrefabs[1]);
             shotGunHasBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -39,6 +57,7 @@ public class GunsShop : MonoBehaviour
         buyMac10.interactable = false;
         if (!mac10HasBought)
         {
+            CrystalsController.Instance.orangeCrystals -= 100;
             handController.allGunsInStock.Add(allGunsPrefabs[2]);
             mac10HasBought = true;
             SoundsController.Instance.PlayShopsSound(0);

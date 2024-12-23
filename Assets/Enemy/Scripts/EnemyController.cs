@@ -39,6 +39,7 @@ public class EnemyController : MonoBehaviour
 
     private int attackPower = 0;
     private int enemyHealth = 0;
+    private int orangeCrystalsForKill = 0;
 
     private TextMeshProUGUI OrangeCrystallCountForKill;
 
@@ -60,18 +61,21 @@ public class EnemyController : MonoBehaviour
     {
         if (gameObject.name == "BeetleLight(Clone)")
         {
-            attackPower = 2;
-            enemyHealth = 3;
+            attackPower = 1;
+            enemyHealth = 1;
+            orangeCrystalsForKill = 1;
         }
         else if (gameObject.name == "BeetleMedium(Clone)")
         {
-            attackPower = 4;
-            enemyHealth = 4;
+            attackPower = 2;
+            enemyHealth = 2;
+            orangeCrystalsForKill = 2;
         }
         else if (gameObject.name == "BeetleHeavy(Clone)")
         {
-            attackPower = 8;
-            enemyHealth = 5;
+            attackPower = 3;
+            enemyHealth = 3;
+            orangeCrystalsForKill = 3;
         }
     }
     void Update()
@@ -186,9 +190,9 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject);
                 SoundsController.Instance.PlayEnemyDeathSound(0);
 
-                CrystalsController.Instance.orangeCrystals += 1;
+                CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 
-                OrangeCrystallCountForKill.text = "+" + 1;
+                OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
 
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
