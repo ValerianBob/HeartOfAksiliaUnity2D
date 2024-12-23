@@ -42,6 +42,7 @@ public class GameOver : MonoBehaviour
             }
 
             timeResult.text = "Your Result : " + string.Format("{0:00}:{1:00}", time.minutes, time.seconds);
+            NotificationsController.Instance.AddNewMessage("Game Over!!!", "red");
         }
     }
 

@@ -48,7 +48,6 @@ public class ShopController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B) && !buildsShop.isBuying)
         {
-            NotificationsController.Instance.AddNewMessage("Open shop!!!", "red");
             isOpened = !isOpened;
             shopMenu.SetActive(isOpened);
         }

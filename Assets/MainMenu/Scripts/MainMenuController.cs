@@ -15,30 +15,37 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainMenuButtons;
     public GameObject optionsMenu;
     public GameObject resultsMenu;
+    public GameObject creditsMenu;
     public GameObject chooseQuitMenu;
     public GameObject gameTitle;
+    
 
     public Button newGame;
     public Button options;
     public Button results;
+    public Button credits;
     public Button quit;
     public Button backFromOptions;
     public Button backFromResults;
+    public Button backFromCredits;
     public Button chooseYes;
     public Button chooseNo;
 
     public bool isOptions = false;
     public bool isResults = false;
     public bool isChoose = false;
+    public bool isCredits = false;
 
     public void Start()
     {
         newGame.onClick.AddListener(NewGame);
         options.onClick.AddListener(Options);
         results.onClick.AddListener(Results);
+        credits.onClick.AddListener(Credits);
         quit.onClick.AddListener(Quit);
         backFromOptions.onClick.AddListener(BackFromOptions);
         backFromResults.onClick.AddListener(BackFromResults);
+        backFromCredits.onClick.AddListener(BackFromCredits);
         chooseYes.onClick.AddListener(QuitFromGame);
         chooseNo.onClick.AddListener(BackToMainMenu);
     }
@@ -71,12 +78,29 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Results");
     }
 
+    public void Credits()
+    {
+        SoundsController.Instance.PlayInGameMenuSound(1);
+        isCredits = true;
+        mainMenuButtons.SetActive(!isCredits);
+        creditsMenu.SetActive(isCredits);
+        Debug.Log("Credits");
+    }
+
     public void Quit()
     {
         SoundsController.Instance.PlayInGameMenuSound(1);
         isChoose = true;
         mainMenuButtons.SetActive(!isChoose);
         chooseQuitMenu.SetActive(isChoose);
+    }
+
+    public void BackFromCredits()
+    {
+        SoundsController.Instance.PlayInGameMenuSound(0);
+        isCredits = false;
+        creditsMenu.SetActive(isCredits);
+        mainMenuButtons.SetActive(!isCredits);
     }
 
     public void BackFromOptions()

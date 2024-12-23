@@ -42,6 +42,6 @@ public class BuildsShop : MonoBehaviour
         shopController.isOpened = !shopController.isOpened;
         shopController.shopMenu.SetActive(false);
         SoundsController.Instance.PlayShopsSound(0);
-        NotificationsController.Instance.AddNewMessage("Buy turrel","green");
+        NotificationsController.Instance.AddNewMessage("Buy turrel","blue");
     }
 }

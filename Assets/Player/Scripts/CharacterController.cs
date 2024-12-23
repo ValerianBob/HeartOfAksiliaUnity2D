@@ -46,6 +46,7 @@ public class CharacterController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            NotificationsController.Instance.AddNewMessage("Player dead", "red");
             //GameOver.Instance.gameOver = true;
         }
     }

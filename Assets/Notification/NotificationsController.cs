@@ -57,7 +57,7 @@ public class NotificationsController : MonoBehaviour
 
         _notifications.Enqueue($"<color={color}>{message}</color>" + "\n");
 
-        if(_notifications.Count > 6)
+        if(_notifications.Count > 7)
         {
             _notifications.Dequeue();
             _notificationText.text = "";
