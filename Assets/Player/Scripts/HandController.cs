@@ -9,7 +9,7 @@ public class HandController : MonoBehaviour
     private InGameMenuController _inGameMenuController;
     private GunsShop gunsShop;
 
-    public GameObject player;
+    public CharacterController player;
     public List<GameObject> allGunsInStock = new List<GameObject>();
 
     public Image[] gunsImages;
@@ -41,9 +41,11 @@ public class HandController : MonoBehaviour
     {
         if (!_inGameMenuController.isPause && !GameOver.Instance.gameOver)
         {
-            HandMovement();
-
-            ChooseGun();
+            if (!player.isPlayerDead)
+            {
+                HandMovement();
+                ChooseGun();
+            }
         }
     }
 

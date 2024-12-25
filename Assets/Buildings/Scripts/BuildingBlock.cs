@@ -70,6 +70,21 @@ public class BuildingBlock : MonoBehaviour
             _buildingController.canNotBuildHere = true;
             ChangeBuildBlockColor(canNotBuildBlockColor, transparency);
         }
+        if (collision.gameObject.CompareTag("Bush"))
+        {
+            _buildingController.canNotBuildHere = true;
+            ChangeBuildBlockColor(canNotBuildBlockColor, transparency);
+        }
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            _buildingController.canNotBuildHere = true;
+            ChangeBuildBlockColor(canNotBuildBlockColor, transparency);
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            _buildingController.canNotBuildHere = true;
+            ChangeBuildBlockColor(canNotBuildBlockColor, transparency);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -80,6 +95,21 @@ public class BuildingBlock : MonoBehaviour
             ChangeBuildBlockColor(canBuildColor, transparency);
         }
         if (collision.gameObject.CompareTag("Kaylo"))
+        {
+            _buildingController.canNotBuildHere = false;
+            ChangeBuildBlockColor(canBuildColor, transparency);
+        }
+        if (collision.gameObject.CompareTag("Bush"))
+        {
+            _buildingController.canNotBuildHere = false;
+            ChangeBuildBlockColor(canBuildColor, transparency);
+        }
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            _buildingController.canNotBuildHere = false;
+            ChangeBuildBlockColor(canBuildColor, transparency);
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             _buildingController.canNotBuildHere = false;
             ChangeBuildBlockColor(canBuildColor, transparency);

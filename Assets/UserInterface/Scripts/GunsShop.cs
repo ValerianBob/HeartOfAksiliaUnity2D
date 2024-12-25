@@ -29,13 +29,18 @@ public class GunsShop : MonoBehaviour
         {
             buyMac10.interactable = true;
         }
-        else if (CrystalsController.Instance.orangeCrystals >= 200 && !shotGunHasBought)
+        else
+        {
+            buyMac10.interactable = false;
+        }
+
+        if (CrystalsController.Instance.orangeCrystals >= 200 && !shotGunHasBought)
         {
             buyShotGun.interactable = true;
         }
         else
         {
-            buyMac10.interactable = false;
+            
             buyShotGun.interactable = false;
         }
     }

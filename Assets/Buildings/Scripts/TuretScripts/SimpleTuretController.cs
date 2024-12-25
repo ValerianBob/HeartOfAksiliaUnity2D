@@ -7,6 +7,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class SimpleTuretController : MonoBehaviour
 {
+    private BuildingController buildingController;
+
     public GameObject turetBullet;
 
     private Transform targetEnemy;
@@ -21,16 +23,27 @@ public class SimpleTuretController : MonoBehaviour
     private float nextFireTime;
     private float fireRate = 0.3f;
 
+    private bool building = true;
+
     private void Start()
     {
-       
+        buildingController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<BuildingController>();
     }
 
     private void Update()
     {
-        FindTarget();
-        RotateTurret();
-        Shoot();
+        Debug.Log(buildingController.canNotBuildHere);
+        if (Input.GetMouseButtonDown(1) && !buildingController.canNotBuildHere && building)
+        {
+            building = false;
+        }
+
+        if (!building)
+        {
+            FindTarget();
+            RotateTurret();
+            Shoot();
+        }
     }
 
     private void Shoot()

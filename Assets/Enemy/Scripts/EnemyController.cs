@@ -7,6 +7,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyController : MonoBehaviour
 {
+    private CharacterController characterController;
+
     private Animator animator;
 
     private Transform player;
@@ -19,7 +21,7 @@ public class EnemyController : MonoBehaviour
     public GameObject _bloodPrefab;
     public GameObject _OrangeCrystall;
 
-    private Vector3 playerDirection;
+    private Vector3 targetDirection;
     private Vector3 localScale;
     private Vector3 obstacleAvoidDirection; 
 
@@ -48,6 +50,7 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         player = GameObject.Find("Kaylo").GetComponent<Transform>();
+        characterController = GameObject.Find("Kaylo").GetComponent<CharacterController>();
 
         OrangeCrystallCountForKill = _OrangeCrystall.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 
@@ -61,20 +64,20 @@ public class EnemyController : MonoBehaviour
     {
         if (gameObject.name == "BeetleLight(Clone)")
         {
-            attackPower = 1;
-            enemyHealth = 1;
+            attackPower = 2;
+            enemyHealth = 2;
             orangeCrystalsForKill = 1;
         }
         else if (gameObject.name == "BeetleMedium(Clone)")
         {
-            attackPower = 2;
-            enemyHealth = 2;
+            attackPower = 3;
+            enemyHealth = 3;
             orangeCrystalsForKill = 2;
         }
         else if (gameObject.name == "BeetleHeavy(Clone)")
         {
-            attackPower = 3;
-            enemyHealth = 3;
+            attackPower = 4;
+            enemyHealth = 4;
             orangeCrystalsForKill = 3;
         }
     }
@@ -105,7 +108,14 @@ public class EnemyController : MonoBehaviour
 
         if (playerDistance <= attackRange && playerDistance < closestBuildingDistance)
         {
-            currentTarget = player;
+            if (!characterController.isPlayerDead)
+            {
+                currentTarget = player;
+            }
+            else
+            {
+                currentTarget = targets[0].transform;
+            }
         }
         else if (closestBuildingDistance <= attackRange)
         {
@@ -114,7 +124,14 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            currentTarget = player;
+            if (!characterController.isPlayerDead)
+            {
+                currentTarget = player;
+            }
+            else
+            {
+                currentTarget = targets[0].transform;
+            }
         }
     }
 
@@ -122,9 +139,9 @@ public class EnemyController : MonoBehaviour
     {
         if (!isAvoidingObstacle) 
         {
-            playerDirection = (currentTarget.transform.position - transform.position).normalized;
+            targetDirection = (currentTarget.transform.position - transform.position).normalized;
         }
-        transform.Translate(playerDirection * enemySpeed * Time.deltaTime);
+        transform.Translate(targetDirection * enemySpeed * Time.deltaTime);
     }
 
     private void EnemyRotation()

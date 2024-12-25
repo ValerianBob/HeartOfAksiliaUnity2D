@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -10,15 +12,32 @@ public class CharacterController : MonoBehaviour
 
     private Animator animator;
 
+    public GameObject deadBackground;
+
+    public TextMeshProUGUI respawnInText;
+    public TextMeshProUGUI buyBackCoastText;
+
+    public Button buyBackButton;
+
+    public GameObject bloodPrefab;
+    private GameObject blood;
+
     private Vector3 movement;
     private Vector3 currentPosition;
 
     private float moveInputHorizontal;
     private float moveInputVertical;
-    public float moveSpeed;
+    private float moveSpeed = 15;
 
-    public int MaxHealth = 100;
+    private int MaxHealth = 100;
     public int currentHealth;
+
+    private int secondsToRespawn = 1;
+    private int buyBackCoast = 0;
+
+    private int seconds = 0;
+
+    public bool isPlayerDead = false;
 
     private void Start()
     {
@@ -28,27 +47,59 @@ public class CharacterController : MonoBehaviour
 
         currentHealth = MaxHealth;
         healthBarUI.SetMaxHealth(MaxHealth);
+
+        buyBackButton.onClick.AddListener(BuyBack);
     }
 
     private void Update()
     {
-        CharacterMovement();
+        if (!isPlayerDead)
+        {
+            CharacterMovement();
+        }
 
         currentPosition = transform.position;
         currentPosition.z = -1;
         transform.position = currentPosition;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (currentHealth <= 0 && !isPlayerDead)
         {
-            currentHealth -= 5;
-            healthBarUI.SetHealth(currentHealth);
+            isPlayerDead = true;
+
+            deadBackground.SetActive(true);
+
+            secondsToRespawn += 2;
+            buyBackCoast += 50;
+
+            respawnInText.text = "Respawn in : " + secondsToRespawn.ToString();
+            buyBackCoastText.text = "Buy Back  : " + buyBackCoast.ToString();
+
+            HideOrShowCharacter();
+            blood = Instantiate(bloodPrefab, new Vector3(transform.position.x,transform.position.y, 0), bloodPrefab.transform.rotation);
+            SoundsController.Instance.PlayEnemyDeathSound(0);
+
+            StartCoroutine("SecondsCounter");
+
+            NotificationsController.Instance.AddNewMessage("Player dead", "red");
         }
 
-        if (currentHealth <= 0)
+        if (seconds == 0 && isPlayerDead)
         {
-            NotificationsController.Instance.AddNewMessage("Player dead", "red");
-            //GameOver.Instance.gameOver = true;
+            isPlayerDead = false;
+            deadBackground.SetActive(false);
+
+            currentHealth = MaxHealth;
+            healthBarUI.SetHealth(currentHealth);
+
+            Destroy(blood);
+            HideOrShowCharacter();
+
+            StopCoroutine("SecondsCounter");
+
+            NotificationsController.Instance.AddNewMessage("Player Respawned", "green");
         }
+
+        CheckOnBuyBack();
     }
 
     private void CharacterMovement()
@@ -74,5 +125,65 @@ public class CharacterController : MonoBehaviour
     {
         currentHealth -= damage;
         healthBarUI.SetHealth(currentHealth);
+    }
+
+    private IEnumerator SecondsCounter()
+    {
+        seconds = secondsToRespawn;
+
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            respawnInText.text = "Respawn in : " + (seconds -= 1).ToString();
+        }
+    }
+
+    private void HideOrShowCharacter()
+    {
+        if (isPlayerDead)
+        {
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
+
+    private void BuyBack()
+    {
+        if (CrystalsController.Instance.orangeCrystals >= buyBackCoast)
+        {
+            CrystalsController.Instance.orangeCrystals -= buyBackCoast;
+
+            isPlayerDead = false;
+            deadBackground.SetActive(false);
+
+            currentHealth = MaxHealth;
+            healthBarUI.SetHealth(currentHealth);
+
+            Destroy(blood);
+            HideOrShowCharacter();
+
+            StopCoroutine("SecondsCounter");
+
+            NotificationsController.Instance.AddNewMessage("Player Respawned", "green");
+        }
+    }
+
+    private void CheckOnBuyBack()
+    {
+        if (CrystalsController.Instance.orangeCrystals >= buyBackCoast)
+        {
+            buyBackButton.interactable = true;
+        }
+        else
+        {
+            buyBackButton.interactable = false;
+        }
     }
 }

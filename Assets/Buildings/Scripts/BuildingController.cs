@@ -50,7 +50,7 @@ public class BuildingController : MonoBehaviour
             newBuild.transform.position = new Vector3(mouseWorldPosition.x, mouseWorldPosition.y, -1);
         }
 
-        if (Input.GetMouseButtonDown(1) && !canNotBuildHere)
+        if (Input.GetMouseButtonDown(1) && !canNotBuildHere && buildingMode)
         {
             buildsCount += 1;
             buildingMode = false;

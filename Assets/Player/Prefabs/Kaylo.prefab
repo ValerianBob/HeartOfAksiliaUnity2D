@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d714e6323896bcc4baea8fba0adc9771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5251614289537299427}
+  player: {fileID: 5227533327796697851}
   allGunsInStock: []
   gunsImages:
   - {fileID: 0}
@@ -88,7 +88,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 6b09321e273360c4a9c05b3bc69f933d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.8
+      value: -19.64
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 6b09321e273360c4a9c05b3bc69f933d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -160,9 +160,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarUI: {fileID: 0}
-  moveSpeed: 15
-  MaxHealth: 100
+  deadBackground: {fileID: 0}
+  respawnInText: {fileID: 0}
+  buyBackCoastText: {fileID: 0}
+  buyBackButton: {fileID: 0}
+  bloodPrefab: {fileID: 2871806775945570715, guid: 3657cfb7549f7ca4399a9d27882d1a7a, type: 3}
   currentHealth: 0
+  isPlayerDead: 0
 --- !u!61 &2849207678914019010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -347,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f6fde6e59401429e71c8c190bee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 5227533327796697851}
   bulletPrefab: {fileID: 1557224723038939894, guid: 7f60d04ef3e755446b4aa557bbc32960, type: 3}
   handController: {fileID: 6175514735151157445}
 --- !u!1001 &6979596752867035991
@@ -435,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0719c551f3b8ba48865a97e56359f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 5227533327796697851}
   bulletPrefab: {fileID: 2546146162279681414, guid: cbbb81f6ba7412248ae7ec1bdb74b5f5, type: 3}
   handController: {fileID: 6175514735151157445}
 --- !u!1001 &8430122648836907282
@@ -531,5 +537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d574f5ec89cb324fa32f0e551be5e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 5227533327796697851}
   bulletPrefab: {fileID: 5177173302976027906, guid: 2ee5bdc08dcde0443bd084a34d1fa909, type: 3}
   handController: {fileID: 6175514735151157445}

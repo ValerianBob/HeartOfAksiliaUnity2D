@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MacShotController : MonoBehaviour
 {
+    public CharacterController characterController;
+
     public GameObject bulletPrefab;
 
     private ShopController _shopController;
@@ -25,7 +27,7 @@ public class MacShotController : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!_inGameMenuController.isPause && !GameOver.Instance.gameOver)
+        if (!_inGameMenuController.isPause && !GameOver.Instance.gameOver && !characterController.isPlayerDead)
         {
             if (Input.GetMouseButton(0) && !_shopController.isOpened)
             {
