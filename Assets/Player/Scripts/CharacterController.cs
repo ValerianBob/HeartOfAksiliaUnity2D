@@ -97,6 +97,7 @@ public class CharacterController : MonoBehaviour
             StopCoroutine("SecondsCounter");
 
             NotificationsController.Instance.AddNewMessage("Player Respawned", "green");
+            SoundsController.Instance.PlayOtherSounds(2);
         }
 
         CheckOnBuyBack();
@@ -125,6 +126,7 @@ public class CharacterController : MonoBehaviour
     {
         currentHealth -= damage;
         healthBarUI.SetHealth(currentHealth);
+        SoundsController.Instance.PlayHit(0);
     }
 
     private IEnumerator SecondsCounter()
@@ -172,6 +174,7 @@ public class CharacterController : MonoBehaviour
             StopCoroutine("SecondsCounter");
 
             NotificationsController.Instance.AddNewMessage("Player Respawned", "green");
+            SoundsController.Instance.PlayOtherSounds(2);
         }
     }
 

@@ -10,6 +10,8 @@ public class HealthOfBuild : MonoBehaviour
 
     private int maxHealth;
     public int currentHealth;
+    
+    private bool checkOnGameOver = false;
 
     private void Start()
     {
@@ -35,9 +37,11 @@ public class HealthOfBuild : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.name == "MainBase" && currentHealth <= 0)
+        if (gameObject.name == "MainBase" && currentHealth <= 0 && !checkOnGameOver)
         {
             GameOver.Instance.gameOver = true;
+            checkOnGameOver = true;
+            SoundsController.Instance.PlayOtherSounds(1);
         }
         else if (currentHealth <= 0)
         {
@@ -49,5 +53,6 @@ public class HealthOfBuild : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        SoundsController.Instance.PlayHit(1);
     }
 }

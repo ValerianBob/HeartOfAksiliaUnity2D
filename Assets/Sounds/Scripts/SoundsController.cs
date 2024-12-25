@@ -14,6 +14,8 @@ public class SoundsController : MonoBehaviour
     public AudioClip[] InGameMenuSound;
     public AudioClip[] PressButton;
     public AudioClip[] TurretShots;
+    public AudioClip[] Hit;
+    public AudioClip[] OtherSounds;
 
     public AudioSource audioSource;
 
@@ -74,6 +76,16 @@ public class SoundsController : MonoBehaviour
     public void PlayTurretShots(int index)
     {
         audioSource.PlayOneShot(TurretShots[index]);
+    }
+
+    public void PlayHit(int index)
+    {
+        audioSource.PlayOneShot(Hit[index]);
+    }
+
+    public void PlayOtherSounds(int index)
+    {
+        audioSource.PlayOneShot(OtherSounds[index]);
     }
 }
 // audioSource.clip = GunSounds[index];

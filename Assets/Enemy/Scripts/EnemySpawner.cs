@@ -60,6 +60,7 @@ public class EnemySpawner : MonoBehaviour
 
             Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
+            SoundsController.Instance.PlayOtherSounds(0);
         }
         else if (wavesCount < 6 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -73,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
 
             Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
+            SoundsController.Instance.PlayOtherSounds(0);
         }
         else if (wavesCount < 9 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -87,6 +89,7 @@ public class EnemySpawner : MonoBehaviour
 
             Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
+            SoundsController.Instance.PlayOtherSounds(0);
         }
         else if (secondsToRespawn == 60)
         {

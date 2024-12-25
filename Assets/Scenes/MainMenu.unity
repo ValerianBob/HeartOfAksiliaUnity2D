@@ -5622,6 +5622,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f037631789fb3848a9072088ebb1477, type: 3}
   TurretShots:
   - {fileID: 8300000, guid: 815786e4d231b1247a51cba6a7c2026a, type: 3}
+  Hit:
+  - {fileID: 8300000, guid: 648406192c7399b40aa321544e7f4fb8, type: 3}
+  - {fileID: 8300000, guid: b0e27d6e17c85174393e60e97820fc36, type: 3}
+  OtherSounds:
+  - {fileID: 8300000, guid: 94b0b30513e83f54fb790f70034cbca7, type: 3}
+  - {fileID: 8300000, guid: c01c7fb460ebe8e4d97c15591797a04c, type: 3}
+  - {fileID: 8300000, guid: b57c23f42ca16124ab959760ea3aef6f, type: 3}
   audioSource: {fileID: 0}
 --- !u!82 &1607631694
 AudioSource:
