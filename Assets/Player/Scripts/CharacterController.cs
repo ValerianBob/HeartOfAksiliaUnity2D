@@ -129,6 +129,15 @@ public class CharacterController : MonoBehaviour
         SoundsController.Instance.PlayHit(0);
     }
 
+    public void Healing(int hp)
+    {
+        if (currentHealth < MaxHealth)
+        {
+            currentHealth += hp;
+            healthBarUI.SetHealth(currentHealth);
+        }
+    }
+
     private IEnumerator SecondsCounter()
     {
         seconds = secondsToRespawn;

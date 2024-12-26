@@ -30,7 +30,6 @@ public class BuildingBlock : MonoBehaviour
 
         _renderer = GetComponent<Renderer>();
         ChangeBuildBlockColor(canBuildColor, transparency);
-
     }
 
     private void Update()
@@ -85,6 +84,16 @@ public class BuildingBlock : MonoBehaviour
             _buildingController.canNotBuildHere = true;
             ChangeBuildBlockColor(canNotBuildBlockColor, transparency);
         }
+        if (gameObject.name == "MedTent(Clone)" + _buildingController.buildsCount && collision.gameObject.CompareTag("HealingFild"))
+        {
+            _buildingController.canNotBuildHere = true;
+            ChangeBuildBlockColor(canNotBuildBlockColor, transparency);
+        }
+        if (gameObject.name == "EnergoTower(Clone)" + _buildingController.buildsCount && collision.gameObject.CompareTag("HealingFildEnergo"))
+        {
+            _buildingController.canNotBuildHere = true;
+            ChangeBuildBlockColor(canNotBuildBlockColor, transparency);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -110,6 +119,16 @@ public class BuildingBlock : MonoBehaviour
             ChangeBuildBlockColor(canBuildColor, transparency);
         }
         if (collision.gameObject.CompareTag("Enemy"))
+        {
+            _buildingController.canNotBuildHere = false;
+            ChangeBuildBlockColor(canBuildColor, transparency);
+        }
+        if (gameObject.name == "MedTent(Clone)" + _buildingController.buildsCount && collision.gameObject.CompareTag("HealingFild"))
+        {
+            _buildingController.canNotBuildHere = false;
+            ChangeBuildBlockColor(canBuildColor, transparency);
+        }
+        if (gameObject.name == "EnergoTower(Clone)" + _buildingController.buildsCount && collision.gameObject.CompareTag("HealingFildEnergo"))
         {
             _buildingController.canNotBuildHere = false;
             ChangeBuildBlockColor(canBuildColor, transparency);

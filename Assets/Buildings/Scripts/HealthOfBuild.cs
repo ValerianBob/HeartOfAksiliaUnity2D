@@ -33,6 +33,14 @@ public class HealthOfBuild : MonoBehaviour
         {
             maxHealth = 120;
         }
+        else if (gameObject.name == "MedTent(Clone)" + buildingController.buildsCount)
+        {
+            maxHealth = 200;
+        }
+        else if (gameObject.name == "EnergoTower(Clone)" + buildingController.buildsCount)
+        {
+            maxHealth = 210;
+        }
     }
 
     private void Update()
@@ -54,5 +62,14 @@ public class HealthOfBuild : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         SoundsController.Instance.PlayHit(1);
+    }
+
+    public void HealingBuild(int hp)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += hp;
+            healthBar.SetHealth(currentHealth);
+        }
     }
 }

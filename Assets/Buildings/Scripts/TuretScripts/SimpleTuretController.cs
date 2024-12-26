@@ -32,7 +32,6 @@ public class SimpleTuretController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(buildingController.canNotBuildHere);
         if (Input.GetMouseButtonDown(1) && !buildingController.canNotBuildHere && building)
         {
             building = false;
