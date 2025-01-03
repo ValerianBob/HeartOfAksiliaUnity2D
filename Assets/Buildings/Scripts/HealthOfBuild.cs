@@ -41,6 +41,22 @@ public class HealthOfBuild : MonoBehaviour
         {
             maxHealth = 210;
         }
+        else if (gameObject.name == "MachinGunTuret(Clone)" + buildingController.buildsCount)
+        {
+            maxHealth = 130;
+        }
+        else if (gameObject.name == "ShotGunTuret(Clone)" + buildingController.buildsCount)
+        {
+            maxHealth = 130;
+        }
+        else if (gameObject.name == "PiercingTuret(Clone)" + buildingController.buildsCount)
+        {
+            maxHealth = 130;
+        }
+        else if (gameObject.name == "CrystalFarming(Clone)" + buildingController.buildsCount)
+        {
+            maxHealth = 200;
+        }
     }
 
     private void Update()

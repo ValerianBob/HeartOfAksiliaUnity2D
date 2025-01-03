@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class SimpleTuretController : MonoBehaviour
+public class ShotGunTuretController : MonoBehaviour
 {
     private BuildingController buildingController;
 
@@ -52,11 +50,18 @@ public class SimpleTuretController : MonoBehaviour
             Debug.Log("Fire !!!");
             nextFireTime = Time.time + fireRate;
 
+            Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, 5f));
+            Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, 10f));
+            Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, 15f));
             Instantiate(turetBullet, transform.position, transform.rotation);
+            Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, -5f));
+            Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, -10f));
+            Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, -15f));
+
             SoundsController.Instance.PlayTurretShots(0);
         }
     }
-    
+
     private void RotateTurret()
     {
         if (targetEnemy != null)

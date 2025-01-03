@@ -15,6 +15,7 @@ TagManager:
   - Bush
   - HealingFild
   - HealingFildEnergo
+  - PiercingTuretBullet
   layers:
   - Default
   - TransparentFX

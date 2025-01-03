@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class SimpleTuretController : MonoBehaviour
+public class PiercingTuretController : MonoBehaviour
 {
     private BuildingController buildingController;
 
@@ -21,7 +19,7 @@ public class SimpleTuretController : MonoBehaviour
     private float angleNeededToLook;
     private float detectionRadius = 10f;
     private float nextFireTime;
-    private float fireRate = 0.5f;
+    private float fireRate = 0.3f;
 
     private bool building = true;
 
@@ -56,7 +54,7 @@ public class SimpleTuretController : MonoBehaviour
             SoundsController.Instance.PlayTurretShots(0);
         }
     }
-    
+
     private void RotateTurret()
     {
         if (targetEnemy != null)

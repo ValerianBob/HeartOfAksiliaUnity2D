@@ -14,6 +14,10 @@ public class BuildsShop : MonoBehaviour
     public Button buySimpleTurel;
     public Button buyMedTent;
     public Button buyEnergoTower;
+    public Button buyMachineGunTuret;
+    public Button buyShotGunTuret;
+    public Button buyPiercingTuret;
+    public Button buyCrystalFarming;
 
     public bool isBuying = false;
 
@@ -23,6 +27,10 @@ public class BuildsShop : MonoBehaviour
         buySimpleTurel.onClick.AddListener(BuySimpleTurel);
         buyMedTent.onClick.AddListener(BuyMedTent);
         buyEnergoTower.onClick.AddListener(BuyEnergoTower);
+        buyMachineGunTuret.onClick.AddListener(BuyMachineGunTuret);
+        buyShotGunTuret.onClick.AddListener(BuyShotGunTuret);
+        buyPiercingTuret.onClick.AddListener(BuyPiercingTuret);
+        buyCrystalFarming.onClick.AddListener(BuyCrystalFarming);
     }
 
     private void Update()
@@ -52,6 +60,42 @@ public class BuildsShop : MonoBehaviour
         else
         {
             buyEnergoTower.interactable = true;
+        }
+
+        if (CrystalsController.Instance.crystals < 200)
+        {
+            buyMachineGunTuret.interactable = false;
+        }
+        else
+        {
+            buyMachineGunTuret.interactable = true;
+        }
+
+        if (CrystalsController.Instance.crystals < 200)
+        {
+            buyShotGunTuret.interactable = false;
+        }
+        else
+        {
+            buyShotGunTuret.interactable = true;
+        }
+
+        if (CrystalsController.Instance.crystals < 300)
+        {
+            buyPiercingTuret.interactable = false;
+        }
+        else
+        {
+            buyPiercingTuret.interactable = true;
+        }
+
+        if (CrystalsController.Instance.crystals < 200)
+        {
+            buyCrystalFarming.interactable = false;
+        }
+        else
+        {
+            buyCrystalFarming.interactable = true;
         }
     }
 
@@ -89,5 +133,52 @@ public class BuildsShop : MonoBehaviour
         shopController.shopMenu.SetActive(false);
         SoundsController.Instance.PlayShopsSound(0);
         NotificationsController.Instance.AddNewMessage("Energo bought", "blue");
+    }
+
+    private void BuyMachineGunTuret()
+    {
+        CrystalsController.Instance.crystals -= 200;
+        chosenBuild = builds[3];
+        isBuying = true;
+
+        shopController.isOpened = !shopController.isOpened;
+        shopController.shopMenu.SetActive(false);
+        SoundsController.Instance.PlayShopsSound(0);
+        NotificationsController.Instance.AddNewMessage("Machin Turet bought", "blue");
+    }
+    private void BuyShotGunTuret()
+    {
+        CrystalsController.Instance.crystals -= 200;
+        chosenBuild = builds[4];
+        isBuying = true;
+
+        shopController.isOpened = !shopController.isOpened;
+        shopController.shopMenu.SetActive(false);
+        SoundsController.Instance.PlayShopsSound(0);
+        NotificationsController.Instance.AddNewMessage("ShotGunTuret bought", "blue");
+    }
+
+    private void BuyPiercingTuret()
+    {
+        CrystalsController.Instance.crystals -= 300;
+        chosenBuild = builds[5];
+        isBuying = true;
+
+        shopController.isOpened = !shopController.isOpened;
+        shopController.shopMenu.SetActive(false);
+        SoundsController.Instance.PlayShopsSound(0);
+        NotificationsController.Instance.AddNewMessage("PiercingTuret bought", "blue");
+    }
+
+    private void BuyCrystalFarming()
+    {
+        CrystalsController.Instance.crystals -= 200;
+        chosenBuild = builds[6];
+        isBuying = true;
+
+        shopController.isOpened = !shopController.isOpened;
+        shopController.shopMenu.SetActive(false);
+        SoundsController.Instance.PlayShopsSound(0);
+        NotificationsController.Instance.AddNewMessage("CrystalFarming bought", "blue");
     }
 }

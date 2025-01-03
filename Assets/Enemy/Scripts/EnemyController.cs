@@ -215,6 +215,23 @@ public class EnemyController : MonoBehaviour
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
             }
         }
+        if (collision.gameObject.CompareTag("PiercingTuretBullet"))
+        {
+            enemyHealth -= 1;
+
+            if (enemyHealth <= 0)
+            {
+                Destroy(gameObject);
+                SoundsController.Instance.PlayEnemyDeathSound(0);
+
+                CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
+
+                OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
+
+                Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
+                Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
