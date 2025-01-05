@@ -44,6 +44,8 @@ public class MacShotController : MonoBehaviour
     {
         newBulletDirection = transform.position + handController.difference;
 
+        PlayerResult.Instance.BulletsFired += 1;
+
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation);
 
         SoundsController.Instance.PlayGunSound(2);

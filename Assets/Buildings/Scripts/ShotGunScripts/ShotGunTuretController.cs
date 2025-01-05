@@ -50,6 +50,8 @@ public class ShotGunTuretController : MonoBehaviour
             Debug.Log("Fire !!!");
             nextFireTime = Time.time + fireRate;
 
+            PlayerResult.Instance.BulletsFired += 7;
+
             Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, 5f));
             Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, 10f));
             Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, 15f));

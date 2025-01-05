@@ -65,6 +65,7 @@ public class CharacterController : MonoBehaviour
         if (currentHealth <= 0 && !isPlayerDead)
         {
             isPlayerDead = true;
+            PlayerResult.Instance.CountOfPlayerDead += 1;
 
             deadBackground.SetActive(true);
 

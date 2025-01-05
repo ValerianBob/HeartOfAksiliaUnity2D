@@ -26,6 +26,7 @@ public class CrystalsCount : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             CrystalsController.Instance.crystals += 1;
+            PlayerResult.Instance.BlueCrystalCollected += 1;
         }
     }
 }

@@ -50,6 +50,7 @@ public class PiercingTuretController : MonoBehaviour
             Debug.Log("Fire !!!");
             nextFireTime = Time.time + fireRate;
 
+            PlayerResult.Instance.BulletsFired += 1;
             Instantiate(turetBullet, transform.position, transform.rotation);
             SoundsController.Instance.PlayTurretShots(0);
         }

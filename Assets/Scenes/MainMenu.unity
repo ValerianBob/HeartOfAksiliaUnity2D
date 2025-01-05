@@ -4418,7 +4418,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 2dda9ac9c3249ca489cba993120a95b7, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 731c7a05488828e4cbeadc40d8c1e364, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -5553,6 +5553,7 @@ GameObject:
   - component: {fileID: 1607631692}
   - component: {fileID: 1607631691}
   - component: {fileID: 1607631693}
+  - component: {fileID: 1607631695}
   - component: {fileID: 1607631694}
   m_Layer: 0
   m_Name: DontDestroyObj
@@ -5726,6 +5727,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1607631695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607631690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abadcfb7029d4a94690496d44ccf6308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1675425081
 GameObject:
   m_ObjectHideFlags: 0

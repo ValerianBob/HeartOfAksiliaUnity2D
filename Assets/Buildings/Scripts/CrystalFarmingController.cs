@@ -31,6 +31,7 @@ public class CrystalFarmingController : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             CrystalsController.Instance.crystals += 1;
+            PlayerResult.Instance.BlueCrystalCollected += 1;
             Instantiate(crystalUI, transform.position, crystalUI.transform.rotation);
         }
     }

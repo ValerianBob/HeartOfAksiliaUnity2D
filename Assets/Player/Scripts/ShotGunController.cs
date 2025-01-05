@@ -44,6 +44,8 @@ public class ShotGunController : MonoBehaviour
     {
         newBulletDirection = transform.position + handController.difference;
 
+        PlayerResult.Instance.BulletsFired += 7;
+
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 5f));
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 10f));
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, 15f));

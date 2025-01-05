@@ -36,6 +36,7 @@ public class EnetgoTowerScript : MonoBehaviour
                 if (build != null)
                 {
                     build.GetComponent<HealthOfBuild>().HealingBuild(1);
+                    PlayerResult.Instance.CountOfTowerHealedHP += 1;
                     Instantiate(healingUI, build.transform.position, healingUI.transform.rotation);
                 }
             }

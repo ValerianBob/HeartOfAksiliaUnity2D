@@ -110,6 +110,7 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log("All enemies are dead !!");
             NotificationsController.Instance.AddNewMessage("Enemies Dead", "green");
         }
+        PlayerResult.Instance.Wave = wavesCount;
     }
 
     private void StopAllEnemiesSpawn()

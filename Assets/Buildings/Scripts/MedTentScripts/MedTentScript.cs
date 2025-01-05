@@ -30,6 +30,7 @@ public class MedTentScript : MonoBehaviour
         if (Time.time >= nextFireTime && !building && !player.isPlayerDead)
         {
             player.Healing(1);
+            PlayerResult.Instance.CountOfPlayerHealedHP += 1;
             Instantiate(healingUI, player.transform.position, healingUI.transform.rotation);
             nextFireTime = Time.time + healingSpeed;
         }

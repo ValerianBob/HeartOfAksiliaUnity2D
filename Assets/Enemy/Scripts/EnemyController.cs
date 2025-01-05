@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
 
     private Vector3 targetDirection;
     private Vector3 localScale;
-    private Vector3 obstacleAvoidDirection; 
+    private Vector3 obstacleAvoidDirection;
 
     private bool isAvoidingObstacle = false;
 
@@ -137,7 +137,7 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyMovement()
     {
-        if (!isAvoidingObstacle) 
+        if (!isAvoidingObstacle)
         {
             targetDirection = (currentTarget.transform.position - transform.position).normalized;
         }
@@ -179,6 +179,10 @@ public class EnemyController : MonoBehaviour
         {
             if (Time.time >= nextFireTime)
             {
+                if (collision.gameObject.name == "MainBase")
+                {
+                    PlayerResult.Instance.CountOfMainBaseDamage += attackPower;
+                }
                 collision.gameObject.GetComponent<HealthOfBuild>().TakeDamage(attackPower);
                 nextFireTime = Time.time + attackSpeed;
                 animator.SetBool("Attack", true);
@@ -197,36 +201,51 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("BerretBullet") || collision.gameObject.CompareTag("SimpleTuretBullet"))
+        if (collision.gameObject.CompareTag("BerretBullet"))
         {
             Destroy(collision.gameObject);
             enemyHealth -= 1;
 
-            if (enemyHealth <= 0)
+            if (enemyHealth == 0)
             {
+                CountOfDeadCrip();
                 Destroy(gameObject);
                 SoundsController.Instance.PlayEnemyDeathSound(0);
 
                 CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 
                 OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
+
+                PlayerResult.Instance.OrangeCrystalCollected += orangeCrystalsForKill;
+                PlayerResult.Instance.Kills += 1;
+                PlayerResult.Instance.KillsByPlayer += 1;
 
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
             }
         }
-        if (collision.gameObject.CompareTag("PiercingTuretBullet"))
+        if (collision.gameObject.CompareTag("PiercingTuretBullet") || collision.gameObject.CompareTag("SimpleTuretBullet"))
         {
+            if (collision.gameObject.CompareTag("SimpleTuretBullet"))
+            {
+                Destroy(collision.gameObject);
+            }
+
             enemyHealth -= 1;
 
-            if (enemyHealth <= 0)
+            if (enemyHealth == 0)
             {
+                CountOfDeadCrip();
                 Destroy(gameObject);
                 SoundsController.Instance.PlayEnemyDeathSound(0);
 
                 CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 
                 OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
+
+                PlayerResult.Instance.OrangeCrystalCollected += orangeCrystalsForKill;
+                PlayerResult.Instance.Kills += 1;
+                PlayerResult.Instance.KillsByTower += 1;
 
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
@@ -263,5 +282,21 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    private void CountOfDeadCrip()
+    {
+        if (gameObject.name == "BeetleHeavy(Clone)")
+        {
+            PlayerResult.Instance.KillsBeetleHeavy += 1;
+        }
+        else if (gameObject.name == "BeetleLight(Clone)")
+        {
+            PlayerResult.Instance.KillsBeetleLight += 1;
+        }
+        else if (gameObject.name == "BeetleMedium(Clone)")
+        {
+            PlayerResult.Instance.KillsBeetleMedium += 1;
+        }
     }
 }

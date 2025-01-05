@@ -50,7 +50,9 @@ public class GunsShop : MonoBehaviour
         buyShotGun.interactable = false;
         if (!shotGunHasBought)
         {
+            PlayerResult.Instance.CountOfBoughtGuns += 1;
             CrystalsController.Instance.orangeCrystals -= 200;
+            PlayerResult.Instance.Orange—rystalsSpent += 200;
             handController.allGunsInStock.Add(allGunsPrefabs[1]);
             shotGunHasBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -63,7 +65,9 @@ public class GunsShop : MonoBehaviour
         buyMac10.interactable = false;
         if (!mac10HasBought)
         {
+            PlayerResult.Instance.CountOfBoughtGuns += 1;
             CrystalsController.Instance.orangeCrystals -= 100;
+            PlayerResult.Instance.Orange—rystalsSpent -= 100;
             handController.allGunsInStock.Add(allGunsPrefabs[2]);
             mac10HasBought = true;
             SoundsController.Instance.PlayShopsSound(0);

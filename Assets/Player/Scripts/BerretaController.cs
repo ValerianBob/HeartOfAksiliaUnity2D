@@ -43,6 +43,7 @@ public class BerretaController : MonoBehaviour
     private void BerretaShot()
     {
         newBulletDirection = transform.position + handController.difference;
+        PlayerResult.Instance.BulletsFired += 1;
 
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation);
     }

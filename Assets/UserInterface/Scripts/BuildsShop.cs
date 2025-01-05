@@ -102,9 +102,12 @@ public class BuildsShop : MonoBehaviour
     private void BuySimpleTurel()
     {
         CrystalsController.Instance.crystals -= 100;
+        PlayerResult.Instance.CountOfPlacedTowers += 1;
+        PlayerResult.Instance.CountOfSimpleTurel += 1;
+        PlayerResult.Instance.Blue—rystalsSpent += 100;
         chosenBuild = builds[0];
         isBuying = true;
-
+        
         shopController.isOpened = !shopController.isOpened;
         shopController.shopMenu.SetActive(false);
         SoundsController.Instance.PlayShopsSound(0);
@@ -114,6 +117,9 @@ public class BuildsShop : MonoBehaviour
     private void BuyMedTent()
     {
         CrystalsController.Instance.crystals -= 200;
+        PlayerResult.Instance.Blue—rystalsSpent += 200;
+        PlayerResult.Instance.CountOfPlacedTowers += 1;
+        PlayerResult.Instance.CountOfMedTent += 1;
         chosenBuild = builds[1];
         isBuying = true;
 
@@ -126,6 +132,9 @@ public class BuildsShop : MonoBehaviour
     private void BuyEnergoTower()
     {
         CrystalsController.Instance.crystals -= 300;
+        PlayerResult.Instance.Blue—rystalsSpent += 300;
+        PlayerResult.Instance.CountOfPlacedTowers += 1;
+        PlayerResult.Instance.CountOfEnergoTower += 1;
         chosenBuild = builds[2];
         isBuying = true;
 
@@ -138,6 +147,9 @@ public class BuildsShop : MonoBehaviour
     private void BuyMachineGunTuret()
     {
         CrystalsController.Instance.crystals -= 200;
+        PlayerResult.Instance.CountOfPlacedTowers += 1;
+        PlayerResult.Instance.CountOfMachineGunTuret += 1;
+        PlayerResult.Instance.Blue—rystalsSpent += 200;
         chosenBuild = builds[3];
         isBuying = true;
 
@@ -149,6 +161,9 @@ public class BuildsShop : MonoBehaviour
     private void BuyShotGunTuret()
     {
         CrystalsController.Instance.crystals -= 200;
+        PlayerResult.Instance.Blue—rystalsSpent += 200;
+        PlayerResult.Instance.CountOfPlacedTowers += 1;
+        PlayerResult.Instance.CountOfShotGunTuret += 1;
         chosenBuild = builds[4];
         isBuying = true;
 
@@ -161,6 +176,9 @@ public class BuildsShop : MonoBehaviour
     private void BuyPiercingTuret()
     {
         CrystalsController.Instance.crystals -= 300;
+        PlayerResult.Instance.Blue—rystalsSpent += 300;
+        PlayerResult.Instance.CountOfPlacedTowers += 1;
+        PlayerResult.Instance.CountOfPiercingTuret += 1;
         chosenBuild = builds[5];
         isBuying = true;
 
@@ -173,6 +191,9 @@ public class BuildsShop : MonoBehaviour
     private void BuyCrystalFarming()
     {
         CrystalsController.Instance.crystals -= 200;
+        PlayerResult.Instance.Blue—rystalsSpent += 200;
+        PlayerResult.Instance.CountOfPlacedTowers += 1;
+        PlayerResult.Instance.CountOfCrystalFarming += 1;
         chosenBuild = builds[6];
         isBuying = true;
 
