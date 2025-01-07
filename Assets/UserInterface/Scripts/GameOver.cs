@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,7 +10,9 @@ public class GameOver : MonoBehaviour
 {
 	public static GameOver Instance { get; private set; }
 
-	private TimerController time;
+    DateTime currentDate = DateTime.Now;
+
+    private TimerController time;
 
     private ShopController shop;
 
@@ -19,6 +22,7 @@ public class GameOver : MonoBehaviour
 	public Button InMainMenu;
 
 	public bool gameOver = false;
+    public bool norep = true;
 
     private void Start()
     {
@@ -30,9 +34,10 @@ public class GameOver : MonoBehaviour
 
     private void Update()
     {
-        if (gameOver)
+        if (gameOver && norep)
 		{
             Time.timeScale = 0;
+
             gameOverWindow.gameObject.SetActive(true);
 
             if (shop.isOpened)
@@ -43,7 +48,13 @@ public class GameOver : MonoBehaviour
 
             timeResult.text = "Your Result : " + string.Format("{0:00}:{1:00}", time.minutes, time.seconds);
             PlayerResult.Instance.Time = string.Format("{0:00}:{1:00}", time.minutes, time.seconds);
+            PlayerResult.Instance.Date = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
             NotificationsController.Instance.AddNewMessage("Game Over!!!", "red");
+            PlayerResult.Instance._gameResults.AddGameResult(PlayerResult.Instance.GetThisSaveData());
+            PlayerResult.Instance._gameResults.SaveToFile(Application.persistentDataPath + "/gameResults.xml");
+            SoundsController.Instance.PlayOtherSounds(1);
+
+            norep = false;
         }
     }
 
@@ -58,8 +69,10 @@ public class GameOver : MonoBehaviour
 			Instance = this;
 		}
 	}
+
     private void GoInMainMenu()
     {
+        Debug.Log("1414124");
         SceneManager.LoadScene("MainMenu");
     }
 }
