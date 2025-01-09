@@ -224,6 +224,7 @@ public class EnemyController : MonoBehaviour
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
             }
         }
+
         if (collision.gameObject.CompareTag("PiercingTuretBullet") || collision.gameObject.CompareTag("SimpleTuretBullet"))
         {
             if (collision.gameObject.CompareTag("SimpleTuretBullet"))
@@ -250,6 +251,25 @@ public class EnemyController : MonoBehaviour
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
             }
+        }
+
+        if (collision.gameObject.CompareTag("Mine"))
+        {
+            CountOfDeadCrip();
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            SoundsController.Instance.PlayEnemyDeathSound(0);
+
+            CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
+
+            OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
+
+            PlayerResult.Instance.OrangeCrystalCollected += orangeCrystalsForKill;
+            PlayerResult.Instance.Kills += 1;
+            PlayerResult.Instance.KillsByTower += 1;
+
+            Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
+            Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MacShotController : MonoBehaviour
+public class PechenegController : MonoBehaviour
 {
     public CharacterController characterController;
 
@@ -15,7 +15,7 @@ public class MacShotController : MonoBehaviour
 
     private Vector2 newBulletDirection;
 
-    private float fireRate = 0.2f;
+    private float fireRate = 0.1f;
 
     private float nextFireTime = 0f;
 
@@ -33,14 +33,14 @@ public class MacShotController : MonoBehaviour
             {
                 if (Time.time >= nextFireTime)
                 {
-                    Mac10Shot();
+                    PechenegShoot();
                     nextFireTime = Time.time + fireRate;
                 }
             }
         }
     }
 
-    private void Mac10Shot()
+    private void PechenegShoot()
     {
         newBulletDirection = transform.position + handController.difference;
 

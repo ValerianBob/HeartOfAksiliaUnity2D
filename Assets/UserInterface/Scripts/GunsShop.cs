@@ -11,9 +11,11 @@ public class GunsShop : MonoBehaviour
 
     public Button buyShotGun;
     public Button buyMac10;
+    public Button buyPecheneg;
 
     private bool shotGunHasBought = false;
     private bool mac10HasBought = false;
+    private bool pechenegBought = false;
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class GunsShop : MonoBehaviour
 
         buyShotGun.onClick.AddListener(BuyShotGun);
         buyMac10.onClick.AddListener(BuyMac10);
+        buyPecheneg.onClick.AddListener(BuyPecheneg);
     }
 
     private void Update()
@@ -42,6 +45,16 @@ public class GunsShop : MonoBehaviour
         {
             
             buyShotGun.interactable = false;
+        }
+
+        if (CrystalsController.Instance.orangeCrystals >= 300 && !pechenegBought)
+        {
+            buyPecheneg.interactable = true;
+        }
+        else
+        {
+
+            buyPecheneg.interactable = false;
         }
     }
 
@@ -72,6 +85,20 @@ public class GunsShop : MonoBehaviour
             mac10HasBought = true;
             SoundsController.Instance.PlayShopsSound(0);
             NotificationsController.Instance.AddNewMessage("Buy mac10", "blue");
+        }
+    }
+    private void BuyPecheneg()
+    {
+        buyPecheneg.interactable = false;
+        if (!pechenegBought)
+        {
+            PlayerResult.Instance.CountOfBoughtGuns += 1;
+            CrystalsController.Instance.orangeCrystals -= 300;
+            PlayerResult.Instance.Orange—rystalsSpent -= 300;
+            handController.allGunsInStock.Add(allGunsPrefabs[3]);
+            pechenegBought = true;
+            SoundsController.Instance.PlayShopsSound(0);
+            NotificationsController.Instance.AddNewMessage("Buy Pecheneg", "blue");
         }
     }
 }

@@ -23,6 +23,7 @@ public class ShopController : MonoBehaviour
     private bool buildsActive = true;
     private bool gunsActive = false;
     private bool superWeaponsActive = false;
+    public bool cantOpenWhilePlacingSuperWeapon = false;
 
     private void Start()
     {
@@ -46,7 +47,7 @@ public class ShopController : MonoBehaviour
 
     private void OpenShop()
     {
-        if (Input.GetKeyDown(KeyCode.B) && !buildsShop.isBuying)
+        if (Input.GetKeyDown(KeyCode.B) && !buildsShop.isBuying && !cantOpenWhilePlacingSuperWeapon)
         {
             isOpened = !isOpened;
             shopMenu.SetActive(isOpened);

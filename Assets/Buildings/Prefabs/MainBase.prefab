@@ -96,11 +96,11 @@ GameObject:
   - component: {fileID: 3779941115269654130}
   - component: {fileID: 1273047963365868518}
   - component: {fileID: 3602393498978055043}
-  - component: {fileID: 456373601651138052}
   - component: {fileID: 1528107768061603800}
   - component: {fileID: 1441809471310605851}
   - component: {fileID: 1609910682207668314}
   - component: {fileID: 3477884767027764834}
+  - component: {fileID: 7407898968897018767}
   m_Layer: 0
   m_Name: MainBase
   m_TagString: Build
@@ -369,12 +369,16 @@ MonoBehaviour:
   - {fileID: 1524722343853732460, guid: 804ffc1b6f19db546912de85ad175706, type: 3}
   - {fileID: 105282643624718676, guid: ea2b6f674d5889c4885439dd695bade4, type: 3}
   - {fileID: 5869894245457166768, guid: 50b74602b05a3d54d9e8d53992e8172c, type: 3}
+  - {fileID: 2560157270981485994, guid: 91028914054b0e847a74958ebd529752, type: 3}
+  - {fileID: 2532186958384174887, guid: b68f666c08c8f2740a82b0f9a314f5b5, type: 3}
   chosenBuild: {fileID: 0}
   buySimpleTurel: {fileID: 0}
   buyMedTent: {fileID: 0}
   buyEnergoTower: {fileID: 0}
   buyMachineGunTuret: {fileID: 0}
   buyShotGunTuret: {fileID: 0}
+  buyPiercingTuret: {fileID: 0}
+  buyCrystalFarming: {fileID: 0}
   isBuying: 0
 --- !u!114 &3779941115269654130
 MonoBehaviour:
@@ -430,18 +434,6 @@ MonoBehaviour:
   isPause: 0
   isOptions: 0
   isChoose: 0
---- !u!114 &456373601651138052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4467364044916312430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68b244c9d1aefc48a7e1befa1924526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &1528107768061603800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -466,8 +458,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   buyShotGun: {fileID: 0}
   buyMac10: {fileID: 0}
+  buyPecheneg: {fileID: 0}
 --- !u!114 &1609910682207668314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +478,7 @@ MonoBehaviour:
   timeResult: {fileID: 0}
   InMainMenu: {fileID: 0}
   gameOver: 0
+  norep: 1
 --- !u!114 &3477884767027764834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +493,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _notificationText: {fileID: 0}
   notification: {fileID: 0}
+--- !u!114 &7407898968897018767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4467364044916312430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2339842dab1eb6d4e82d6cc65d190bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSuperWeaponsPrefabs:
+  - {fileID: 3014403958438391304, guid: ee9ff647af263e840a0716cad736879a, type: 3}
+  buyMine: {fileID: 0}
 --- !u!1 &6049213347764081427
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ TagManager:
   - HealingFild
   - HealingFildEnergo
   - PiercingTuretBullet
+  - Mine
   layers:
   - Default
   - TransparentFX
