@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class HealthOfBuild : MonoBehaviour
 {
+    private Animator animator;
+
     public HealthBarController healthBar;
     private BuildingController buildingController;
 
@@ -14,6 +16,7 @@ public class HealthOfBuild : MonoBehaviour
     private void Start()
     {
         buildingController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<BuildingController>();
+        animator = transform.GetChild(0).GetComponent<Animator>();
 
         SetHalthForBuild();
 
@@ -62,6 +65,7 @@ public class HealthOfBuild : MonoBehaviour
         if (gameObject.name == "MainBase" && currentHealth <= 0)
         {
             GameOver.Instance.gameOver = true;
+            animator.SetBool("Destroy", true);
         }
         else if (currentHealth <= 0)
         {

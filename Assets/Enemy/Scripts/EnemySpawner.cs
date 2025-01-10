@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
 
     public TextMeshProUGUI waves;
 
-    private int wavesCount = 0;
+    public int wavesCount = 0;
     public int secondsToRespawn = 0;
 
     private bool canStartNewWave = true;
@@ -29,13 +29,56 @@ public class EnemySpawner : MonoBehaviour
     private Coroutine beetleHeavy1;
     private Coroutine beetleHeavy2;
     private Coroutine beetleHeavy3;
+    //Beetle Needl :
+    private Coroutine beetleNeedl1;
+    private Coroutine beetleNeedl2;
+    private Coroutine beetleNeedl3;
+    //Beetle Horns :
+    private Coroutine beetleHorns1;
+    private Coroutine beetleHorns2;
+    private Coroutine beetleHorns3;
+    //Beetle Mantis :
+    private Coroutine beetleMantis1;
+    private Coroutine beetleMantis2;
+    private Coroutine beetleMantis3;
 
     private Vector3[] spawnPositions =
     {
+        //bottom :
         new Vector3(-75, -74, -1),
-        new Vector3(-75, 74, -1),
-        new Vector3(75, 74, -1),
+        new Vector3(-60, -74, -1),
+        new Vector3(-40, -74, -1),
+        new Vector3(-20, -74, -1),
+        new Vector3(0, -74, -1),
+        new Vector3(20, -74, -1),
+        new Vector3(40, -74, -1),
+        new Vector3(60, -74, -1),
         new Vector3(75, -74, -1),
+
+        //Top :
+        new Vector3(-75, 74, -1),
+        new Vector3(-60, 74, -1),
+        new Vector3(-40, 74, -1),
+        new Vector3(-20, 74, -1),
+        new Vector3(0, 74, -1),
+        new Vector3(20, 74, -1),
+        new Vector3(40, 74, -1),
+        new Vector3(60, 74, -1),
+        new Vector3(75, 74, -1),
+
+        //Right :
+        new Vector3(75, 40, -1),
+        new Vector3(75, 20, -1),
+        new Vector3(75, 0, -1),
+        new Vector3(75, -40, -1),
+        new Vector3(75, -20, -1),
+
+        //Left :
+        new Vector3(-75, 40, -1),
+        new Vector3(-75, 20, -1),
+        new Vector3(-75, 0, -1),
+        new Vector3(-75, -40, -1),
+        new Vector3(-75, -20, -1),
     };
 
     private void Start()
@@ -84,6 +127,57 @@ public class EnemySpawner : MonoBehaviour
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
             BeetleHeavyCoroutinesStarter();
+
+            waves.text = wavesCount.ToString() + " wave";
+
+            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
+            NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
+            SoundsController.Instance.PlayOtherSounds(0);
+        }
+        else if (wavesCount < 12 && secondsToRespawn == 30 && canStartNewWave == true)
+        {
+            wavesCount += 1;
+            secondsToRespawn += 1;
+
+            BeetleLightCoroutinesStarter();
+            BeetleMediumCoroutinesStarter();
+            BeetleHeavyCoroutinesStarter();
+            BeetleNeedlCoroutinesStarter();
+
+            waves.text = wavesCount.ToString() + " wave";
+
+            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
+            NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
+            SoundsController.Instance.PlayOtherSounds(0);
+        }
+        else if (wavesCount < 15 && secondsToRespawn == 30 && canStartNewWave == true)
+        {
+            wavesCount += 1;
+            secondsToRespawn += 1;
+
+            BeetleLightCoroutinesStarter();
+            BeetleMediumCoroutinesStarter();
+            BeetleHeavyCoroutinesStarter();
+            BeetleNeedlCoroutinesStarter();
+            BeetleHornsCoroutinesStarter();
+
+            waves.text = wavesCount.ToString() + " wave";
+
+            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
+            NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
+            SoundsController.Instance.PlayOtherSounds(0);
+        }
+        else if (wavesCount < 18 && secondsToRespawn == 30 && canStartNewWave == true)
+        {
+            wavesCount += 1;
+            secondsToRespawn += 1;
+
+            BeetleLightCoroutinesStarter();
+            BeetleMediumCoroutinesStarter();
+            BeetleHeavyCoroutinesStarter();
+            BeetleNeedlCoroutinesStarter();
+            BeetleHornsCoroutinesStarter();
+            BeetleMantisCoroutinesStarter();
 
             waves.text = wavesCount.ToString() + " wave";
 
@@ -154,6 +248,45 @@ public class EnemySpawner : MonoBehaviour
         {
             StopCoroutine(beetleHeavy3);
         }
+        //Needl :
+        if (beetleNeedl1 != null)
+        {
+            StopCoroutine(beetleNeedl1);
+        }
+        if (beetleNeedl2 != null)
+        {
+            StopCoroutine(beetleNeedl2);
+        }
+        if (beetleNeedl3 != null)
+        {
+            StopCoroutine(beetleNeedl3);
+        } 
+        //Horns :
+        if (beetleHorns1 != null)
+        {
+            StopCoroutine(beetleHorns1);
+        }
+        if (beetleHorns2 != null)
+        {
+            StopCoroutine(beetleHorns2);
+        }
+        if (beetleHorns3 != null)
+        {
+            StopCoroutine(beetleHorns3);
+        }
+        //Mantis :
+        if (beetleMantis1 != null)
+        {
+            StopCoroutine(beetleMantis1);
+        }
+        if (beetleMantis2 != null)
+        {
+            StopCoroutine(beetleMantis2);
+        }
+        if (beetleMantis3 != null)
+        {
+            StopCoroutine(beetleMantis3);
+        }
     }
 
     private void BeetleLightCoroutinesStarter()
@@ -210,6 +343,63 @@ public class EnemySpawner : MonoBehaviour
             beetleHeavy1 = StartCoroutine(SpawnBeetle(2));
             beetleHeavy2 = StartCoroutine(SpawnBeetle(2));
             beetleHeavy3 = StartCoroutine(SpawnBeetle(2));
+        }
+    }
+
+    private void BeetleNeedlCoroutinesStarter()
+    {
+        if (wavesCount <= 10)
+        {
+            beetleNeedl1 = StartCoroutine(SpawnBeetle(3));
+        }
+        else if (wavesCount <= 11)
+        {
+            beetleNeedl1 = StartCoroutine(SpawnBeetle(3));
+            beetleNeedl2 = StartCoroutine(SpawnBeetle(3));
+        }
+        else if (wavesCount >= 12)
+        {
+            beetleNeedl1 = StartCoroutine(SpawnBeetle(3));
+            beetleNeedl2 = StartCoroutine(SpawnBeetle(3));
+            beetleNeedl3 = StartCoroutine(SpawnBeetle(3));
+        }
+    }
+
+    private void BeetleHornsCoroutinesStarter()
+    {
+        if (wavesCount <= 13)
+        {
+            beetleHorns1 = StartCoroutine(SpawnBeetle(4));
+        }
+        else if (wavesCount <= 14)
+        {
+            beetleHorns1 = StartCoroutine(SpawnBeetle(4));
+            beetleHorns2 = StartCoroutine(SpawnBeetle(4));
+        }
+        else if (wavesCount >= 15)
+        {
+            beetleHorns1 = StartCoroutine(SpawnBeetle(4));
+            beetleHorns2 = StartCoroutine(SpawnBeetle(4));
+            beetleHorns3 = StartCoroutine(SpawnBeetle(4));
+        }
+    }
+
+    private void BeetleMantisCoroutinesStarter()
+    {
+        if (wavesCount <= 16)
+        {
+            beetleMantis1 = StartCoroutine(SpawnBeetle(5));
+        }
+        else if (wavesCount <= 17)
+        {
+            beetleMantis1 = StartCoroutine(SpawnBeetle(5));
+            beetleMantis2 = StartCoroutine(SpawnBeetle(5));
+        }
+        else if (wavesCount >= 18)
+        {
+            beetleMantis1 = StartCoroutine(SpawnBeetle(5));
+            beetleMantis2 = StartCoroutine(SpawnBeetle(5));
+            beetleMantis3 = StartCoroutine(SpawnBeetle(5));
         }
     }
 

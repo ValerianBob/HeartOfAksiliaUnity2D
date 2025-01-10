@@ -64,21 +64,39 @@ public class EnemyController : MonoBehaviour
     {
         if (gameObject.name == "BeetleLight(Clone)")
         {
-            attackPower = 2;
+            attackPower = 1;
             enemyHealth = 2;
             orangeCrystalsForKill = 1;
         }
         else if (gameObject.name == "BeetleMedium(Clone)")
         {
-            attackPower = 3;
+            attackPower = 2;
             enemyHealth = 3;
             orangeCrystalsForKill = 2;
         }
         else if (gameObject.name == "BeetleHeavy(Clone)")
         {
-            attackPower = 4;
+            attackPower = 3;
             enemyHealth = 4;
             orangeCrystalsForKill = 3;
+        }
+        else if (gameObject.name == "BeetleNeedl(Clone)")
+        {
+            attackPower = 4;
+            enemyHealth = 5;
+            orangeCrystalsForKill = 4;
+        }
+        else if (gameObject.name == "BeetleHorns(Clone)")
+        {
+            attackPower = 5;
+            enemyHealth = 6;
+            orangeCrystalsForKill = 5;
+        }
+        else if (gameObject.name == "BeetleMantis(Clone)")
+        {
+            attackPower = 6;
+            enemyHealth = 7;
+            orangeCrystalsForKill = 6;
         }
     }
     void Update()
@@ -255,21 +273,25 @@ public class EnemyController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Mine"))
         {
-            CountOfDeadCrip();
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-            SoundsController.Instance.PlayEnemyDeathSound(0);
+            MineController mineController = collision.gameObject.GetComponent<MineController>();
+            if (!mineController.isPlacing)
+            {
+                CountOfDeadCrip();
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+                SoundsController.Instance.PlayEnemyDeathSound(0);
 
-            CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
+                CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 
-            OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
+                OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
 
-            PlayerResult.Instance.OrangeCrystalCollected += orangeCrystalsForKill;
-            PlayerResult.Instance.Kills += 1;
-            PlayerResult.Instance.KillsByTower += 1;
+                PlayerResult.Instance.OrangeCrystalCollected += orangeCrystalsForKill;
+                PlayerResult.Instance.Kills += 1;
+                PlayerResult.Instance.KillsByTower += 1;
 
-            Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
-            Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
+                Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
+                Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
+            }
         }
     }
 

@@ -24,7 +24,11 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (characterController.isPlayerDead)
+        if (GameOver.Instance.gameOver == true)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(0f, 0f, -10f), 2f * Time.deltaTime);
+        }
+        else if (characterController.isPlayerDead)
         {
             Vector3 mousePos = Input.mousePosition;
 
@@ -57,7 +61,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!characterController.isPlayerDead)
+        if (!characterController.isPlayerDead && GameOver.Instance.gameOver == false)
         {
             targetPosition = player.position + offset;
             transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
