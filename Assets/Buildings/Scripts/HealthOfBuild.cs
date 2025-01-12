@@ -13,6 +13,8 @@ public class HealthOfBuild : MonoBehaviour
     private int maxHealth;
     public int currentHealth;
 
+    public bool gameOver = false;
+
     private void Start()
     {
         buildingController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<BuildingController>();
@@ -62,12 +64,13 @@ public class HealthOfBuild : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.name == "MainBase" && currentHealth <= 0)
+        if (gameObject.name == "MainBase" && currentHealth <= 0 && gameOver==false)
         {
             GameOver.Instance.gameOver = true;
+            gameOver = true; 
             animator.SetBool("Destroy", true);
         }
-        else if (currentHealth <= 0)
+        else if (currentHealth <= 0 && gameObject.name != "MainBase")
         {
             Destroy(gameObject);
         }

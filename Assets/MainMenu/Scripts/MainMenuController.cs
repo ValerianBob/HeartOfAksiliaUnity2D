@@ -18,7 +18,6 @@ public class MainMenuController : MonoBehaviour
     public GameObject creditsMenu;
     public GameObject chooseQuitMenu;
     public GameObject gameTitle;
-    
 
     public Button newGame;
     public Button options;
@@ -38,6 +37,9 @@ public class MainMenuController : MonoBehaviour
 
     public void Start()
     {
+        GameResults gameResults = GameResults.LoadFromFile(Application.persistentDataPath + "/gameResults.xml");
+        PlayerResult.Instance.gameResults = gameResults;
+
         newGame.onClick.AddListener(NewGame);
         options.onClick.AddListener(Options);
         results.onClick.AddListener(Results);
@@ -76,6 +78,7 @@ public class MainMenuController : MonoBehaviour
         mainMenuButtons.SetActive(!isResults);
         resultsMenu.SetActive(isResults);
         Debug.Log("Results");
+        Debug.Log(Application.persistentDataPath + "/gameResults.xml");
     }
 
     public void Credits()

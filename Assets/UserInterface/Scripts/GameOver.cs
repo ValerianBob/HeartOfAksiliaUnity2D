@@ -36,6 +36,7 @@ public class GameOver : MonoBehaviour
     {
         if (gameOver && norep)
 		{
+            norep = false;
             Invoke(nameof(GameOverMethod), 2f);
         }
     }
@@ -56,11 +57,8 @@ public class GameOver : MonoBehaviour
         PlayerResult.Instance.Time = string.Format("{0:00}:{1:00}", time.minutes, time.seconds);
         PlayerResult.Instance.Date = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
         NotificationsController.Instance.AddNewMessage("Game Over!!!", "red");
-        PlayerResult.Instance._gameResults.AddGameResult(PlayerResult.Instance.GetThisSaveData());
-        PlayerResult.Instance._gameResults.SaveToFile(Application.persistentDataPath + "/gameResults.xml");
+        PlayerResult.Instance.SaveGameResult(PlayerResult.Instance.GetThisSaveData());
         SoundsController.Instance.PlayOtherSounds(1);
-
-        norep = false;
     }
 
     private void Awake()

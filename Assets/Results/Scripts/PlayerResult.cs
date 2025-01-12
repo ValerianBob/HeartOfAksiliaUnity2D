@@ -8,7 +8,7 @@ using UnityEngine;
 [Serializable]
 public class PlayerResult : MonoBehaviour
 {
-    public GameResults _gameResults;
+    public GameResults gameResults;
 
     public static PlayerResult Instance;
 
@@ -85,16 +85,7 @@ public class PlayerResult : MonoBehaviour
         {
             PrintInfo();
         }
-        //if (Input.GetKeyDown(KeyCode.T))
-        //{
-        //    SaveToFile(Application.persistentDataPath + "/save.xml");
-        //    Debug.Log(Application.persistentDataPath + "/save.xml");
-        //}
-        //if(Input.GetKeyDown(KeyCode.Y))
-        //{
-        //    LoadFromFile(Application.persistentDataPath + "/save.xml");
-        //    Debug.Log(Application.persistentDataPath + "/save.xml");
-        //}
+
     }
 
     public void PrintInfo()
@@ -108,8 +99,9 @@ public class PlayerResult : MonoBehaviour
 
     public void SaveGameResult(SaveData result)
     {
-        _gameResults.AddGameResult(result);
-        _gameResults.SaveToFile(Application.persistentDataPath + "/gameResults.xml");
+        gameResults.AddGameResult(result);
+        Clear();
+        gameResults.SaveToFile(Application.persistentDataPath + "/gameResults.xml");
     }
 
     public SaveData GetThisSaveData()
@@ -148,46 +140,34 @@ public class PlayerResult : MonoBehaviour
         return data;
     }
 
-    //public void LoadFromFile(string filePath)
-    //{
-    //    if (!File.Exists(filePath))
-    //    {
-    //        Debug.LogError("‘‡ÈÎ ÌÂ Ì‡È‰ÂÌ: " + filePath);
-    //        return;
-    //    }
-
-    //    XmlSerializer serializer = new XmlSerializer(typeof(SaveData));
-    //    using (StreamReader reader = new StreamReader(filePath))
-    //    {
-    //        SaveData data = (SaveData)serializer.Deserialize(reader);
-
-    //        this.Time = data.Time;
-    //         
-    //        this.BlueCrystalCollected = data.BlueCrystalCollected;
-    //        this.OrangeCrystalCollected = data.OrangeCrystalCollected;
-    //        this.Blue—rystalsSpent = data.Blue—rystalsSpent;
-    //        this.Orange—rystalsSpent = data.Orange—rystalsSpent;
-    //        this.Kills = data.Kills;
-    //        this.KillsByTower = data.KillsByTower;
-    //        this.KillsByPlayer = data.KillsByPlayer;
-    //        this.KillsBeetleHeavy = data.KillsBeetleHeavy;
-    //        this.KillsBeetleLight = data.KillsBeetleLight;
-    //        this.KillsBeetleMedium = data.KillsBeetleMedium;
-    //        this.Wave = data.Wave;
-    //        this.BulletsFired = data.BulletsFired;
-    //        this.CountOfPlayerDead = data.CountOfPlayerDead;
-    //        this.CountOfTowerHealedHP = data.CountOfTowerHealedHP;
-    //        this.CountOfPlayerHealedHP = data.CountOfPlayerHealedHP;
-    //        this.CountOfMainBaseDamage = data.CountOfMainBaseDamage;
-    //        this.CountOfBoughtGuns = data.CountOfBoughtGuns;
-    //        this.CountOfPlacedTowers = data.CountOfPlacedTowers;
-    //        this.CountOfSimpleTurel = data.CountOfSimpleTurel;
-    //        this.CountOfMedTent = data.CountOfMedTent;
-    //        this.CountOfEnergoTower = data.CountOfEnergoTower;
-    //        this.CountOfMachineGunTuret = data.CountOfMachineGunTuret;
-    //        this.CountOfShotGunTuret = data.CountOfShotGunTuret;
-    //        this.CountOfPiercingTuret = data.CountOfPiercingTuret;
-    //        this.CountOfCrystalFarming = data.CountOfCrystalFarming;
-    //    }
-    //}
+    public void Clear()
+    {
+        Time = "";
+        Date = "";
+        BlueCrystalCollected = 0;
+        OrangeCrystalCollected = 0;
+        Blue—rystalsSpent = 0;
+        Orange—rystalsSpent = 0;
+        Kills = 0;
+        KillsByTower = 0;
+        KillsByPlayer = 0;
+        KillsBeetleHeavy = 0;
+        KillsBeetleLight = 0;
+        KillsBeetleMedium = 0;
+        Wave = 0;
+        BulletsFired = 0;
+        CountOfPlayerDead = 0;
+        CountOfTowerHealedHP = 0;
+        CountOfPlayerHealedHP = 0;
+        CountOfMainBaseDamage = 0;
+        CountOfBoughtGuns = 0;
+        CountOfPlacedTowers = 0;
+        CountOfSimpleTurel = 0;
+        CountOfMedTent = 0;
+        CountOfEnergoTower = 0;
+        CountOfMachineGunTuret = 0;
+        CountOfShotGunTuret = 0;
+        CountOfPiercingTuret = 0;
+        CountOfCrystalFarming = 0;
+    }
 }
