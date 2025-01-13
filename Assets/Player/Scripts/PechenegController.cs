@@ -48,6 +48,6 @@ public class PechenegController : MonoBehaviour
 
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation);
 
-        SoundsController.Instance.PlayGunSound(2);
+        SoundsController.Instance.PlayGunSound(3);
     }
 }

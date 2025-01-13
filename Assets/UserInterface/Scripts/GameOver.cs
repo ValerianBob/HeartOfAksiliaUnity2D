@@ -37,6 +37,7 @@ public class GameOver : MonoBehaviour
         if (gameOver && norep)
 		{
             norep = false;
+            SoundsController.Instance.PlayOtherSounds(3);
             Invoke(nameof(GameOverMethod), 2f);
         }
     }

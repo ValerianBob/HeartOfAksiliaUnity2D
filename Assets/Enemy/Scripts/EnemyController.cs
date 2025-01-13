@@ -280,6 +280,7 @@ public class EnemyController : MonoBehaviour
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
                 SoundsController.Instance.PlayEnemyDeathSound(0);
+                SoundsController.Instance.PlayGunSound(4);
 
                 CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 

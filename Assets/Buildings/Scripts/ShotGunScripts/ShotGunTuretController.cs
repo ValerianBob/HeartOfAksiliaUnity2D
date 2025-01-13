@@ -60,7 +60,7 @@ public class ShotGunTuretController : MonoBehaviour
             Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, -10f));
             Instantiate(turetBullet, transform.position, transform.rotation * Quaternion.Euler(0, 0, -15f));
 
-            SoundsController.Instance.PlayTurretShots(0);
+            SoundsController.Instance.PlayTurretShots(1);
         }
     }
 
