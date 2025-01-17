@@ -6682,14 +6682,18 @@ MonoBehaviour:
   Date: 
   BlueCrystalCollected: 0
   OrangeCrystalCollected: 0
-  "Blue\u0421rystalsSpent": 0
-  "Orange\u0421rystalsSpent": 0
+  "Blue\xD1rystalsSpent": 0
+  "Orange\xD1rystalsSpent": 0
   Kills: 0
   KillsByTower: 0
   KillsByPlayer: 0
+  KillsBySuperWeapon: 0
   KillsBeetleHeavy: 0
   KillsBeetleLight: 0
   KillsBeetleMedium: 0
+  KillsBeetleNeedl: 0
+  KillsBeetleMantis: 0
+  KillsBeetleHorns: 0
   Wave: 0
   BulletsFired: 0
   CountOfPlayerDead: 0
@@ -6705,6 +6709,7 @@ MonoBehaviour:
   CountOfShotGunTuret: 0
   CountOfPiercingTuret: 0
   CountOfCrystalFarming: 0
+  CountOfBoughtSuperWeapon: 0
 --- !u!1 &1675425081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6824,7 +6829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273, y: -190}
+  m_AnchoredPosition: {x: -235, y: -190}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1675425086

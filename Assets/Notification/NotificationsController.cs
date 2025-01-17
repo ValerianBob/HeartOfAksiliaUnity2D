@@ -23,7 +23,7 @@ public class NotificationsController : MonoBehaviour
     private void Start()
     {
         image = notification.GetComponent<Image>();
-        AddNewMessage("Game Start!!!", "green");
+        AddNewMessage("Game Start!!!", "#32CD32");
     }
 
     private void Update()
