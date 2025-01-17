@@ -11,6 +11,8 @@ public class CrystalFarmingController : MonoBehaviour
 
     private bool building = true;
 
+    private int crystalsEarn = 2;
+
     private void Start()
     {
         buildingController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<BuildingController>();
@@ -30,8 +32,8 @@ public class CrystalFarmingController : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(1);
-            CrystalsController.Instance.crystals += 1;
-            PlayerResult.Instance.BlueCrystalCollected += 1;
+            CrystalsController.Instance.crystals += crystalsEarn;
+            PlayerResult.Instance.BlueCrystalCollected += crystalsEarn;
             Instantiate(crystalUI, transform.position, crystalUI.transform.rotation);
         }
     }

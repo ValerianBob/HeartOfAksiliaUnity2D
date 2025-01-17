@@ -36,31 +36,31 @@ public class HealthOfBuild : MonoBehaviour
         }
         else if (gameObject.name == "SimpleTuret(Clone)" + buildingController.buildsCount)
         {
-            maxHealth = 120;
+            maxHealth = 150;
         }
         else if (gameObject.name == "MedTent(Clone)" + buildingController.buildsCount)
         {
-            maxHealth = 200;
+            maxHealth = 250;
         }
         else if (gameObject.name == "EnergoTower(Clone)" + buildingController.buildsCount)
         {
-            maxHealth = 210;
+            maxHealth = 250;
         }
         else if (gameObject.name == "MachinGunTuret(Clone)" + buildingController.buildsCount)
         {
-            maxHealth = 130;
+            maxHealth = 200;
         }
         else if (gameObject.name == "ShotGunTuret(Clone)" + buildingController.buildsCount)
         {
-            maxHealth = 130;
+            maxHealth = 200;
         }
         else if (gameObject.name == "PiercingTuret(Clone)" + buildingController.buildsCount)
         {
-            maxHealth = 130;
+            maxHealth = 200;
         }
         else if (gameObject.name == "CrystalFarming(Clone)" + buildingController.buildsCount)
         {
-            maxHealth = 200;
+            maxHealth = 250;
         }
     }
 

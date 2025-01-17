@@ -395,8 +395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911d0bd6fe601d34589691ce0d837f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystals: 2000
-  orangeCrystals: 2000
+  crystals: 0
+  orangeCrystals: 0
 --- !u!114 &1273047963365868518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crystalsText: {fileID: 0}
   orangeCrystalsText: {fileID: 0}
+  crystalUI: {fileID: 9070990235765891817, guid: 712f4450480d8804995d92eceb7c47f8, type: 3}
 --- !u!114 &3602393498978055043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +480,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverWindow: {fileID: 0}
   timeResult: {fileID: 0}
+  KillsResult: {fileID: 0}
+  CollectedBlueResult: {fileID: 0}
   InMainMenu: {fileID: 0}
   gameOver: 0
   norep: 1

@@ -9,6 +9,10 @@ public class CrystalsCount : MonoBehaviour
     public TextMeshProUGUI crystalsText;
     public TextMeshProUGUI orangeCrystalsText;
 
+    public GameObject crystalUI;
+
+    private int crystalsEarn = 2;
+
     private void Start()
     {
         StartCoroutine("CountCrystals");
@@ -25,8 +29,9 @@ public class CrystalsCount : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            CrystalsController.Instance.crystals += 1;
-            PlayerResult.Instance.BlueCrystalCollected += 1;
+            CrystalsController.Instance.crystals += crystalsEarn;
+            PlayerResult.Instance.BlueCrystalCollected += crystalsEarn;
+            Instantiate(crystalUI, new Vector3(transform.position.x - 1, transform.position.y, -10f), crystalUI.transform.rotation);
         }
     }
 }

@@ -15,7 +15,7 @@ public class ShotGunController : MonoBehaviour
 
     private Vector2 newBulletDirection;
 
-    private float fireRate = 0.4f;
+    private float fireRate = 0.3f;
 
     private float nextFireTime = 0f;
 

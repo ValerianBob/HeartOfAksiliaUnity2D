@@ -19,7 +19,7 @@ public class MachinGunTuretController : MonoBehaviour
     private float angleNeededToLook;
     private float detectionRadius = 10f;
     private float nextFireTime;
-    private float fireRate = 0.2f;
+    private float fireRate = 0.1f;
 
     private bool building = true;
 

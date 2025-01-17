@@ -19,7 +19,7 @@ public class ShotGunTuretController : MonoBehaviour
     private float angleNeededToLook;
     private float detectionRadius = 10f;
     private float nextFireTime;
-    private float fireRate = 0.5f;
+    private float fireRate = 0.4f;
 
     private bool building = true;
 
