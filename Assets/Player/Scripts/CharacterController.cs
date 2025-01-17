@@ -62,7 +62,7 @@ public class CharacterController : MonoBehaviour
         currentPosition.z = -1;
         transform.position = currentPosition;
 
-        if (currentHealth <= 0 && !isPlayerDead)
+        if (currentHealth <= 0 && !isPlayerDead && GameOver.Instance.gameOver == false)
         {
             isPlayerDead = true;
             PlayerResult.Instance.CountOfPlayerDead += 1;
@@ -99,6 +99,11 @@ public class CharacterController : MonoBehaviour
 
             NotificationsController.Instance.AddNewMessage("Player Respawned", "green");
             SoundsController.Instance.PlayOtherSounds(2);
+        }
+
+        if (GameOver.Instance.gameOver == true)
+        {
+            deadBackground.SetActive(false);
         }
 
         CheckOnBuyBack();

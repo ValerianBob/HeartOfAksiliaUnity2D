@@ -303,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 6183688227683957210}
   currentHealth: 0
+  gameOver: 0
 --- !u!114 &8081366495876631477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,7 +862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: ce504f2424a07604dbaed6097c5456ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: ce504f2424a07604dbaed6097c5456ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -897,14 +898,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -3888481672020999207, guid: ce504f2424a07604dbaed6097c5456ed, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1838204874931878314}
+      addedObject: {fileID: 7989913411546110449}
   m_SourcePrefab: {fileID: 7243324766535440047, guid: ce504f2424a07604dbaed6097c5456ed, type: 3}
 --- !u!1 &5851554762036578792 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3888481672020999207, guid: ce504f2424a07604dbaed6097c5456ed, type: 3}
   m_PrefabInstance: {fileID: 1962919114682780209}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1838204874931878314
+--- !u!95 &7989913411546110449
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -914,7 +915,7 @@ Animator:
   m_GameObject: {fileID: 5851554762036578792}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94173f774f1c59744be0a8165b162ced, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6f24a14d6d22c314f9c852f0340cdc9a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

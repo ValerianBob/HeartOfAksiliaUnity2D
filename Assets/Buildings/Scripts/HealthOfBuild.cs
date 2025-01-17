@@ -15,6 +15,8 @@ public class HealthOfBuild : MonoBehaviour
 
     public bool gameOver = false;
 
+    private bool setTag = true;
+
     private void Start()
     {
         buildingController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<BuildingController>();
@@ -73,6 +75,12 @@ public class HealthOfBuild : MonoBehaviour
         else if (currentHealth <= 0 && gameObject.name != "MainBase")
         {
             Destroy(gameObject);
+        }
+
+        if (Input.GetMouseButtonDown(1) && !buildingController.canNotBuildHere && setTag)
+        {
+            setTag = false;
+            gameObject.tag = "Build";
         }
     }
 

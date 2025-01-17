@@ -47,7 +47,6 @@ public class MachinGunTuretController : MonoBehaviour
     {
         if (targetEnemy != null && Time.time >= nextFireTime)
         {
-            Debug.Log("Fire !!!");
             nextFireTime = Time.time + fireRate;
 
             PlayerResult.Instance.BulletsFired += 1;

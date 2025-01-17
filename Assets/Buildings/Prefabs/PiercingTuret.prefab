@@ -500,7 +500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: ff45d2913de921a48af117c8ffa0fe05, type: 3}
       propertyPath: m_TagString
-      value: Build
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: ff45d2913de921a48af117c8ffa0fe05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -677,3 +677,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 36369247388521470}
   currentHealth: 0
+  gameOver: 0

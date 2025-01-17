@@ -101,7 +101,6 @@ public class EnemySpawner : MonoBehaviour
 
             waves.text = wavesCount.ToString() + " wave";
 
-            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
             SoundsController.Instance.PlayOtherSounds(0);
         }
@@ -115,7 +114,6 @@ public class EnemySpawner : MonoBehaviour
 
             waves.text = wavesCount.ToString() + " wave";
 
-            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
             SoundsController.Instance.PlayOtherSounds(0);
         }
@@ -130,7 +128,6 @@ public class EnemySpawner : MonoBehaviour
 
             waves.text = wavesCount.ToString() + " wave";
 
-            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
             SoundsController.Instance.PlayOtherSounds(0);
         }
@@ -146,7 +143,6 @@ public class EnemySpawner : MonoBehaviour
 
             waves.text = wavesCount.ToString() + " wave";
 
-            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
             SoundsController.Instance.PlayOtherSounds(0);
         }
@@ -163,7 +159,6 @@ public class EnemySpawner : MonoBehaviour
 
             waves.text = wavesCount.ToString() + " wave";
 
-            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
             SoundsController.Instance.PlayOtherSounds(0);
         }
@@ -181,7 +176,6 @@ public class EnemySpawner : MonoBehaviour
 
             waves.text = wavesCount.ToString() + " wave";
 
-            Debug.Log("Wave : " + wavesCount.ToString() + " Started !");
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
             SoundsController.Instance.PlayOtherSounds(0);
         }
@@ -192,16 +186,12 @@ public class EnemySpawner : MonoBehaviour
             StopAllEnemiesSpawn();
 
             canStartNewWave = false;
-
-            Debug.Log("Wave : " + wavesCount.ToString() + " Ended !");
-            Debug.Log("Enemise left :" + enemiesAlive.Length.ToString());
         }
         else if (enemiesAlive.Length == 0 && canStartNewWave == false)
         {
             secondsCounter = StartCoroutine(SecondsCounter());
             canStartNewWave = true;
 
-            Debug.Log("All enemies are dead !!");
             NotificationsController.Instance.AddNewMessage("Enemies Dead", "green");
         }
         PlayerResult.Instance.Wave = wavesCount;

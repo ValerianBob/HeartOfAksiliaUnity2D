@@ -129,8 +129,6 @@ public class MainOptions : MonoBehaviour
         sliderMusic.value = OptionsConfig.Instance.music;
         textMusicPercent.text = Convert.ToString(Convert.ToInt32(sliderMusic.value * 100)) + " %";
 
-        Debug.Log("Scene name : " + _currentSceneName);
-
         if (_currentSceneName == "Game")
         {
             notificationsSystem.SetActive(OptionsConfig.Instance.notificationsSystem);

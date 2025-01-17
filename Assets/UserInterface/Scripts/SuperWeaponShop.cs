@@ -35,8 +35,6 @@ public class SuperWeaponShop : MonoBehaviour
             slotIsUsing = false;
         }
 
-        Debug.Log("Slot is using :" + slotIsUsing);
-
         if (Input.GetKeyDown(KeyCode.Alpha1) && !slotIsUsing)
         {
             UseSlot(0);
@@ -85,7 +83,7 @@ public class SuperWeaponShop : MonoBehaviour
 
             AddItemToSlot(allSuperWeaponsPrefabs[0]);
 
-            DisplaySlots();
+            //DisplaySlots();
 
             SoundsController.Instance.PlayShopsSound(0);
             NotificationsController.Instance.AddNewMessage("Mine bought", "blue");
@@ -142,7 +140,7 @@ public class SuperWeaponShop : MonoBehaviour
             Instantiate(slots[index]);
             slots[index] = null;
             superWeaponsUI.transform.GetChild(0).transform.GetChild(index).gameObject.SetActive(false);
-            DisplaySlots();
+            //DisplaySlots();
         }
         else
         {

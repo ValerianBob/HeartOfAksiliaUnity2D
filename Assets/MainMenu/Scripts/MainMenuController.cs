@@ -68,7 +68,6 @@ public class MainMenuController : MonoBehaviour
         isOptions = true;
         mainMenuButtons.SetActive(!isOptions);
         optionsMenu.SetActive(isOptions);
-        Debug.Log("Options");
     }
 
     public void Results()
@@ -77,7 +76,6 @@ public class MainMenuController : MonoBehaviour
         isResults = true;
         mainMenuButtons.SetActive(!isResults);
         resultsMenu.SetActive(isResults);
-        Debug.Log("Results");
         Debug.Log(Application.persistentDataPath + "/gameResults.xml");
     }
 
@@ -87,7 +85,6 @@ public class MainMenuController : MonoBehaviour
         isCredits = true;
         mainMenuButtons.SetActive(!isCredits);
         creditsMenu.SetActive(isCredits);
-        Debug.Log("Credits");
     }
 
     public void Quit()
@@ -125,7 +122,6 @@ public class MainMenuController : MonoBehaviour
     public void QuitFromGame()
     {
         SoundsController.Instance.PlayInGameMenuSound(1);
-        Debug.Log("QUIT!!!");
         Application.Quit();
     }
 
