@@ -44,7 +44,7 @@ public class BuildsShop : MonoBehaviour
             buySimpleTurel.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 200)
+        if (CrystalsController.Instance.crystals < 250)
         {
             buyMedTent.interactable = false;
         }
@@ -71,7 +71,7 @@ public class BuildsShop : MonoBehaviour
             buyMachineGunTuret.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 200)
+        if (CrystalsController.Instance.crystals < 250)
         {
             buyShotGunTuret.interactable = false;
         }
@@ -116,7 +116,7 @@ public class BuildsShop : MonoBehaviour
 
     private void BuyMedTent()
     {
-        CrystalsController.Instance.crystals -= 200;
+        CrystalsController.Instance.crystals -= 250;
         PlayerResult.Instance.BlueÑrystalsSpent += 200;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfMedTent += 1;
@@ -160,7 +160,7 @@ public class BuildsShop : MonoBehaviour
     }
     private void BuyShotGunTuret()
     {
-        CrystalsController.Instance.crystals -= 200;
+        CrystalsController.Instance.crystals -= 250;
         PlayerResult.Instance.BlueÑrystalsSpent += 200;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfShotGunTuret += 1;

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeetleNeedl
       objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 52ce1cbf43cad404588e6f5dd41a828f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 52ce1cbf43cad404588e6f5dd41a828f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7
@@ -194,3 +198,5 @@ MonoBehaviour:
   _bloodPrefab: {fileID: 7121561308081327540, guid: ee618e6108ff9cc4d8bb1b0d17671815, type: 3}
   _OrangeCrystall: {fileID: 7538372884535361891, guid: f38cb501ee6363844900bce5117135c6, type: 3}
   avoidSpeedMultiplier: 2
+  attackPower: 0
+  enemyHealth: 0

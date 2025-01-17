@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeetleHorns
       objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: c26e151e18d42da43a3e9ab6d300b199, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: c26e151e18d42da43a3e9ab6d300b199, type: 3}
       propertyPath: m_LocalScale.x
       value: -1.7
@@ -173,6 +177,8 @@ MonoBehaviour:
   _bloodPrefab: {fileID: 7121561308081327540, guid: ee618e6108ff9cc4d8bb1b0d17671815, type: 3}
   _OrangeCrystall: {fileID: 7538372884535361891, guid: f38cb501ee6363844900bce5117135c6, type: 3}
   avoidSpeedMultiplier: 2
+  attackPower: 0
+  enemyHealth: 0
 --- !u!95 &7725192738511650233
 Animator:
   serializedVersion: 5

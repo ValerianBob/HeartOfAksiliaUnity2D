@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
 {
     private CharacterController characterController;
 
+    private EnemySpawner spawner;
+
     private Animator animator;
 
     private Transform player;
@@ -39,8 +41,8 @@ public class EnemyController : MonoBehaviour
     private float nextFireTime;
     private float attackSpeed = 0.5f;
 
-    private int attackPower = 0;
-    private int enemyHealth = 0;
+    public int attackPower = 0;
+    public int enemyHealth = 0;
     private int orangeCrystalsForKill = 0;
 
     private TextMeshProUGUI OrangeCrystallCountForKill;
@@ -52,6 +54,8 @@ public class EnemyController : MonoBehaviour
         player = GameObject.Find("Kaylo").GetComponent<Transform>();
         characterController = GameObject.Find("Kaylo").GetComponent<CharacterController>();
 
+        spawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
+
         OrangeCrystallCountForKill = _OrangeCrystall.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 
         SetEnemyParameters();
@@ -60,7 +64,7 @@ public class EnemyController : MonoBehaviour
         enemyScale = transform.localScale.x;
     }
 
-    private void SetEnemyParameters()
+    public void SetEnemyParameters()
     {
         if (gameObject.name == "BeetleLight(Clone)")
         {
@@ -97,6 +101,12 @@ public class EnemyController : MonoBehaviour
             attackPower = 6;
             enemyHealth = 7;
             orangeCrystalsForKill = 6;
+        }
+
+        if (spawner.wavesCount >= 18)
+        {
+            attackPower += spawner.enemyNewPower;
+            enemyHealth += spawner.enemyNewPower;
         }
     }
     void Update()
@@ -296,10 +306,10 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        GoAroundTheRock(collision);
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    GoAroundTheRock(collision);
+    //}
 
     private void GoAroundTheRock(Collision2D collision)
     {

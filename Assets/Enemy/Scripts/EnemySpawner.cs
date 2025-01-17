@@ -15,6 +15,10 @@ public class EnemySpawner : MonoBehaviour
 
     private bool canStartNewWave = true;
 
+    private float spawnerSpeed = 1f;
+
+    public int enemyNewPower = 0;
+
     private Coroutine secondsCounter;
 
     //Beetle Light :
@@ -166,6 +170,25 @@ public class EnemySpawner : MonoBehaviour
         {
             wavesCount += 1;
             secondsToRespawn += 1;
+
+            BeetleLightCoroutinesStarter();
+            BeetleMediumCoroutinesStarter();
+            BeetleHeavyCoroutinesStarter();
+            BeetleNeedlCoroutinesStarter();
+            BeetleHornsCoroutinesStarter();
+            BeetleMantisCoroutinesStarter();
+
+            waves.text = wavesCount.ToString() + " wave";
+
+            NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
+            SoundsController.Instance.PlayOtherSounds(0);
+        }
+        else if (wavesCount >= 18 && secondsToRespawn == 30 && canStartNewWave == true)
+        {
+            wavesCount += 1;
+            secondsToRespawn += 1;
+
+            enemyNewPower += 1;
 
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
@@ -397,7 +420,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(spawnerSpeed);
 
             Instantiate(enemy[index], spawnPositions[Random.Range(0, spawnPositions.Length)], enemy[0].transform.rotation);
         }

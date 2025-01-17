@@ -12096,6 +12096,7 @@ MonoBehaviour:
   waves: {fileID: 1330636414}
   wavesCount: 0
   secondsToRespawn: 0
+  enemyNewPower: 0
 --- !u!1 &614391535
 GameObject:
   m_ObjectHideFlags: 0
@@ -14121,7 +14122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 200'
+  m_text: 'Cost : 250'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
@@ -23035,7 +23036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Farm 1 Blue Crystal per second
+  m_text: Farm 2 Blue Crystal per second
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
@@ -28663,7 +28664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 200'
+  m_text: 'Cost : 250'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
