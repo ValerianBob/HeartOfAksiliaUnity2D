@@ -16,9 +16,13 @@ public class SaveData
     public int Kills;//+
     public int KillsByTower;//+
     public int KillsByPlayer;//+
+    public int KillsBySuperWeapon;//+
     public int KillsBeetleHeavy;//+
     public int KillsBeetleLight;//+
     public int KillsBeetleMedium;//+
+    public int KillsBeetleNeedl;//+
+    public int KillsBeetleMantis;//+
+    public int KillsBeetleHorns;//+
     public int Wave;//+
     public int BulletsFired;//+
     public int CountOfPlayerDead;//+
@@ -34,6 +38,7 @@ public class SaveData
     public int CountOfShotGunTuret;//+
     public int CountOfPiercingTuret;//+
     public int CountOfCrystalFarming;//+
+    public int CountOfBoughtSuperWeapon;//+
 }
 
 [Serializable]

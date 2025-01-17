@@ -87,6 +87,7 @@ public class SuperWeaponShop : MonoBehaviour
 
             SoundsController.Instance.PlayShopsSound(0);
             NotificationsController.Instance.AddNewMessage("Mine bought", "blue");
+            PlayerResult.Instance.CountOfBoughtSuperWeapon += 1;
         }
         else
         {
