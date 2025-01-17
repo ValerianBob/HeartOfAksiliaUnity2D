@@ -288,7 +288,7 @@ public class EnemyController : MonoBehaviour
 
                 PlayerResult.Instance.OrangeCrystalCollected += orangeCrystalsForKill;
                 PlayerResult.Instance.Kills += 1;
-                PlayerResult.Instance.KillsByTower += 1;
+                PlayerResult.Instance.KillsBySuperWeapon += 1;
 
                 Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
                 Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
@@ -340,6 +340,18 @@ public class EnemyController : MonoBehaviour
         else if (gameObject.name == "BeetleMedium(Clone)")
         {
             PlayerResult.Instance.KillsBeetleMedium += 1;
+        }
+        else if(gameObject.name == "KillsBeetleHorns(Clone)")
+        {
+            PlayerResult.Instance.KillsBeetleHorns += 1;
+        }
+        else if (gameObject.name == "KillsBeetleMantis(Clone)")
+        {
+            PlayerResult.Instance.KillsBeetleMantis += 1;
+        }
+        else if (gameObject.name == "KillsBeetleNeedl(Clone)")
+        {
+            PlayerResult.Instance.KillsBeetleNeedl += 1;
         }
     }
 }

@@ -30,11 +30,19 @@ public class PlayerResult : MonoBehaviour
 
     public int KillsByPlayer;//+
 
+    public int KillsBySuperWeapon;//+
+
     public int KillsBeetleHeavy;//+
 
     public int KillsBeetleLight;//+
 
     public int KillsBeetleMedium;//+
+
+    public int KillsBeetleNeedl;//+
+
+    public int KillsBeetleMantis;//+
+
+    public int KillsBeetleHorns;//+
 
     public int Wave;//+
 
@@ -66,6 +74,8 @@ public class PlayerResult : MonoBehaviour
 
     public int CountOfCrystalFarming;//+
 
+    public int CountOfBoughtSuperWeapon;//+
+
     private void Awake()
     {
         if (Instance == null)
@@ -91,8 +101,8 @@ public class PlayerResult : MonoBehaviour
     public void PrintInfo()
     {
         Debug.Log($"Time:{Time}\nDate:{Date}\nBlueCrystalCollected:{BlueCrystalCollected}\nOrangeCrystalCollected:{OrangeCrystalCollected}\nBlue—rystalsSpent:{Blue—rystalsSpent}\nOrange—rystalsSpent:{Orange—rystalsSpent}\n" +
-            $"Kills:{Kills}\nKillsByTower:{KillsByTower}\nKillsByPlayer:{KillsByPlayer}\nKillsBeetleHeavy:{KillsBeetleHeavy}\nKillsBeetleLight:{KillsBeetleLight}\nKillsBeetleMedium:{KillsBeetleMedium}\n" +
-            $"Wave:{Wave}\nBulletsFired:{BulletsFired}\nCountOfPlayerDead:{CountOfPlayerDead}\nCountOfTowerHealedHP:{CountOfTowerHealedHP}\nCountOfPlayerHealedHP:{CountOfPlayerHealedHP}\nCountOfMainBaseDamage:{CountOfMainBaseDamage}\n" +
+            $"Kills:{Kills}\nKillsByTower:{KillsByTower}\nKillsByPlayer:{KillsByPlayer}\nKillsBySuperWeapon{KillsBySuperWeapon}\nKillsBeetleHeavy:{KillsBeetleHeavy}\nKillsBeetleLight:{KillsBeetleLight}\nKillsBeetleMedium:{KillsBeetleMedium}\nKillsBeetleNeedl:{KillsBeetleNeedl}\nKillsBeetleMantis:{KillsBeetleMantis}\nKillsBeetleHorns:{KillsBeetleHorns}" +
+            $"Wave:{Wave}\nBulletsFired:{BulletsFired}\nUsed Super Weapon:{CountOfBoughtSuperWeapon}\nCountOfPlayerDead:{CountOfPlayerDead}\nCountOfTowerHealedHP:{CountOfTowerHealedHP}\nCountOfPlayerHealedHP:{CountOfPlayerHealedHP}\nCountOfMainBaseDamage:{CountOfMainBaseDamage}\n" +
             $"CountOfBoughtGuns:{CountOfBoughtGuns}\nCountOfPlacedTowers:{CountOfPlacedTowers}\nCountOfSimpleTurel:{CountOfSimpleTurel}\nCountOfMedTent:{CountOfMedTent}\nCountOfEnergoTower:{CountOfEnergoTower}\n" +
             $"CountOfMachineGunTuret:{CountOfMachineGunTuret}\nCountOfShotGunTuret:{CountOfShotGunTuret}\nCountOfPiercingTuret:{CountOfPiercingTuret}\nCountOfCrystalFarming:{CountOfCrystalFarming}\n");
     }
@@ -117,9 +127,13 @@ public class PlayerResult : MonoBehaviour
             Kills = this.Kills,
             KillsByTower = this.KillsByTower,
             KillsByPlayer = this.KillsByPlayer,
+            KillsBySuperWeapon = this.KillsBySuperWeapon,
             KillsBeetleHeavy = this.KillsBeetleHeavy,
             KillsBeetleLight = this.KillsBeetleLight,
             KillsBeetleMedium = this.KillsBeetleMedium,
+            KillsBeetleHorns = this.KillsBeetleHorns,
+            KillsBeetleMantis = this.KillsBeetleMantis,
+            KillsBeetleNeedl = this.KillsBeetleNeedl,
             Wave = this.Wave,
             BulletsFired = this.BulletsFired,
             CountOfPlayerDead = this.CountOfPlayerDead,
@@ -134,7 +148,8 @@ public class PlayerResult : MonoBehaviour
             CountOfMachineGunTuret = this.CountOfMachineGunTuret,
             CountOfShotGunTuret = this.CountOfShotGunTuret,
             CountOfPiercingTuret = this.CountOfPiercingTuret,
-            CountOfCrystalFarming = this.CountOfCrystalFarming
+            CountOfCrystalFarming = this.CountOfCrystalFarming,
+            CountOfBoughtSuperWeapon = this.CountOfBoughtSuperWeapon
         };
 
         return data;
@@ -151,9 +166,13 @@ public class PlayerResult : MonoBehaviour
         Kills = 0;
         KillsByTower = 0;
         KillsByPlayer = 0;
+        KillsBySuperWeapon = 0;
         KillsBeetleHeavy = 0;
         KillsBeetleLight = 0;
         KillsBeetleMedium = 0;
+        KillsBeetleHorns = 0;
+        KillsBeetleMantis = 0;
+        KillsBeetleNeedl = 0;
         Wave = 0;
         BulletsFired = 0;
         CountOfPlayerDead = 0;
@@ -169,5 +188,6 @@ public class PlayerResult : MonoBehaviour
         CountOfShotGunTuret = 0;
         CountOfPiercingTuret = 0;
         CountOfCrystalFarming = 0;
+        CountOfBoughtSuperWeapon = 0;
     }
 }
