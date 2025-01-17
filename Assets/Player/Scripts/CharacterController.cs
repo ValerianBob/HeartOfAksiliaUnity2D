@@ -125,6 +125,11 @@ public class CharacterController : MonoBehaviour
             animator.SetFloat("Running", Mathf.Abs(moveInputVertical));
         }
 
+        if (moveInputVertical == 0 && moveInputHorizontal == 0)
+        {
+            animator.SetFloat("Running", Mathf.Abs(moveInputVertical));
+        }
+
         transform.Translate(movement);
     }
 
