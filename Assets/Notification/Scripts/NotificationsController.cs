@@ -23,7 +23,7 @@ public class NotificationsController : MonoBehaviour
     private void Start()
     {
         image = notification.GetComponent<Image>();
-        AddNewMessage("Game Start!!!", "#32CD32");
+        AddNewMessage("Game Start!!!", "#008000");
     }
 
     private void Update()
@@ -57,7 +57,7 @@ public class NotificationsController : MonoBehaviour
 
         _notifications.Enqueue($"<color={color}>{message}</color>" + "\n");
 
-        if(_notifications.Count > 7)
+        if(_notifications.Count > 6)
         {
             _notifications.Dequeue();
             _notificationText.text = "";
