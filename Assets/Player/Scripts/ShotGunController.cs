@@ -19,6 +19,8 @@ public class ShotGunController : MonoBehaviour
 
     private float nextFireTime = 0f;
 
+    public bool fire = false;
+
     void Start()
     {
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
@@ -33,6 +35,7 @@ public class ShotGunController : MonoBehaviour
             {
                 if (Time.time >= nextFireTime)
                 {
+                    fire = true;
                     ShotGunShot();
                     nextFireTime = Time.time + fireRate;
                 }

@@ -19,6 +19,8 @@ public class PechenegController : MonoBehaviour
 
     private float nextFireTime = 0f;
 
+    public bool fire = false;
+
     void Start()
     {
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
@@ -33,6 +35,7 @@ public class PechenegController : MonoBehaviour
             {
                 if (Time.time >= nextFireTime)
                 {
+                    fire = true;
                     PechenegShoot();
                     nextFireTime = Time.time + fireRate;
                 }

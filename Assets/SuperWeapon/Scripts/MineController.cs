@@ -11,6 +11,8 @@ public class MineController : MonoBehaviour
 
     private Material mat;
 
+    public GameObject minFlame;
+
     private Color color;
     public Color canNotBuildBlockColor;
     public Color canBuildColor;
@@ -64,6 +66,14 @@ public class MineController : MonoBehaviour
         mat.color = new Color(newColor.r, newColor.g, newColor.b);
 
         spriteRenderer.material.color = new Color(newColor.r, newColor.g, newColor.b);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && !isPlacing)
+        {
+            Instantiate(minFlame, transform.position, minFlame.transform.rotation);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

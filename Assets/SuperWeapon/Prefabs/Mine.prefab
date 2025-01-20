@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8060ca226829eb844a948be09bc840f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minFlame: {fileID: 4181474296005256136, guid: b0133aa46db7fea4c80c4e5475c4b923, type: 3}
   canNotBuildBlockColor: {r: 1, g: 0.3529412, b: 0.3529412, a: 0}
   canBuildColor: {r: 1, g: 1, b: 1, a: 0}
   isPlacing: 1

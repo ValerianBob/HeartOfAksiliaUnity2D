@@ -19,6 +19,8 @@ public class BerretaController : MonoBehaviour
 
     private float nextFireTime = 0f; 
 
+    public bool fire = false;
+
     void Start()
     {
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
@@ -33,6 +35,7 @@ public class BerretaController : MonoBehaviour
             {
                 if (Time.time >= nextFireTime)
                 {
+                    fire = true;
                     BerretaShot();
                     nextFireTime = Time.time + fireRate;
                 }
@@ -43,8 +46,9 @@ public class BerretaController : MonoBehaviour
     private void BerretaShot()
     {
         newBulletDirection = transform.position + handController.difference;
-        PlayerResult.Instance.BulletsFired += 1;
 
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation);
+
+        PlayerResult.Instance.BulletsFired += 1;
     }
 }

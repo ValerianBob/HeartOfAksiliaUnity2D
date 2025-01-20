@@ -19,6 +19,8 @@ public class MacShotController : MonoBehaviour
 
     private float nextFireTime = 0f;
 
+    public bool fire = false;
+
     void Start()
     {
         _inGameMenuController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<InGameMenuController>();
@@ -33,6 +35,7 @@ public class MacShotController : MonoBehaviour
             {
                 if (Time.time >= nextFireTime)
                 {
+                    fire = true;
                     Mac10Shot();
                     nextFireTime = Time.time + fireRate;
                 }
