@@ -19,7 +19,8 @@ public class SuperWeaponShop : MonoBehaviour
     public Button buyMine;
 
     private bool checkOnNull = false;
-    private bool slotIsUsing = false;
+    private bool cantPlaceHere = false;
+    public bool slotIsUsing = false;
 
     private void Start()
     {
@@ -30,10 +31,10 @@ public class SuperWeaponShop : MonoBehaviour
     {
         CheckOnCost();
 
-        if (Input.GetMouseButtonDown(1) && slotIsUsing)
-        {
-            slotIsUsing = false;
-        }
+        //if (Input.GetMouseButtonDown(1) && slotIsUsing)
+        //{
+        //    slotIsUsing = false;
+        //}
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && !slotIsUsing)
         {
@@ -63,7 +64,7 @@ public class SuperWeaponShop : MonoBehaviour
 
     private void CheckOnCost()
     {
-        if (CrystalsController.Instance.orangeCrystals >= 25)
+        if (CrystalsController.Instance.orangeCrystals >= 100)
         {
             buyMine.interactable = true;
         }
@@ -79,7 +80,7 @@ public class SuperWeaponShop : MonoBehaviour
 
         if (!checkOnNull)
         {
-            CrystalsController.Instance.orangeCrystals -= 25;
+            CrystalsController.Instance.orangeCrystals -= 100;
 
             AddItemToSlot(allSuperWeaponsPrefabs[0]);
 

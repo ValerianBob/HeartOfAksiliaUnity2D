@@ -13504,7 +13504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 25'
+  m_text: 'Cost : 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
@@ -14032,7 +14032,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 400'
+  m_text: 'Cost : 900'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
@@ -28884,7 +28884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 300'
+  m_text: 'Cost : 700'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
@@ -29603,7 +29603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 100'
+  m_text: 'Cost : 300'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
@@ -35713,7 +35713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cost : 200'
+  m_text: 'Cost : 500'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
   m_sharedMaterial: {fileID: -1147900654353611982, guid: f3d10ba1f2ed642438a057675d6aa9f5, type: 2}
@@ -37136,9 +37136,25 @@ PrefabInstance:
       propertyPath: inGameMenuButtons
       value: 
       objectReference: {fileID: 494034321}
+    - target: {fileID: 3779941115269654130, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
+      propertyPath: crystals
+      value: 9999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779941115269654130, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
+      propertyPath: orangeCrystals
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4467364044916312430, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
       propertyPath: m_Name
       value: MainBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562062598830382938, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562062598830382938, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5643820601985375125, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
       propertyPath: buyMedTent
@@ -37257,7 +37273,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1262243335812385969, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a927427a34ecb0f49ba6b1664ef2b46b, type: 3}

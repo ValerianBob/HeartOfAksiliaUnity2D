@@ -21,6 +21,8 @@ public class BuildsShop : MonoBehaviour
 
     public bool isBuying = false;
 
+    public int energoTowerCount = 0;
+
     void Start()
     {
         shopController = GetComponent<ShopController>();
@@ -137,6 +139,8 @@ public class BuildsShop : MonoBehaviour
         PlayerResult.Instance.CountOfEnergoTower += 1;
         chosenBuild = builds[2];
         isBuying = true;
+
+        energoTowerCount += 1;
 
         shopController.isOpened = !shopController.isOpened;
         shopController.shopMenu.SetActive(false);

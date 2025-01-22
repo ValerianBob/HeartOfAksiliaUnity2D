@@ -5,6 +5,8 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class MineController : MonoBehaviour
 {
+    private SuperWeaponShop superWeaponShop;
+
     private ShopController shopController;
 
     private SpriteRenderer spriteRenderer;
@@ -25,6 +27,8 @@ public class MineController : MonoBehaviour
 
     void Start()
     {
+        superWeaponShop = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<SuperWeaponShop>();
+
         shopController = GameObject.Find("Buildings").transform.GetChild(0).GetComponent<ShopController>();
         shopController.cantOpenWhilePlacingSuperWeapon = true;
 
@@ -48,6 +52,7 @@ public class MineController : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && isPlacing && !cantPlacHere)
         {
             isPlacing = false;
+            superWeaponShop.slotIsUsing = isPlacing;
             shopController.cantOpenWhilePlacingSuperWeapon = false;
 
             spriteRenderer = GetComponent<SpriteRenderer>();

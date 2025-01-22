@@ -31,7 +31,7 @@ public class GunsShop : MonoBehaviour
 
     private void Update()
     {
-        if (CrystalsController.Instance.orangeCrystals >= 100 && !mac10HasBought)
+        if (CrystalsController.Instance.orangeCrystals >= 300 && !mac10HasBought)
         {
             buyMac10.interactable = true;
         }
@@ -40,7 +40,7 @@ public class GunsShop : MonoBehaviour
             buyMac10.interactable = false;
         }
 
-        if (CrystalsController.Instance.orangeCrystals >= 200 && !shotGunHasBought)
+        if (CrystalsController.Instance.orangeCrystals >= 500 && !shotGunHasBought)
         {
             buyShotGun.interactable = true;
         }
@@ -50,7 +50,7 @@ public class GunsShop : MonoBehaviour
             buyShotGun.interactable = false;
         }
 
-        if (CrystalsController.Instance.orangeCrystals >= 400 && !pechenegBought)
+        if (CrystalsController.Instance.orangeCrystals >= 900 && !pechenegBought)
         {
             buyPecheneg.interactable = true;
         }
@@ -60,7 +60,7 @@ public class GunsShop : MonoBehaviour
             buyPecheneg.interactable = false;
         }
 
-        if (CrystalsController.Instance.orangeCrystals >= 300 && !akBought)
+        if (CrystalsController.Instance.orangeCrystals >= 700 && !akBought)
         {
             buyAK.interactable = true;
         }
@@ -77,8 +77,8 @@ public class GunsShop : MonoBehaviour
         if (!shotGunHasBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 200;
-            PlayerResult.Instance.Orange—rystalsSpent += 200;
+            CrystalsController.Instance.orangeCrystals -= 500;
+            PlayerResult.Instance.Orange—rystalsSpent += 500;
             handController.allGunsInStock.Add(allGunsPrefabs[1]);
             shotGunHasBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -92,8 +92,8 @@ public class GunsShop : MonoBehaviour
         if (!mac10HasBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 100;
-            PlayerResult.Instance.Orange—rystalsSpent -= 100;
+            CrystalsController.Instance.orangeCrystals -= 300;
+            PlayerResult.Instance.Orange—rystalsSpent -= 300;
             handController.allGunsInStock.Add(allGunsPrefabs[2]);
             mac10HasBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -106,8 +106,8 @@ public class GunsShop : MonoBehaviour
         if (!pechenegBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 400;
-            PlayerResult.Instance.Orange—rystalsSpent -= 400;
+            CrystalsController.Instance.orangeCrystals -= 900;
+            PlayerResult.Instance.Orange—rystalsSpent -= 900;
             handController.allGunsInStock.Add(allGunsPrefabs[3]);
             pechenegBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -121,8 +121,8 @@ public class GunsShop : MonoBehaviour
         if (!akBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 300;
-            PlayerResult.Instance.Orange—rystalsSpent -= 300;
+            CrystalsController.Instance.orangeCrystals -= 700;
+            PlayerResult.Instance.Orange—rystalsSpent -= 700;
             handController.allGunsInStock.Add(allGunsPrefabs[4]);
             akBought = true;
             SoundsController.Instance.PlayShopsSound(0);

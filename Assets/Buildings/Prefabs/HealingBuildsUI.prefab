@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294906120
-  m_fontColor: {r: 0.031372547, g: 0.06618819, b: 1, a: 1}
+    rgba: 4278255369
+  m_fontColor: {r: 0.034784317, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.7
-  m_fontSizeBase: 0.7
+  m_fontSize: 0.4
+  m_fontSizeBase: 0.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 7.982353, w: 9.539972}
+  m_margin: {x: 0, y: 0, z: 7.0066786, w: 9.673889}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -246,7 +246,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1379401377598755811}
   - component: {fileID: 7653159916423786750}
-  - component: {fileID: 7264308229730647274}
   m_Layer: 0
   m_Name: HealingBuildsUI
   m_TagString: Untagged
@@ -322,15 +321,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7264308229730647274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4707999682981756722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d477d61387740e849aab701b5764932a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
