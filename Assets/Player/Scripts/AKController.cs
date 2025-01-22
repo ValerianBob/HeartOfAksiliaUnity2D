@@ -51,6 +51,6 @@ public class AKController : MonoBehaviour
 
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation);
 
-        SoundsController.Instance.PlayGunSound(3);
+        SoundsController.Instance.PlayGunSound(5);
     }
 }
