@@ -43,13 +43,14 @@ public class MainResults : MonoBehaviour
             button.onClick.AddListener(() => WatchFullInfo(i-1));
 
             instance.transform.SetParent(container.transform, false);
-            height += 180;
+            height += 200;
             dateConvert = DateTime.ParseExact(game.Date, "yyyy-MM-dd HH:mm:ss", null);
 
             textComponents[0].text = "Date: "+  (dateConvert.ToString("yyyy-MM-dd"));
             textComponents[1].text = "Kills:" + game.Kills.ToString();
-            textComponents[2].text = "¹ " + i.ToString();
-            textComponents[3].text = "Collected: " + (game.BlueCrystalCollected + game.OrangeCrystalCollected).ToString();
+            textComponents[2].text = "¹";
+            textComponents[3].text = i.ToString();
+            textComponents[4].text = "Collected: " + (game.BlueCrystalCollected + game.OrangeCrystalCollected).ToString();
             Debug.Log(textComponents[0].text);
         }
 
@@ -59,6 +60,7 @@ public class MainResults : MonoBehaviour
 
     public void WatchFullInfo(int number)
     {
+        SoundsController.Instance.PlayInGameMenuSound(1);
         games.SetActive(false);
         infoAboutGame.SetActive(true);
         bacToMenu.SetActive(false);
@@ -73,6 +75,7 @@ public class MainResults : MonoBehaviour
 
     public void BackToGames()
     {
+        SoundsController.Instance.PlayInGameMenuSound(0);
         games.SetActive(true);
         infoAboutGame.SetActive(false);
         bacToMenu.SetActive(true);

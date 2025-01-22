@@ -18,6 +18,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject creditsMenu;
     public GameObject chooseQuitMenu;
     public GameObject gameTitle;
+    public GameObject playWindow;
 
     public Button newGame;
     public Button options;
@@ -29,6 +30,7 @@ public class MainMenuController : MonoBehaviour
     public Button backFromCredits;
     public Button chooseYes;
     public Button chooseNo;
+    public Button skipPlayWindow;
 
     public bool isOptions = false;
     public bool isResults = false;
@@ -50,6 +52,7 @@ public class MainMenuController : MonoBehaviour
         backFromCredits.onClick.AddListener(BackFromCredits);
         chooseYes.onClick.AddListener(QuitFromGame);
         chooseNo.onClick.AddListener(BackToMainMenu);
+        skipPlayWindow.onClick.AddListener(PlayWindow);
     }
 
     public void NewGame()
@@ -57,6 +60,13 @@ public class MainMenuController : MonoBehaviour
         SoundsController.Instance.PlayInGameMenuSound(1);
         gameTitle.SetActive(false);
         mainMenuButtons.SetActive(false);
+        playWindow.SetActive(true);
+    }
+
+    public void PlayWindow()
+    {
+        SoundsController.Instance.PlayInGameMenuSound(1);
+        playWindow.SetActive(false);
         loadingText.transform.localPosition = Vector3.zero;
         loadingText.text = "Loading...";
         StartCoroutine(WaitForLoading(0.25f));
