@@ -463,9 +463,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   buyShotGun: {fileID: 0}
   buyMac10: {fileID: 0}
   buyPecheneg: {fileID: 0}
+  buyAK: {fileID: 0}
 --- !u!114 &1609910682207668314
 MonoBehaviour:
   m_ObjectHideFlags: 0

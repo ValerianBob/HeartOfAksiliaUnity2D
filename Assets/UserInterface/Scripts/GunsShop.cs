@@ -12,10 +12,12 @@ public class GunsShop : MonoBehaviour
     public Button buyShotGun;
     public Button buyMac10;
     public Button buyPecheneg;
+    public Button buyAK;
 
     private bool shotGunHasBought = false;
     private bool mac10HasBought = false;
     private bool pechenegBought = false;
+    private bool akBought = false;
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class GunsShop : MonoBehaviour
         buyShotGun.onClick.AddListener(BuyShotGun);
         buyMac10.onClick.AddListener(BuyMac10);
         buyPecheneg.onClick.AddListener(BuyPecheneg);
+        buyAK.onClick.AddListener(BuyAk);
     }
 
     private void Update()
@@ -47,7 +50,7 @@ public class GunsShop : MonoBehaviour
             buyShotGun.interactable = false;
         }
 
-        if (CrystalsController.Instance.orangeCrystals >= 300 && !pechenegBought)
+        if (CrystalsController.Instance.orangeCrystals >= 400 && !pechenegBought)
         {
             buyPecheneg.interactable = true;
         }
@@ -55,6 +58,16 @@ public class GunsShop : MonoBehaviour
         {
 
             buyPecheneg.interactable = false;
+        }
+
+        if (CrystalsController.Instance.orangeCrystals >= 300 && !akBought)
+        {
+            buyAK.interactable = true;
+        }
+        else
+        {
+
+            buyAK.interactable = false;
         }
     }
 
@@ -93,12 +106,27 @@ public class GunsShop : MonoBehaviour
         if (!pechenegBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 300;
-            PlayerResult.Instance.Orange—rystalsSpent -= 300;
+            CrystalsController.Instance.orangeCrystals -= 400;
+            PlayerResult.Instance.Orange—rystalsSpent -= 400;
             handController.allGunsInStock.Add(allGunsPrefabs[3]);
             pechenegBought = true;
             SoundsController.Instance.PlayShopsSound(0);
             NotificationsController.Instance.AddNewMessage("Buy Pecheneg", "blue");
+        }
+    }
+
+    private void BuyAk()
+    {
+        buyAK.interactable = false;
+        if (!akBought)
+        {
+            PlayerResult.Instance.CountOfBoughtGuns += 1;
+            CrystalsController.Instance.orangeCrystals -= 300;
+            PlayerResult.Instance.Orange—rystalsSpent -= 300;
+            handController.allGunsInStock.Add(allGunsPrefabs[4]);
+            akBought = true;
+            SoundsController.Instance.PlayShopsSound(0);
+            NotificationsController.Instance.AddNewMessage("Buy AK", "blue");
         }
     }
 }

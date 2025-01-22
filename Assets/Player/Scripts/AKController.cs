@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PechenegController : MonoBehaviour
+public class AKController : MonoBehaviour
 {
     public CharacterController characterController;
 
@@ -15,7 +15,7 @@ public class PechenegController : MonoBehaviour
 
     private Vector2 newBulletDirection;
 
-    private float fireRate = 0.08f;
+    private float fireRate = 0.150f;
 
     private float nextFireTime = 0f;
 
@@ -36,14 +36,14 @@ public class PechenegController : MonoBehaviour
                 if (Time.time >= nextFireTime)
                 {
                     fire = true;
-                    PechenegShoot();
+                    AKShoot();
                     nextFireTime = Time.time + fireRate;
                 }
             }
         }
     }
 
-    private void PechenegShoot()
+    private void AKShoot()
     {
         newBulletDirection = transform.position + handController.difference;
 

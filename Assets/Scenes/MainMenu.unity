@@ -6683,8 +6683,8 @@ MonoBehaviour:
   Date: 
   BlueCrystalCollected: 0
   OrangeCrystalCollected: 0
-  "Blue\u0421rystalsSpent": 0
-  "Orange\u0421rystalsSpent": 0
+  "Blue\xD1rystalsSpent": 0
+  "Orange\xD1rystalsSpent": 0
   Kills: 0
   KillsByTower: 0
   KillsByPlayer: 0

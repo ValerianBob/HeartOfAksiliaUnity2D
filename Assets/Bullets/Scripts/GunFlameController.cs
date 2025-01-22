@@ -14,6 +14,8 @@ public class GunFlameController : MonoBehaviour
 
     public PechenegController pechenegController;
 
+    public AKController ak;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -35,8 +37,12 @@ public class GunFlameController : MonoBehaviour
         {
             transform.localPosition = new Vector3(1.2f, -0.075f, -2f);
         }
+        else if (ak.fire == true)
+        {
+            transform.localPosition = new Vector3(0.95f, -0.13f, -2f);
+        }
 
-        if (berretaFlame.fire || shotGunController.fire || macShotControllerFlame.fire || pechenegController.fire)
+        if (berretaFlame.fire || shotGunController.fire || macShotControllerFlame.fire || pechenegController.fire || ak.fire)
         {
             spriteRenderer.enabled = true;
             Invoke(nameof(HideGunFlame), 0.1f);
@@ -51,6 +57,7 @@ public class GunFlameController : MonoBehaviour
         shotGunController.fire = false;
         macShotControllerFlame.fire = false;
         pechenegController.fire = false;
+        ak.fire = false;
     }
 }
 
