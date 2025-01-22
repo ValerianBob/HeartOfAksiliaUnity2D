@@ -194,7 +194,7 @@ public class EnemyController : MonoBehaviour
 
     private void AttackTarget(Collision2D collision)
     {
-        if (currentTarget == collision.gameObject.CompareTag("Kaylo"))
+        if (collision.gameObject.CompareTag("Kaylo"))
         {
             if (Time.time >= nextFireTime)
             {
@@ -203,7 +203,7 @@ public class EnemyController : MonoBehaviour
                 animator.SetBool("Attack", true);
             }
         }
-        else if (currentTarget == collision.gameObject.CompareTag("Build"))
+        else if (collision.gameObject.CompareTag("Build"))
         {
             if (Time.time >= nextFireTime)
             {
