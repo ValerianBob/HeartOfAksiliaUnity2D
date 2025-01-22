@@ -11,15 +11,21 @@ public class VideoScript : MonoBehaviour
 
     void Start()
     {
-        if (videoPlayer == null)
+        if (videoPlayer == null )
         {
             Debug.LogError("Video Player не назначен!");
             return;
         }
 
-        videoPlayer.Play();
-        musicMainMenu.volume = 0;
-        videoPlayer.loopPointReached += OnVideoEnd;
+        gameObject.SetActive(false);
+        if (OptionsConfig.Instance.firstEnterGame != true)
+        {
+            gameObject.SetActive(true);
+            videoPlayer.Play();
+            OptionsConfig.Instance.firstEnterGame = true;
+            musicMainMenu.volume = 0;
+            videoPlayer.loopPointReached += OnVideoEnd;
+        }
     }
 
 

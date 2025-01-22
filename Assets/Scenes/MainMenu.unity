@@ -7859,7 +7859,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -8010,6 +8010,7 @@ MonoBehaviour:
   music: 0.5
   cameraSize: 10
   notificationsSystem: 1
+  firstEnterGame: 0
 --- !u!4 &1607631692
 Transform:
   m_ObjectHideFlags: 0
