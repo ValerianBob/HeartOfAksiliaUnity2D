@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 using TMPro;
 using Unity.VisualScripting;
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 
 public class MainMenuEnterName : MonoBehaviour
 {
-    public GameObject enterNameWindow;
+    public GameObject mainMenuButtons;
     public Button reset;
     public Button confirm;
     public TMP_InputField name;
@@ -29,10 +30,18 @@ public class MainMenuEnterName : MonoBehaviour
     private void Confirm()
     {
         SoundsController.Instance.PlayInGameMenuSound(1);
-        SaveToFile(Application.persistentDataPath + "/saveName.xml", name.text.ToString());
-        enterNameWindow.SetActive(false);
-        string test = LoadFromFile(Application.persistentDataPath + "/saveName.xml");
-        Debug.Log(test);
+        if(string.IsNullOrWhiteSpace(name.text.ToString()) || name.text.ToString().Contains(" ") || name.text.ToString().Count() > 12)
+        {
+            Reset();
+        }
+        else
+        {
+            SaveToFile(Application.persistentDataPath + "/saveName.xml", name.text.ToString());
+            gameObject.SetActive(false);
+            mainMenuButtons.SetActive(true);
+            string test = LoadFromFile(Application.persistentDataPath + "/saveName.xml");
+            Debug.Log(test);
+        }
     }
 
     public void SaveToFile(string filePath, string content)
@@ -44,7 +53,7 @@ public class MainMenuEnterName : MonoBehaviour
         }
     }
 
-    public static string LoadFromFile(string filePath)
+    public string LoadFromFile(string filePath)
     {
         if (File.Exists(filePath))
         {
@@ -56,6 +65,7 @@ public class MainMenuEnterName : MonoBehaviour
         }
         else
         {
+            gameObject.SetActive(true);
             return "";
         }
     }

@@ -8,6 +8,7 @@ public class StartWindow : MonoBehaviour
 {
     public GameObject mainMenuButtons;
     public GameObject titleOfGame;
+    public MainMenuEnterName MainMenuEnterName;
 
     public Button start;
 
@@ -22,5 +23,10 @@ public class StartWindow : MonoBehaviour
         gameObject.SetActive(false);
         mainMenuButtons.SetActive(true);    
         titleOfGame.SetActive(true);
+        OptionsConfig.Instance.userName = MainMenuEnterName.LoadFromFile(Application.persistentDataPath + "/saveName.xml");
+        if(OptionsConfig.Instance.userName == "")
+        {
+            mainMenuButtons.SetActive(false) ;
+        }
     }
 }

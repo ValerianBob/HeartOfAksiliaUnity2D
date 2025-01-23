@@ -7,7 +7,6 @@ public class VideoScript : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public AudioSource musicMainMenu;
-    public GameObject buttonsMain;
 
     void Start()
     {
