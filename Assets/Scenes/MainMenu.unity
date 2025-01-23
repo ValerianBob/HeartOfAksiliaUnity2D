@@ -8045,6 +8045,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 14b61a5cd1783664b8b4ccb47ec769d6, type: 3}
   - {fileID: 8300000, guid: d06b22fb4ea1a63409804cdcd7c173a7, type: 3}
   - {fileID: 8300000, guid: 1f6e2871b74255840abb3db217f09e00, type: 3}
+  - {fileID: 8300000, guid: 5ceb7e00975c23a42a624a9c18e81105, type: 3}
   EnemyDeathSounds:
   - {fileID: 8300000, guid: 00efead016a0812479a4c93a608e4848, type: 3}
   ShopsSounds:
