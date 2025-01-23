@@ -16,6 +16,8 @@ public class GunFlameController : MonoBehaviour
 
     public AKController ak;
 
+    public GrozaController grozaController;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -41,8 +43,12 @@ public class GunFlameController : MonoBehaviour
         {
             transform.localPosition = new Vector3(0.95f, -0.13f, -2f);
         }
+        else if (grozaController.fire == true)
+        {
+            transform.localPosition = new Vector3(0.777f, -0.118f, -2f);
+        }
 
-        if (berretaFlame.fire || shotGunController.fire || macShotControllerFlame.fire || pechenegController.fire || ak.fire)
+        if (berretaFlame.fire || shotGunController.fire || macShotControllerFlame.fire || pechenegController.fire || ak.fire || grozaController.fire)
         {
             spriteRenderer.enabled = true;
             Invoke(nameof(HideGunFlame), 0.1f);
@@ -58,6 +64,7 @@ public class GunFlameController : MonoBehaviour
         macShotControllerFlame.fire = false;
         pechenegController.fire = false;
         ak.fire = false;
+        grozaController.fire = false;
     }
 }
 

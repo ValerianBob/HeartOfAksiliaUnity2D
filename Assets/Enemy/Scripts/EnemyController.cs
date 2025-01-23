@@ -103,11 +103,8 @@ public class EnemyController : MonoBehaviour
             orangeCrystalsForKill = 6;
         }
 
-        if (spawner.wavesCount >= 18)
-        {
-            attackPower += spawner.enemyNewPower;
-            enemyHealth += spawner.enemyNewPower;
-        }
+        attackPower += spawner.enemyNewPower;
+        enemyHealth += spawner.enemyNewPower;
     }
     void Update()
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,11 +14,25 @@ public class GunsShop : MonoBehaviour
     public Button buyMac10;
     public Button buyPecheneg;
     public Button buyAK;
+    public Button buyGroza;
 
     private bool shotGunHasBought = false;
     private bool mac10HasBought = false;
     private bool pechenegBought = false;
     private bool akBought = false;
+    private bool grozaBought = false;
+
+    public TextMeshProUGUI mac10CostText;
+    public TextMeshProUGUI shotGunCostText;
+    public TextMeshProUGUI pechenegCostText;
+    public TextMeshProUGUI akCostText;
+    public TextMeshProUGUI grozaCostText;
+
+    private int mac10Cost = 100;
+    private int shotGunCost = 300;
+    private int pechenegCost = 700;
+    private int akCost = 500;
+    private int grozaCost = 900;
 
     void Start()
     {
@@ -27,11 +42,18 @@ public class GunsShop : MonoBehaviour
         buyMac10.onClick.AddListener(BuyMac10);
         buyPecheneg.onClick.AddListener(BuyPecheneg);
         buyAK.onClick.AddListener(BuyAk);
+        buyGroza.onClick.AddListener(BuyGroza);
+
+        mac10CostText.text = "Cost : " + mac10Cost.ToString();
+        shotGunCostText.text = "Cost : " + shotGunCost.ToString();
+        pechenegCostText.text = "Cost : " + pechenegCost.ToString();
+        akCostText.text = "Cost : " + akCost.ToString();
+        grozaCostText.text = "Cost : " + grozaCost.ToString();
     }
 
     private void Update()
     {
-        if (CrystalsController.Instance.orangeCrystals >= 300 && !mac10HasBought)
+        if (CrystalsController.Instance.orangeCrystals >= mac10Cost && !mac10HasBought)
         {
             buyMac10.interactable = true;
         }
@@ -40,7 +62,7 @@ public class GunsShop : MonoBehaviour
             buyMac10.interactable = false;
         }
 
-        if (CrystalsController.Instance.orangeCrystals >= 500 && !shotGunHasBought)
+        if (CrystalsController.Instance.orangeCrystals >= shotGunCost && !shotGunHasBought)
         {
             buyShotGun.interactable = true;
         }
@@ -50,7 +72,7 @@ public class GunsShop : MonoBehaviour
             buyShotGun.interactable = false;
         }
 
-        if (CrystalsController.Instance.orangeCrystals >= 900 && !pechenegBought)
+        if (CrystalsController.Instance.orangeCrystals >= pechenegCost && !pechenegBought)
         {
             buyPecheneg.interactable = true;
         }
@@ -60,7 +82,7 @@ public class GunsShop : MonoBehaviour
             buyPecheneg.interactable = false;
         }
 
-        if (CrystalsController.Instance.orangeCrystals >= 700 && !akBought)
+        if (CrystalsController.Instance.orangeCrystals >= akCost && !akBought)
         {
             buyAK.interactable = true;
         }
@@ -68,6 +90,16 @@ public class GunsShop : MonoBehaviour
         {
 
             buyAK.interactable = false;
+        }
+
+        if (CrystalsController.Instance.orangeCrystals >= grozaCost && !grozaBought)
+        {
+            buyGroza.interactable = true;
+        }
+        else
+        {
+
+            buyGroza.interactable = false;
         }
     }
 
@@ -77,8 +109,8 @@ public class GunsShop : MonoBehaviour
         if (!shotGunHasBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 500;
-            PlayerResult.Instance.Orange—rystalsSpent += 500;
+            CrystalsController.Instance.orangeCrystals -= shotGunCost;
+            PlayerResult.Instance.Orange—rystalsSpent += shotGunCost;
             handController.allGunsInStock.Add(allGunsPrefabs[1]);
             shotGunHasBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -92,8 +124,8 @@ public class GunsShop : MonoBehaviour
         if (!mac10HasBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 300;
-            PlayerResult.Instance.Orange—rystalsSpent -= 300;
+            CrystalsController.Instance.orangeCrystals -= mac10Cost;
+            PlayerResult.Instance.Orange—rystalsSpent -= mac10Cost;
             handController.allGunsInStock.Add(allGunsPrefabs[2]);
             mac10HasBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -106,8 +138,8 @@ public class GunsShop : MonoBehaviour
         if (!pechenegBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 900;
-            PlayerResult.Instance.Orange—rystalsSpent -= 900;
+            CrystalsController.Instance.orangeCrystals -= pechenegCost;
+            PlayerResult.Instance.Orange—rystalsSpent -= pechenegCost;
             handController.allGunsInStock.Add(allGunsPrefabs[3]);
             pechenegBought = true;
             SoundsController.Instance.PlayShopsSound(0);
@@ -121,12 +153,27 @@ public class GunsShop : MonoBehaviour
         if (!akBought)
         {
             PlayerResult.Instance.CountOfBoughtGuns += 1;
-            CrystalsController.Instance.orangeCrystals -= 700;
-            PlayerResult.Instance.Orange—rystalsSpent -= 700;
+            CrystalsController.Instance.orangeCrystals -= akCost;
+            PlayerResult.Instance.Orange—rystalsSpent -= akCost;
             handController.allGunsInStock.Add(allGunsPrefabs[4]);
             akBought = true;
             SoundsController.Instance.PlayShopsSound(0);
             NotificationsController.Instance.AddNewMessage("Buy AK", "blue");
+        }
+    }
+
+    private void BuyGroza()
+    {
+        buyGroza.interactable = false;
+        if (!grozaBought)
+        {
+            PlayerResult.Instance.CountOfBoughtGuns += 1;
+            CrystalsController.Instance.orangeCrystals -= grozaCost;
+            PlayerResult.Instance.Orange—rystalsSpent -= grozaCost;
+            handController.allGunsInStock.Add(allGunsPrefabs[5]);
+            grozaBought = true;
+            SoundsController.Instance.PlayShopsSound(0);
+            NotificationsController.Instance.AddNewMessage("Buy Groza", "blue");
         }
     }
 }

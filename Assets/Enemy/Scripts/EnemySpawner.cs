@@ -101,6 +101,12 @@ public class EnemySpawner : MonoBehaviour
             wavesCount += 1;
             secondsToRespawn += 1;
 
+            if (wavesCount % 2 == 0)
+            {
+                enemyNewPower += 2;
+                NotificationsController.Instance.AddNewMessage("Enemy Power +" + enemyNewPower, "red");
+            }
+
             BeetleLightCoroutinesStarter();
 
             waves.text = wavesCount.ToString() + " wave";
@@ -112,6 +118,12 @@ public class EnemySpawner : MonoBehaviour
         {
             wavesCount += 1;
             secondsToRespawn += 1;
+
+            if (wavesCount % 2 == 0)
+            {
+                enemyNewPower += 4;
+                NotificationsController.Instance.AddNewMessage("Enemy Power +" + enemyNewPower, "red");
+            }
 
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
@@ -126,6 +138,12 @@ public class EnemySpawner : MonoBehaviour
             wavesCount += 1;
             secondsToRespawn += 1;
 
+            if (wavesCount % 2 == 0)
+            {
+                enemyNewPower += 6;
+                NotificationsController.Instance.AddNewMessage("Enemy Power +" + enemyNewPower, "red");
+            }
+
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
             BeetleHeavyCoroutinesStarter();
@@ -139,6 +157,12 @@ public class EnemySpawner : MonoBehaviour
         {
             wavesCount += 1;
             secondsToRespawn += 1;
+
+            if (wavesCount % 2 == 0)
+            {
+                enemyNewPower += 8;
+                NotificationsController.Instance.AddNewMessage("Enemy Power +" + enemyNewPower, "red");
+            }
 
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
@@ -155,6 +179,12 @@ public class EnemySpawner : MonoBehaviour
             wavesCount += 1;
             secondsToRespawn += 1;
 
+            if (wavesCount % 2 == 0)
+            {
+                enemyNewPower += 10;
+                NotificationsController.Instance.AddNewMessage("Enemy Power +" + enemyNewPower, "red");
+            }
+
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
             BeetleHeavyCoroutinesStarter();
@@ -170,6 +200,12 @@ public class EnemySpawner : MonoBehaviour
         {
             wavesCount += 1;
             secondsToRespawn += 1;
+
+            if (wavesCount % 2 == 0)
+            {
+                enemyNewPower += 12;
+                NotificationsController.Instance.AddNewMessage("Enemy Power +" + enemyNewPower, "red");
+            }
 
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
@@ -188,7 +224,11 @@ public class EnemySpawner : MonoBehaviour
             wavesCount += 1;
             secondsToRespawn += 1;
 
-            enemyNewPower += 1;
+            if (wavesCount % 2 == 0)
+            {
+                enemyNewPower += 14;
+                NotificationsController.Instance.AddNewMessage("Enemy Power +" + enemyNewPower, "red");
+            }
 
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,22 @@ public class BuildsShop : MonoBehaviour
     public Button buyPiercingTuret;
     public Button buyCrystalFarming;
 
+    public TextMeshProUGUI simpleTuretCostText;
+    public TextMeshProUGUI medTentCostText;
+    public TextMeshProUGUI energoTowerCostText;
+    public TextMeshProUGUI machineGunTuretCostText;
+    public TextMeshProUGUI shotGunTuretCostText;
+    public TextMeshProUGUI piercingTuretCostText;
+    public TextMeshProUGUI crystalFarmingCostText;
+
+    private int simpleTurelCost = 50;
+    private int medTentCost = 200;
+    private int energoTowerCost = 300;
+    private int machineGunTuretCost = 200;
+    private int shotGunTuretCost = 300;
+    private int piercingTuretCost = 400;
+    private int crystalFarmingCost = 100;
+
     public bool isBuying = false;
 
     public int energoTowerCount = 0;
@@ -33,11 +50,19 @@ public class BuildsShop : MonoBehaviour
         buyShotGunTuret.onClick.AddListener(BuyShotGunTuret);
         buyPiercingTuret.onClick.AddListener(BuyPiercingTuret);
         buyCrystalFarming.onClick.AddListener(BuyCrystalFarming);
+
+        simpleTuretCostText.text = "Cost : " + simpleTurelCost.ToString();
+        medTentCostText.text = "Cost : " + medTentCost.ToString();
+        energoTowerCostText.text = "Cost : " + energoTowerCost.ToString();
+        machineGunTuretCostText.text = "Cost : " + machineGunTuretCost.ToString();
+        shotGunTuretCostText.text = "Cost : " + shotGunTuretCost.ToString();
+        piercingTuretCostText.text = "Cost : " + piercingTuretCost.ToString();
+        crystalFarmingCostText.text = "Cost : " + crystalFarmingCost.ToString();
     }
 
     private void Update()
     {
-        if (CrystalsController.Instance.crystals < 100)
+        if (CrystalsController.Instance.crystals < simpleTurelCost)
         {
             buySimpleTurel.interactable = false;
         }
@@ -46,7 +71,7 @@ public class BuildsShop : MonoBehaviour
             buySimpleTurel.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 250)
+        if (CrystalsController.Instance.crystals < medTentCost)
         {
             buyMedTent.interactable = false;
         }
@@ -55,7 +80,7 @@ public class BuildsShop : MonoBehaviour
             buyMedTent.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 300)
+        if (CrystalsController.Instance.crystals < energoTowerCost)
         {
             buyEnergoTower.interactable = false;
         }
@@ -64,7 +89,7 @@ public class BuildsShop : MonoBehaviour
             buyEnergoTower.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 200)
+        if (CrystalsController.Instance.crystals < machineGunTuretCost)
         {
             buyMachineGunTuret.interactable = false;
         }
@@ -73,7 +98,7 @@ public class BuildsShop : MonoBehaviour
             buyMachineGunTuret.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 250)
+        if (CrystalsController.Instance.crystals < shotGunTuretCost)
         {
             buyShotGunTuret.interactable = false;
         }
@@ -82,7 +107,7 @@ public class BuildsShop : MonoBehaviour
             buyShotGunTuret.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 300)
+        if (CrystalsController.Instance.crystals < piercingTuretCost)
         {
             buyPiercingTuret.interactable = false;
         }
@@ -91,7 +116,7 @@ public class BuildsShop : MonoBehaviour
             buyPiercingTuret.interactable = true;
         }
 
-        if (CrystalsController.Instance.crystals < 200)
+        if (CrystalsController.Instance.crystals < crystalFarmingCost)
         {
             buyCrystalFarming.interactable = false;
         }
@@ -103,10 +128,10 @@ public class BuildsShop : MonoBehaviour
 
     private void BuySimpleTurel()
     {
-        CrystalsController.Instance.crystals -= 100;
+        CrystalsController.Instance.crystals -= simpleTurelCost;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfSimpleTurel += 1;
-        PlayerResult.Instance.BlueÑrystalsSpent += 100;
+        PlayerResult.Instance.BlueÑrystalsSpent += simpleTurelCost;
         chosenBuild = builds[0];
         isBuying = true;
         
@@ -118,8 +143,8 @@ public class BuildsShop : MonoBehaviour
 
     private void BuyMedTent()
     {
-        CrystalsController.Instance.crystals -= 250;
-        PlayerResult.Instance.BlueÑrystalsSpent += 200;
+        CrystalsController.Instance.crystals -= medTentCost;
+        PlayerResult.Instance.BlueÑrystalsSpent += medTentCost;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfMedTent += 1;
         chosenBuild = builds[1];
@@ -133,8 +158,8 @@ public class BuildsShop : MonoBehaviour
 
     private void BuyEnergoTower()
     {
-        CrystalsController.Instance.crystals -= 300;
-        PlayerResult.Instance.BlueÑrystalsSpent += 300;
+        CrystalsController.Instance.crystals -= energoTowerCost;
+        PlayerResult.Instance.BlueÑrystalsSpent += energoTowerCost;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfEnergoTower += 1;
         chosenBuild = builds[2];
@@ -150,10 +175,10 @@ public class BuildsShop : MonoBehaviour
 
     private void BuyMachineGunTuret()
     {
-        CrystalsController.Instance.crystals -= 200;
+        CrystalsController.Instance.crystals -= machineGunTuretCost;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfMachineGunTuret += 1;
-        PlayerResult.Instance.BlueÑrystalsSpent += 200;
+        PlayerResult.Instance.BlueÑrystalsSpent += machineGunTuretCost;
         chosenBuild = builds[3];
         isBuying = true;
 
@@ -164,8 +189,8 @@ public class BuildsShop : MonoBehaviour
     }
     private void BuyShotGunTuret()
     {
-        CrystalsController.Instance.crystals -= 250;
-        PlayerResult.Instance.BlueÑrystalsSpent += 200;
+        CrystalsController.Instance.crystals -= shotGunTuretCost;
+        PlayerResult.Instance.BlueÑrystalsSpent += shotGunTuretCost;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfShotGunTuret += 1;
         chosenBuild = builds[4];
@@ -179,8 +204,8 @@ public class BuildsShop : MonoBehaviour
 
     private void BuyPiercingTuret()
     {
-        CrystalsController.Instance.crystals -= 300;
-        PlayerResult.Instance.BlueÑrystalsSpent += 300;
+        CrystalsController.Instance.crystals -= piercingTuretCost;
+        PlayerResult.Instance.BlueÑrystalsSpent += piercingTuretCost;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfPiercingTuret += 1;
         chosenBuild = builds[5];
@@ -194,8 +219,8 @@ public class BuildsShop : MonoBehaviour
 
     private void BuyCrystalFarming()
     {
-        CrystalsController.Instance.crystals -= 200;
-        PlayerResult.Instance.BlueÑrystalsSpent += 200;
+        CrystalsController.Instance.crystals -= crystalFarmingCost;
+        PlayerResult.Instance.BlueÑrystalsSpent += crystalFarmingCost;
         PlayerResult.Instance.CountOfPlacedTowers += 1;
         PlayerResult.Instance.CountOfCrystalFarming += 1;
         chosenBuild = builds[6];

@@ -35,6 +35,7 @@ Transform:
   - {fileID: 5917384831008335878}
   - {fileID: 8975485027646722060}
   - {fileID: 4946027236130201586}
+  - {fileID: 3540755928895694090}
   - {fileID: 4291872914014538506}
   m_Father: {fileID: 8915880033730666457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,6 +54,7 @@ MonoBehaviour:
   player: {fileID: 5227533327796697851}
   allGunsInStock: []
   gunsImages:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -540,6 +542,96 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4457831536841032129, guid: 746249da23a08fa419ea6b90741404d9, type: 3}
   handController: {fileID: 6175514735151157445}
   fire: 0
+--- !u!1001 &5219943260704869097
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 738132496849497478}
+    m_Modifications:
+    - target: {fileID: -3888481672020999207, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_Name
+      value: Groza
+      objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.267
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.159
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -3888481672020999207, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9032515143791443178}
+  m_SourcePrefab: {fileID: 7243324766535440047, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+--- !u!1 &178349823937759536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3888481672020999207, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+  m_PrefabInstance: {fileID: 5219943260704869097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9032515143791443178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178349823937759536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a047e90c2b4dbb4aa80ad48c61df26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 5227533327796697851}
+  bulletPrefab: {fileID: 7587993769288097274, guid: 3198cb30447a47e4a9314e896642eb57, type: 3}
+  handController: {fileID: 6175514735151157445}
+  fire: 0
+--- !u!4 &3540755928895694090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8742538545776668643, guid: 983f4ad43956fa64fb7e7003dc4cc888, type: 3}
+  m_PrefabInstance: {fileID: 5219943260704869097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6979596752867035991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -748,6 +840,10 @@ PrefabInstance:
       propertyPath: berretaFlame
       value: 
       objectReference: {fileID: 7554567084509175535}
+    - target: {fileID: 4128209278064462214, guid: 89e6c40e8a584324da3abf3fb1f26c4d, type: 3}
+      propertyPath: grozaController
+      value: 
+      objectReference: {fileID: 9032515143791443178}
     - target: {fileID: 4128209278064462214, guid: 89e6c40e8a584324da3abf3fb1f26c4d, type: 3}
       propertyPath: shotGunController
       value: 
