@@ -19,6 +19,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject chooseQuitMenu;
     public GameObject gameTitle;
     public GameObject playWindow;
+    public GameObject background;
+    public GameObject backgroundPlay;
 
     public Button newGame;
     public Button options;
@@ -61,6 +63,8 @@ public class MainMenuController : MonoBehaviour
         gameTitle.SetActive(false);
         mainMenuButtons.SetActive(false);
         playWindow.SetActive(true);
+        background.SetActive(false);
+        backgroundPlay.SetActive(true);
     }
 
     public void PlayWindow()
