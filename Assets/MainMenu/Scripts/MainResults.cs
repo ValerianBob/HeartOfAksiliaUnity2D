@@ -20,10 +20,11 @@ public class MainResults : MonoBehaviour
     public GameObject bacToGames;
     public GameObject bacToMenu;
     public TextMeshProUGUI userName;
-
+    public TextMeshProUGUI nametext;
     void Start()
     {
        LoadAllGameResult();
+       
        backToGames.onClick.AddListener(BackToGames);
     }
 
@@ -32,6 +33,7 @@ public class MainResults : MonoBehaviour
         int i = 0;
 
         userName.text = OptionsConfig.Instance.userName;
+        //nametext.text = userName.text;
 
         RectTransform rect = container.GetComponent<RectTransform>();
         int height = 0;
@@ -50,11 +52,10 @@ public class MainResults : MonoBehaviour
             dateConvert = DateTime.ParseExact(game.Date, "yyyy-MM-dd HH:mm:ss", null);
 
             textComponents[0].text = "Date: "+  (dateConvert.ToString("yyyy-MM-dd"));
-            textComponents[1].text = OptionsConfig.Instance.userName ;
-            textComponents[2].text = "Kills:" + game.Kills.ToString() ;
-            textComponents[3].text = "¹";
-            textComponents[4].text = i.ToString();
-            textComponents[5].text = "Collected: " + (game.BlueCrystalCollected + game.OrangeCrystalCollected).ToString();
+            textComponents[1].text = "Kills:" + game.Kills.ToString();
+            textComponents[2].text = "¹";
+            textComponents[3].text = i.ToString();
+            textComponents[4].text = "Collected: " + (game.BlueCrystalCollected + game.OrangeCrystalCollected).ToString();
             Debug.Log(textComponents[0].text);
         }
 

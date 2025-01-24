@@ -8,6 +8,9 @@ public class StartWindow : MonoBehaviour
 {
     public GameObject mainMenuButtons;
     public GameObject titleOfGame;
+    public GameObject background;
+    public GameObject backgroundPlay;
+    public GameObject imagePlanet;
     public MainMenuEnterName MainMenuEnterName;
 
     public Button start;
@@ -21,6 +24,9 @@ public class StartWindow : MonoBehaviour
     {
         SoundsController.Instance.PlayInGameMenuSound(1);
         gameObject.SetActive(false);
+        backgroundPlay.SetActive(false);
+        background.SetActive(true);
+        imagePlanet.SetActive(true);
         mainMenuButtons.SetActive(true);    
         titleOfGame.SetActive(true);
         OptionsConfig.Instance.userName = MainMenuEnterName.LoadFromFile(Application.persistentDataPath + "/saveName.xml");
