@@ -33,7 +33,7 @@ public class MainResults : MonoBehaviour
         int i = 0;
 
         userName.text = OptionsConfig.Instance.userName;
-        //nametext.text = userName.text;
+        nametext.text = userName.text;
 
         RectTransform rect = container.GetComponent<RectTransform>();
         int height = 0;
@@ -48,7 +48,7 @@ public class MainResults : MonoBehaviour
             button.onClick.AddListener(() => WatchFullInfo(i-1));
 
             instance.transform.SetParent(container.transform, false);
-            height += 200;
+            height += 250;
             dateConvert = DateTime.ParseExact(game.Date, "yyyy-MM-dd HH:mm:ss", null);
 
             textComponents[0].text = "Date: "+  (dateConvert.ToString("yyyy-MM-dd"));
