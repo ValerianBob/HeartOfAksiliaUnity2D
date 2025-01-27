@@ -17,6 +17,7 @@ TagManager:
   - HealingFildEnergo
   - PiercingTuretBullet
   - Mine
+  - ElectrickShock
   layers:
   - Default
   - TransparentFX

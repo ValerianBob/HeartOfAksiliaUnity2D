@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SuperWeaponShop : MonoBehaviour
 {
-    public GameObject superWeaponsUI;
+    public GameObject[] superWeaponUI;
 
     public GameObject[] allSuperWeaponsPrefabs;
 
@@ -17,6 +18,19 @@ public class SuperWeaponShop : MonoBehaviour
     private GameObject[] slots = new GameObject[maxSlots];
 
     public Button buyMine;
+    public Button buyElectrickShock;
+    public Button buyAirStrick;
+    public Button buyLaserRain;
+
+    private int mineCost = 50;
+    private int electricShockCost = 250;
+    private int airStrickCost = 450;
+    private int laserRainCost = 650;
+
+    public TextMeshProUGUI mineCostText;
+    public TextMeshProUGUI electrickShockText;
+    public TextMeshProUGUI airStrikeText;
+    public TextMeshProUGUI laserRainText;
 
     private bool checkOnNull = false;
     private bool cantPlaceHere = false;
@@ -25,6 +39,14 @@ public class SuperWeaponShop : MonoBehaviour
     private void Start()
     {
         buyMine.onClick.AddListener(BuyMine);
+        buyElectrickShock.onClick.AddListener(BuyElectrickShock);
+
+        buyLaserRain.onClick.AddListener(BuyLaserRain);
+
+        mineCostText.text = "Cost : " + mineCost;
+        electrickShockText.text = "Cost : " + electricShockCost;
+
+        laserRainText.text = "Cost : " + laserRainCost;
     }
 
     private void Update()
@@ -64,13 +86,30 @@ public class SuperWeaponShop : MonoBehaviour
 
     private void CheckOnCost()
     {
-        if (CrystalsController.Instance.orangeCrystals >= 100)
+        if (CrystalsController.Instance.orangeCrystals >= mineCost)
         {
             buyMine.interactable = true;
         }
         else
         {
             buyMine.interactable = false;
+        }
+        if (CrystalsController.Instance.orangeCrystals >= electricShockCost)
+        {
+            buyElectrickShock.interactable = true;
+        }
+        else
+        {
+            buyElectrickShock.interactable = false;
+        }
+
+        if (CrystalsController.Instance.orangeCrystals >= laserRainCost)
+        {
+            buyLaserRain.interactable = true;
+        }
+        else
+        {
+            buyLaserRain.interactable = false;
         }
     }
 
@@ -80,7 +119,7 @@ public class SuperWeaponShop : MonoBehaviour
 
         if (!checkOnNull)
         {
-            CrystalsController.Instance.orangeCrystals -= 100;
+            CrystalsController.Instance.orangeCrystals -= mineCost;
 
             AddItemToSlot(allSuperWeaponsPrefabs[0]);
 
@@ -88,6 +127,49 @@ public class SuperWeaponShop : MonoBehaviour
 
             SoundsController.Instance.PlayShopsSound(0);
             NotificationsController.Instance.AddNewMessage("Mine bought", "blue");
+            PlayerResult.Instance.CountOfBoughtSuperWeapon += 1;
+        }
+        else
+        {
+            NotificationsController.Instance.AddNewMessage("All slots full", "red");
+        }
+    }
+    private void BuyElectrickShock()
+    {
+        checkOnNull = AreAllSlotsFull();
+
+        if (!checkOnNull)
+        {
+            CrystalsController.Instance.orangeCrystals -= electricShockCost;
+
+            AddItemToSlot(allSuperWeaponsPrefabs[1]);
+
+            //DisplaySlots();
+
+            SoundsController.Instance.PlayShopsSound(0);
+            NotificationsController.Instance.AddNewMessage("Electrick Shock bought", "blue");
+            PlayerResult.Instance.CountOfBoughtSuperWeapon += 1;
+        }
+        else
+        {
+            NotificationsController.Instance.AddNewMessage("All slots full", "red");
+        }
+    }
+
+    private void BuyLaserRain()
+    {
+        checkOnNull = AreAllSlotsFull();
+
+        if (!checkOnNull)
+        {
+            CrystalsController.Instance.orangeCrystals -= laserRainCost;
+
+            AddItemToSlot(allSuperWeaponsPrefabs[3]);
+
+            //DisplaySlots();
+
+            SoundsController.Instance.PlayShopsSound(0);
+            NotificationsController.Instance.AddNewMessage("Laser Rain bought", "blue");
             PlayerResult.Instance.CountOfBoughtSuperWeapon += 1;
         }
         else
@@ -115,7 +197,19 @@ public class SuperWeaponShop : MonoBehaviour
             if (slots[i] == null)
             {
                 slots[i] = item;
-                superWeaponsUI.transform.GetChild(0).transform.GetChild(i).gameObject.SetActive(true);
+                Debug.Log(slots[i].name);
+                if (slots[i].name == "Mine")
+                {
+                    superWeaponUI[0].transform.GetChild(i).gameObject.SetActive(true);
+                }
+                else if (slots[i].name == "ElectrickShock")
+                {
+                    superWeaponUI[1].transform.GetChild(i).gameObject.SetActive(true);
+                }
+                else if (slots[i].name == "LaserRain")
+                {
+                    superWeaponUI[3].transform.GetChild(i).gameObject.SetActive(true);
+                }
                 return;
             }
         }
@@ -135,14 +229,24 @@ public class SuperWeaponShop : MonoBehaviour
         {
             if (slots[index].name == "Mine")
             {
+                superWeaponUI[0].transform.GetChild(index).gameObject.SetActive(false);
                 MineController mineController = slots[index].GetComponent<MineController>();
                 slotIsUsing = mineController.isPlacing;
             }
+            else if (slots[index].name == "ElectrickShock")
+            {
+                superWeaponUI[1].transform.GetChild(index).gameObject.SetActive(false);
+                ElectrickShockFild electrickShockFild = slots[index].GetComponent<ElectrickShockFild>();
+                slotIsUsing = electrickShockFild.isPlacing;
+            }
+            else if (slots[index].name == "LaserRain")
+            {
+                superWeaponUI[3].transform.GetChild(index).gameObject.SetActive(false);
+            }
 
             Instantiate(slots[index]);
+
             slots[index] = null;
-            superWeaponsUI.transform.GetChild(0).transform.GetChild(index).gameObject.SetActive(false);
-            //DisplaySlots();
         }
         else
         {

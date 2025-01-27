@@ -302,11 +302,25 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    
+    public void KillEnemy()
+    {
+        CountOfDeadCrip();
+        Destroy(gameObject);
+        SoundsController.Instance.PlayEnemyDeathSound(0);
+        //SoundsController.Instance.PlayGunSound(4);
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    GoAroundTheRock(collision);
-    //}
+        CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
+
+        OrangeCrystallCountForKill.text = "+" + orangeCrystalsForKill;
+
+        PlayerResult.Instance.OrangeCrystalCollected += orangeCrystalsForKill;
+        PlayerResult.Instance.Kills += 1;
+        PlayerResult.Instance.KillsBySuperWeapon += 1;
+
+        Instantiate(_bloodPrefab, new Vector3(transform.position.x, transform.position.y, 0), _bloodPrefab.transform.rotation);
+        Instantiate(_OrangeCrystall, new Vector3(transform.position.x, transform.position.y, -1), _OrangeCrystall.transform.rotation);
+    }
 
     private void GoAroundTheRock(Collision2D collision)
     {
