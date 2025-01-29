@@ -16,6 +16,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject resultsMenu;
     public GameObject creditsMenu;
+    public GameObject infoMenu;
     public GameObject chooseQuitMenu;
     public GameObject gameTitle;
     public GameObject playWindow;
@@ -26,6 +27,7 @@ public class MainMenuController : MonoBehaviour
     public Button options;
     public Button results;
     public Button credits;
+    public Button info;
     public Button quit;
     public Button backFromOptions;
     public Button backFromResults;
@@ -38,6 +40,7 @@ public class MainMenuController : MonoBehaviour
     public bool isResults = false;
     public bool isChoose = false;
     public bool isCredits = false;
+    public bool isInfo = false;
 
     public void Start()
     {
@@ -48,6 +51,7 @@ public class MainMenuController : MonoBehaviour
         options.onClick.AddListener(Options);
         results.onClick.AddListener(Results);
         credits.onClick.AddListener(Credits);
+        info.onClick.AddListener(Info);
         quit.onClick.AddListener(Quit);
         backFromOptions.onClick.AddListener(BackFromOptions);
         backFromResults.onClick.AddListener(BackFromResults);
@@ -99,6 +103,14 @@ public class MainMenuController : MonoBehaviour
         isCredits = true;
         mainMenuButtons.SetActive(!isCredits);
         creditsMenu.SetActive(isCredits);
+    }
+
+    public void Info()
+    {
+        SoundsController.Instance.PlayInGameMenuSound(1);
+        isInfo = true;
+        mainMenuButtons.SetActive(!isInfo);
+        infoMenu.SetActive(isInfo);
     }
 
     public void Quit()
