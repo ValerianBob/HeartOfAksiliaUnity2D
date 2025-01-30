@@ -57,6 +57,6 @@ public class GrozaController : MonoBehaviour
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -10f));
         Instantiate(bulletPrefab, newBulletDirection, transform.rotation * Quaternion.Euler(0, 0, -15f));
 
-        SoundsController.Instance.PlayGunSound(6);
+        SoundsController.Instance.PlayGunSound(5);
     }
 }

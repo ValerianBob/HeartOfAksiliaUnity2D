@@ -113,7 +113,7 @@ public class EnemySpawner : MonoBehaviour
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
-            SoundsController.Instance.PlayOtherSounds(0);
+            SoundsController.Instance.PlayOtherSounds(0, transform.position);
         }
         else if (wavesCount < 6 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -134,7 +134,7 @@ public class EnemySpawner : MonoBehaviour
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
-            SoundsController.Instance.PlayOtherSounds(0);
+            SoundsController.Instance.PlayOtherSounds(0, transform.position);
         }
         else if (wavesCount < 9 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -156,7 +156,7 @@ public class EnemySpawner : MonoBehaviour
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
-            SoundsController.Instance.PlayOtherSounds(0);
+            SoundsController.Instance.PlayOtherSounds(0, transform.position);
         }
         else if (wavesCount < 12 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -179,7 +179,7 @@ public class EnemySpawner : MonoBehaviour
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
-            SoundsController.Instance.PlayOtherSounds(0);
+            SoundsController.Instance.PlayOtherSounds(0, transform.position);
         }
         else if (wavesCount < 15 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -203,7 +203,7 @@ public class EnemySpawner : MonoBehaviour
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
-            SoundsController.Instance.PlayOtherSounds(0);
+            SoundsController.Instance.PlayOtherSounds(0, transform.position);
         }
         else if (wavesCount < 18 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -228,7 +228,7 @@ public class EnemySpawner : MonoBehaviour
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
-            SoundsController.Instance.PlayOtherSounds(0);
+            SoundsController.Instance.PlayOtherSounds(0, transform.position);
         }
         else if (wavesCount >= 18 && secondsToRespawn == 30 && canStartNewWave == true)
         {
@@ -253,7 +253,7 @@ public class EnemySpawner : MonoBehaviour
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
-            SoundsController.Instance.PlayOtherSounds(0);
+            SoundsController.Instance.PlayOtherSounds(0, transform.position);
         }
         else if (secondsToRespawn == 60)
         {

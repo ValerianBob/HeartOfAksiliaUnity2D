@@ -77,7 +77,7 @@ public class CharacterController : MonoBehaviour
 
             HideOrShowCharacter();
             blood = Instantiate(bloodPrefab, new Vector3(transform.position.x,transform.position.y, 0), bloodPrefab.transform.rotation);
-            SoundsController.Instance.PlayEnemyDeathSound(0);
+            SoundsController.Instance.PlayEnemyDeathSound(0, transform.position);
 
             StartCoroutine("SecondsCounter");
 
@@ -98,7 +98,7 @@ public class CharacterController : MonoBehaviour
             StopCoroutine("SecondsCounter");
 
             NotificationsController.Instance.AddNewMessage("Player Respawned", "green");
-            SoundsController.Instance.PlayOtherSounds(2);
+            SoundsController.Instance.PlayOtherSounds(2, transform.position);
         }
 
         if (GameOver.Instance.gameOver == true)
@@ -137,7 +137,7 @@ public class CharacterController : MonoBehaviour
     {
         currentHealth -= damage;
         healthBarUI.SetHealth(currentHealth);
-        SoundsController.Instance.PlayHit(0);
+        SoundsController.Instance.PlayHit(0, transform.position);
     }
 
     public void Healing(int hp)
@@ -194,7 +194,7 @@ public class CharacterController : MonoBehaviour
             StopCoroutine("SecondsCounter");
 
             NotificationsController.Instance.AddNewMessage("Player Respawned", "green");
-            SoundsController.Instance.PlayOtherSounds(2);
+            SoundsController.Instance.PlayOtherSounds(2, transform.position);
         }
     }
 

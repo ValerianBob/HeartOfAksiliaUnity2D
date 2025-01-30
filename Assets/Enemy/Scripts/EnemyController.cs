@@ -241,7 +241,7 @@ public class EnemyController : MonoBehaviour
             {
                 CountOfDeadCrip();
                 Destroy(gameObject);
-                SoundsController.Instance.PlayEnemyDeathSound(0);
+                SoundsController.Instance.PlayEnemyDeathSound(0, transform.position);
 
                 CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 
@@ -269,7 +269,7 @@ public class EnemyController : MonoBehaviour
             {
                 CountOfDeadCrip();
                 Destroy(gameObject);
-                SoundsController.Instance.PlayEnemyDeathSound(0);
+                SoundsController.Instance.PlayEnemyDeathSound(0, transform.position);
 
                 CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 
@@ -292,8 +292,8 @@ public class EnemyController : MonoBehaviour
                 CountOfDeadCrip();
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
-                SoundsController.Instance.PlayEnemyDeathSound(0);
-                SoundsController.Instance.PlayGunSound(4);
+                SoundsController.Instance.PlayEnemyDeathSound(0,transform.position);
+                SoundsController.Instance.PlaySuperWeaponSounds(0, transform.position);
 
                 CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 
@@ -313,8 +313,7 @@ public class EnemyController : MonoBehaviour
     {
         CountOfDeadCrip();
         Destroy(gameObject);
-        SoundsController.Instance.PlayEnemyDeathSound(0);
-        //SoundsController.Instance.PlayGunSound(4);
+        SoundsController.Instance.PlayEnemyDeathSound(0, transform.position);      
 
         CrystalsController.Instance.orangeCrystals += orangeCrystalsForKill;
 

@@ -56,7 +56,7 @@ public class BuildingController : MonoBehaviour
             buildingMode = false;
             buildsShop.isBuying = false;
             newBuildCollider.isTrigger = false;
-            SoundsController.Instance.PlayBuildsSound(0);
+            SoundsController.Instance.PlayBuildsSound(0,newBuild.transform.position);
         }
     }
 }

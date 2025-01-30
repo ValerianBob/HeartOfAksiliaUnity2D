@@ -35,6 +35,7 @@ public class LaserRainController : MonoBehaviour
                     EnemyController enemyController = enemies[0].GetComponent<EnemyController>();
                     if (enemyController != null)
                     {
+                        SoundsController.Instance.PlaySuperWeaponSounds(1,enemyController.transform.position);
                         Instantiate(LaserBeam, enemyController.transform.position, LaserBeam.transform.rotation);
                         enemyController.KillEnemy();
                     }

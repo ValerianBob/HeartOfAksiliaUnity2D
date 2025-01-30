@@ -51,7 +51,7 @@ public class MachinGunTuretController : MonoBehaviour
 
             PlayerResult.Instance.BulletsFired += 1;
             Instantiate(turetBullet, transform.position, transform.rotation);
-            SoundsController.Instance.PlayTurretShots(2);
+            SoundsController.Instance.PlayTurretShots(2, transform.position);
         }
     }
 

@@ -55,7 +55,7 @@ public class SimpleTuretController : MonoBehaviour
             PlayerResult.Instance.BulletsFired += 1;
 
             Instantiate(turetBullet, transform.position, transform.rotation);
-            SoundsController.Instance.PlayTurretShots(0);
+            SoundsController.Instance.PlayTurretShots(0, transform.position);
         }
     }
     

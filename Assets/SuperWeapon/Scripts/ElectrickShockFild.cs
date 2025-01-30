@@ -43,8 +43,8 @@ public class ElectrickShockFild : MonoBehaviour
             superWeaponShop.slotIsUsing = isPlacing;
             shopController.cantOpenWhilePlacingSuperWeapon = false;
 
-            KillEnemy();
-            SoundsController.Instance.PlayBuildsSound(0);
+            SoundsController.Instance.PlaySuperWeaponSounds(2,transform.position);
+            KillEnemy();          
             Destroy(gameObject);
         }
     }

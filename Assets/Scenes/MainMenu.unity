@@ -21798,7 +21798,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 519ac394e47c8534b95defeb8effa10e, type: 3}
   - {fileID: 8300000, guid: 15115c567a09a5d4d8bf8aa51527d0cd, type: 3}
   - {fileID: 8300000, guid: 14b61a5cd1783664b8b4ccb47ec769d6, type: 3}
-  - {fileID: 8300000, guid: d06b22fb4ea1a63409804cdcd7c173a7, type: 3}
   - {fileID: 8300000, guid: 1f6e2871b74255840abb3db217f09e00, type: 3}
   - {fileID: 8300000, guid: 5ceb7e00975c23a42a624a9c18e81105, type: 3}
   EnemyDeathSounds:
@@ -21820,12 +21819,19 @@ MonoBehaviour:
   Hit:
   - {fileID: 8300000, guid: 648406192c7399b40aa321544e7f4fb8, type: 3}
   - {fileID: 8300000, guid: b0e27d6e17c85174393e60e97820fc36, type: 3}
+  SuperWeaponSounds:
+  - {fileID: 8300000, guid: d06b22fb4ea1a63409804cdcd7c173a7, type: 3}
+  - {fileID: 8300000, guid: 12da29e96e0617440939b443ac7bd009, type: 3}
+  - {fileID: 8300000, guid: 4608b6a85cddcb747b915ce677270e36, type: 3}
   OtherSounds:
   - {fileID: 8300000, guid: 94b0b30513e83f54fb790f70034cbca7, type: 3}
   - {fileID: 8300000, guid: c01c7fb460ebe8e4d97c15591797a04c, type: 3}
   - {fileID: 8300000, guid: b57c23f42ca16124ab959760ea3aef6f, type: 3}
   - {fileID: 8300000, guid: c7dd3d921a3762b48ae1007b1fee9aa1, type: 3}
+  - {fileID: 8300000, guid: 5482e18c0d96cb24a971cc6fef56c255, type: 3}
   audioSource: {fileID: 0}
+  playerPosition: {fileID: 0}
+  playerFound: 0
 --- !u!82 &1607631694
 AudioSource:
   m_ObjectHideFlags: 0

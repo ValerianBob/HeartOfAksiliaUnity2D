@@ -25,7 +25,7 @@ public class HealthOfBuild : MonoBehaviour
         SetHalthForBuild();
 
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);    
     }
 
     private void SetHalthForBuild()
@@ -88,7 +88,7 @@ public class HealthOfBuild : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        SoundsController.Instance.PlayHit(1);
+        SoundsController.Instance.PlayHit(1,transform.position);
     }
 
     public void HealingBuild(int hp)

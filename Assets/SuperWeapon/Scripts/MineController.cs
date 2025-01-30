@@ -60,7 +60,7 @@ public class MineController : MonoBehaviour
             color.a = 1f;
             spriteRenderer.color = color;
 
-            SoundsController.Instance.PlayBuildsSound(0);
+            SoundsController.Instance.PlayBuildsSound(0, transform.position);
         }
     }
 
