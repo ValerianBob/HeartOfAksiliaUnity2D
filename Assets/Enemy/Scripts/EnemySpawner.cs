@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     public int secondsToRespawn = 0;
 
     private bool canStartNewWave = true;
+    private bool spawnBossOneTime = true;
 
     private float spawnerSpeed = 1f;
 
@@ -128,6 +129,8 @@ public class EnemySpawner : MonoBehaviour
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
 
+            BossesStart(spawnBossOneTime);
+
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
@@ -147,6 +150,8 @@ public class EnemySpawner : MonoBehaviour
             BeetleLightCoroutinesStarter();
             BeetleMediumCoroutinesStarter();
             BeetleHeavyCoroutinesStarter();
+
+            BossesStart(spawnBossOneTime);
 
             waves.text = wavesCount.ToString() + " wave";
 
@@ -169,6 +174,8 @@ public class EnemySpawner : MonoBehaviour
             BeetleHeavyCoroutinesStarter();
             BeetleNeedlCoroutinesStarter();
 
+            BossesStart(spawnBossOneTime);
+
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
@@ -190,6 +197,8 @@ public class EnemySpawner : MonoBehaviour
             BeetleHeavyCoroutinesStarter();
             BeetleNeedlCoroutinesStarter();
             BeetleHornsCoroutinesStarter();
+
+            BossesStart(spawnBossOneTime);
 
             waves.text = wavesCount.ToString() + " wave";
 
@@ -214,6 +223,8 @@ public class EnemySpawner : MonoBehaviour
             BeetleHornsCoroutinesStarter();
             BeetleMantisCoroutinesStarter();
 
+            BossesStart(spawnBossOneTime);
+
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
@@ -237,6 +248,8 @@ public class EnemySpawner : MonoBehaviour
             BeetleHornsCoroutinesStarter();
             BeetleMantisCoroutinesStarter();
 
+            BossesStart(spawnBossOneTime);
+
             waves.text = wavesCount.ToString() + " wave";
 
             NotificationsController.Instance.AddNewMessage("Wave : " + wavesCount.ToString() + " Started !", "red");
@@ -249,6 +262,7 @@ public class EnemySpawner : MonoBehaviour
             StopAllEnemiesSpawn();
 
             canStartNewWave = false;
+            spawnBossOneTime = true;
         }
         else if (enemiesAlive.Length == 0 && canStartNewWave == false)
         {
@@ -453,6 +467,15 @@ public class EnemySpawner : MonoBehaviour
             beetleMantis1 = StartCoroutine(SpawnBeetle(5));
             beetleMantis2 = StartCoroutine(SpawnBeetle(5));
             beetleMantis3 = StartCoroutine(SpawnBeetle(5));
+        }
+    }
+
+    private void BossesStart(bool spawnOneTime)
+    {
+        if (wavesCount % 5 == 0 && spawnOneTime)
+        {
+            Instantiate(enemy[6], new Vector3(-65, 0, 0), enemy[6].transform.rotation);
+            spawnOneTime = false;
         }
     }
 
