@@ -475,6 +475,7 @@ public class EnemySpawner : MonoBehaviour
         if (wavesCount % 5 == 0 && spawnOneTime)
         {
             Instantiate(enemy[6], new Vector3(-65, 0, 0), enemy[6].transform.rotation);
+            Instantiate(enemy[7], new Vector3(65, 0, 0), enemy[7].transform.rotation);
             spawnOneTime = false;
         }
     }

@@ -108,6 +108,12 @@ public class EnemyController : MonoBehaviour
             enemyHealth = 50;
             orangeCrystalsForKill = 9;
         }
+        else if (gameObject.name == "Boss2(Clone)")
+        {
+            attackPower = 10;
+            enemyHealth = 50;
+            orangeCrystalsForKill = 9;
+        }
 
         attackPower += spawner.enemyNewPower;
         enemyHealth += spawner.enemyNewPower;

@@ -535,7 +535,7 @@ MonoBehaviour:
   allSuperWeaponsPrefabs:
   - {fileID: 3014403958438391304, guid: ee9ff647af263e840a0716cad736879a, type: 3}
   - {fileID: 6898429409236629282, guid: bda601ce864ba424aa259d6259c3024a, type: 3}
-  - {fileID: 8277648117063747089, guid: 29a42c86ae1c12d409d663ceebf91352, type: 3}
+  - {fileID: 967605732208594123, guid: 3d82cfac293b37b45956cbd1dc667485, type: 3}
   - {fileID: 8277648117063747089, guid: 29a42c86ae1c12d409d663ceebf91352, type: 3}
   buyMine: {fileID: 0}
   buyElectrickShock: {fileID: 0}

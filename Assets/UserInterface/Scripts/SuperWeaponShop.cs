@@ -40,23 +40,18 @@ public class SuperWeaponShop : MonoBehaviour
     {
         buyMine.onClick.AddListener(BuyMine);
         buyElectrickShock.onClick.AddListener(BuyElectrickShock);
-
+        buyAirStrick.onClick.AddListener(BuyAirStrike);
         buyLaserRain.onClick.AddListener(BuyLaserRain);
 
         mineCostText.text = "Cost : " + mineCost;
         electrickShockText.text = "Cost : " + electricShockCost;
-
+        airStrikeText.text = "Cost : " + airStrickCost;
         laserRainText.text = "Cost : " + laserRainCost;
     }
 
     private void Update()
     {
         CheckOnCost();
-
-        //if (Input.GetMouseButtonDown(1) && slotIsUsing)
-        //{
-        //    slotIsUsing = false;
-        //}
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && !slotIsUsing)
         {
@@ -102,7 +97,14 @@ public class SuperWeaponShop : MonoBehaviour
         {
             buyElectrickShock.interactable = false;
         }
-
+        if (CrystalsController.Instance.orangeCrystals >= airStrickCost)
+        {
+            buyAirStrick.interactable = true;
+        }
+        else
+        {
+            buyAirStrick.interactable = false;
+        }
         if (CrystalsController.Instance.orangeCrystals >= laserRainCost)
         {
             buyLaserRain.interactable = true;
@@ -148,6 +150,28 @@ public class SuperWeaponShop : MonoBehaviour
 
             SoundsController.Instance.PlayShopsSound(0);
             NotificationsController.Instance.AddNewMessage("Electrick Shock bought", "blue");
+            PlayerResult.Instance.CountOfBoughtSuperWeapon += 1;
+        }
+        else
+        {
+            NotificationsController.Instance.AddNewMessage("All slots full", "red");
+        }
+    }
+
+    private void BuyAirStrike()
+    {
+        checkOnNull = AreAllSlotsFull();
+
+        if (!checkOnNull)
+        {
+            CrystalsController.Instance.orangeCrystals -= airStrickCost;
+
+            AddItemToSlot(allSuperWeaponsPrefabs[2]);
+
+            //DisplaySlots();
+
+            SoundsController.Instance.PlayShopsSound(0);
+            NotificationsController.Instance.AddNewMessage("Air Strike bought", "blue");
             PlayerResult.Instance.CountOfBoughtSuperWeapon += 1;
         }
         else
@@ -206,6 +230,10 @@ public class SuperWeaponShop : MonoBehaviour
                 {
                     superWeaponUI[1].transform.GetChild(i).gameObject.SetActive(true);
                 }
+                else if (slots[i].name == "AirStrike")
+                {
+                    superWeaponUI[2].transform.GetChild(i).gameObject.SetActive(true);
+                }
                 else if (slots[i].name == "LaserRain")
                 {
                     superWeaponUI[3].transform.GetChild(i).gameObject.SetActive(true);
@@ -238,6 +266,12 @@ public class SuperWeaponShop : MonoBehaviour
                 superWeaponUI[1].transform.GetChild(index).gameObject.SetActive(false);
                 ElectrickShockFild electrickShockFild = slots[index].GetComponent<ElectrickShockFild>();
                 slotIsUsing = electrickShockFild.isPlacing;
+            }
+            else if (slots[index].name == "AirStrike")
+            {
+                superWeaponUI[2].transform.GetChild(index).gameObject.SetActive(false);
+                AirStrikeController airStrikeController = slots[index].GetComponent<AirStrikeController>();
+                slotIsUsing = airStrikeController.isPlacing;
             }
             else if (slots[index].name == "LaserRain")
             {
