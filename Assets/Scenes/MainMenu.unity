@@ -27583,6 +27583,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d06b22fb4ea1a63409804cdcd7c173a7, type: 3}
   - {fileID: 8300000, guid: 12da29e96e0617440939b443ac7bd009, type: 3}
   - {fileID: 8300000, guid: 4608b6a85cddcb747b915ce677270e36, type: 3}
+  - {fileID: 8300000, guid: b898213822fbc544897e7383e6d2b559, type: 3}
   OtherSounds:
   - {fileID: 8300000, guid: 94b0b30513e83f54fb790f70034cbca7, type: 3}
   - {fileID: 8300000, guid: c01c7fb460ebe8e4d97c15591797a04c, type: 3}

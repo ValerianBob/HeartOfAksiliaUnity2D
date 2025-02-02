@@ -61,7 +61,7 @@ public class AirStrikeController : MonoBehaviour
         KillEnemy();
         Instantiate(explosionFlame, transform.position, explosionFlame.transform.rotation);
 
-        SoundsController.Instance.PlaySuperWeaponSounds(0, transform.position);
+        SoundsController.Instance.PlaySuperWeaponSounds(3, transform.position);
 
         Destroy(gameObject);
     }
