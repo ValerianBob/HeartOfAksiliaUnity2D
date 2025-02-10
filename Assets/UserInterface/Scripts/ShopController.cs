@@ -19,7 +19,6 @@ public class ShopController : MonoBehaviour
     public Button superWeapon;
 
     public bool isOpened = false;
-
     private bool buildsActive = true;
     private bool gunsActive = false;
     private bool superWeaponsActive = false;
@@ -51,6 +50,8 @@ public class ShopController : MonoBehaviour
         {
             isOpened = !isOpened;
             shopMenu.SetActive(isOpened);
+
+            Debug.Log("Shop oppened !");
         }
     }
 
