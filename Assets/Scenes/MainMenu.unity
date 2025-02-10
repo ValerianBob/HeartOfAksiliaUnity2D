@@ -3467,7 +3467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cde4cdeb70d72a3469f46657dc240b5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90707743123888b47a6a63bb3d6db15a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11292,7 +11292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &630370604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12607,8 +12607,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The AK-74 is a Soviet-designed assault rifle developed in the 1970s as
-    an improved version of the AK-47
+  m_text: 'The AK-74 is Ideal for medium-range combat: low recoil, high rate of fire
+    . A great choice for fast and precise shooting .'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
   m_sharedMaterial: {fileID: -1080142482217314782, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
@@ -27249,7 +27249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1580973572
 RectTransform:
   m_ObjectHideFlags: 0
