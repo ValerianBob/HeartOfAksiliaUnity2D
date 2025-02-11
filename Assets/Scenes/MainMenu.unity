@@ -457,7 +457,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 1400, y: 640}
+  m_SizeDelta: {x: 1400, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27007615
 MonoBehaviour:
@@ -512,7 +512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 725, y: -1350}
+  m_AnchoredPosition: {x: 725, y: -1050}
   m_SizeDelta: {x: 250, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &32471128
@@ -2874,7 +2874,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 90}
+  m_SizeDelta: {x: 250, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136718655
 MonoBehaviour:
@@ -3258,7 +3258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Repair all buildswhich Kaylo builded while defend Main Base
+  m_text: Repair all builds which Kaylo builded while defending Main Base
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
   m_sharedMaterial: {fileID: -1080142482217314782, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
@@ -3444,7 +3444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -5.4508}
+  m_AnchoredPosition: {x: 0, y: -5.4508}
   m_SizeDelta: {x: 283, y: 213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &176193758
@@ -4294,7 +4294,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294953003
-  m_fontColor: {r: 0.16862746, g: 0.78431374, b: 1, a: 1}
+  m_fontColor: {r: 0.13333334, g: 0.90196085, b: 0.91372555, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5232,7 +5232,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.9, y: 5}
-  m_SizeDelta: {x: 1400, y: 640}
+  m_SizeDelta: {x: 1400, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &260767633
 MonoBehaviour:
@@ -9424,8 +9424,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9867,7 +9867,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 1400, y: 640}
+  m_SizeDelta: {x: 1400, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546898696
 MonoBehaviour:
@@ -10383,8 +10383,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10792,8 +10792,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11839,7 +11839,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 1400, y: 640}
+  m_SizeDelta: {x: 1400, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &659902581
 MonoBehaviour:
@@ -12607,8 +12607,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The AK-74 is Ideal for medium-range combat: low recoil, high rate of fire
-    . A great choice for fast and precise shooting .'
+  m_text: 'Ideal for medium-range combat: low recoil, high rate of fire . A great
+    choice for fast and precise shooting .'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
   m_sharedMaterial: {fileID: -1080142482217314782, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
@@ -14411,7 +14411,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 1400, y: 640}
+  m_SizeDelta: {x: 1400, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &844110834
 MonoBehaviour:
@@ -16825,7 +16825,7 @@ RectTransform:
   m_GameObject: {fileID: 989640277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.25, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1518282203}
@@ -16833,7 +16833,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 225, y: 150}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989640279
 MonoBehaviour:
@@ -17604,8 +17604,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19070,7 +19070,7 @@ RectTransform:
   m_GameObject: {fileID: 1138361376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0165, y: 2.0165, z: 2.0165}
+  m_LocalScale: {x: 3, y: 3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2100117947}
@@ -19078,7 +19078,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138361378
 MonoBehaviour:
@@ -20588,7 +20588,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 1400, y: 640}
+  m_SizeDelta: {x: 1400, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218292411
 MonoBehaviour:
@@ -23960,8 +23960,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shotgun capable of fully automatic fire, meaning it continuously fires
-    shells as long as the trigger is held down
+  m_text: "Shotgun capable of fully automatic fire, meaning  \nit continuously fires
+    shells as long as the trigger  \nis held down"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
   m_sharedMaterial: {fileID: -1080142482217314782, guid: 3ad3788323356474d9f189f8f90361da, type: 2}
@@ -25724,7 +25724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1485725587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27047,7 +27047,7 @@ RectTransform:
   m_GameObject: {fileID: 1574442362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.9, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 210112214}
@@ -27055,7 +27055,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -16, y: 0}
-  m_SizeDelta: {x: 268, y: 150}
+  m_SizeDelta: {x: 90, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574442364
 MonoBehaviour:
@@ -28028,8 +28028,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -30489,7 +30489,7 @@ RectTransform:
   m_GameObject: {fileID: 1868115969}
   m_LocalRotation: {x: -0, y: -0, z: -0.0019530526, w: 0.9999981}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.03, y: 1.03, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068516059}
@@ -33529,7 +33529,7 @@ RectTransform:
   m_GameObject: {fileID: 2046464308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 937675787}
@@ -33537,7 +33537,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -10.5}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046464310
 MonoBehaviour:
@@ -34912,7 +34912,7 @@ RectTransform:
   m_GameObject: {fileID: 2107542430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 419571333}
@@ -34920,7 +34920,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 12, y: 0}
-  m_SizeDelta: {x: 225, y: 225}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107542432
 MonoBehaviour:

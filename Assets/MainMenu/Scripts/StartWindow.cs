@@ -17,6 +17,10 @@ public class StartWindow : MonoBehaviour
 
     void Start()
     {
+        if(OptionsConfig.Instance.userName != "")
+        {
+            StartButton();
+        }
         start.onClick.AddListener(StartButton);
     }
 

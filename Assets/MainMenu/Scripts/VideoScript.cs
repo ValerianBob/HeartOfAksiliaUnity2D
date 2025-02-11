@@ -10,6 +10,7 @@ public class VideoScript : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
         if (videoPlayer == null )
         {
             Debug.LogError("Video Player не назначен!");
@@ -30,6 +31,7 @@ public class VideoScript : MonoBehaviour
 
     private void OnVideoEnd(VideoPlayer vp)
     {
+        Cursor.visible = true;
         gameObject.SetActive(false);
         musicMainMenu.volume = 0.1f;
     }
@@ -38,6 +40,5 @@ public class VideoScript : MonoBehaviour
     {
         if (videoPlayer != null)
             videoPlayer.loopPointReached -= OnVideoEnd;
-
     }
 }
