@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class MainMenuInfo : MonoBehaviour
 {
+    private Sprite _controlsButtonOrig;
+    private Sprite _buildsButtonOrig;
+    private Sprite _gunsButtonOrig;
+    private Sprite _superGunsButtonOrig;
+    private Sprite _enemyButtonOrig;
+
     public GameObject buttons;
     public GameObject controlsInfo;
     public GameObject buildsInfo;
@@ -20,24 +26,44 @@ public class MainMenuInfo : MonoBehaviour
     public Button enemyButton;
     public Button backFromInfo;
 
+    public Sprite controlsButtonPressed;
+    public Sprite buildsButtonPressed;
+    public Sprite gunsButtonPressed;
+    public Sprite superGunsButtonPressed;
+    public Sprite enemyButtonPressed;
 
     void Start()
-    {
+    {  
         backFromInfo.onClick.AddListener(BackToMainMenu);
         controlsButton.onClick.AddListener(Controls);
         buildsButton.onClick.AddListener(Builds);
         gunsButton.onClick.AddListener(Guns);
         superGunsButton.onClick.AddListener(SuperGuns);
         enemyButton.onClick.AddListener(Enemy);
+
+        _controlsButtonOrig = controlsButton.image.sprite;
+        _buildsButtonOrig = buildsButton.image.sprite;
+        _gunsButtonOrig = gunsButton.image.sprite;
+        _superGunsButtonOrig = superGunsButton.image.sprite;
+        _enemyButtonOrig = enemyButton.image.sprite;
+
+        controlsButton.image.sprite = controlsButtonPressed;
     }
 
     void Controls()
     {
+        Debug.Log("52");
         buildsInfo.SetActive(false);
         gunsInfo.SetActive(false);
         superGunsInfo.SetActive(false);
         enemyInfo.SetActive(false);
         controlsInfo.SetActive(true);
+
+        controlsButton.image.sprite = controlsButtonPressed;
+        buildsButton.image.sprite = _buildsButtonOrig;
+        gunsButton.image.sprite = _gunsButtonOrig;
+        superGunsButton.image.sprite = _superGunsButtonOrig;
+        enemyButton.image.sprite = _enemyButtonOrig;
     }
 
     void Builds()
@@ -47,6 +73,12 @@ public class MainMenuInfo : MonoBehaviour
         superGunsInfo.SetActive(false);
         enemyInfo.SetActive(false);
         buildsInfo.SetActive(true);
+
+        controlsButton.image.sprite = _controlsButtonOrig;
+        buildsButton.image.sprite = buildsButtonPressed;
+        gunsButton.image.sprite = _gunsButtonOrig;
+        superGunsButton.image.sprite = _superGunsButtonOrig;
+        enemyButton.image.sprite = _enemyButtonOrig;
     }
 
     void Guns()
@@ -56,6 +88,12 @@ public class MainMenuInfo : MonoBehaviour
         enemyInfo.SetActive(false);
         buildsInfo.SetActive(false);
         gunsInfo.SetActive(true);
+
+        controlsButton.image.sprite = _controlsButtonOrig;
+        buildsButton.image.sprite = _buildsButtonOrig;
+        gunsButton.image.sprite = gunsButtonPressed;
+        superGunsButton.image.sprite = _superGunsButtonOrig;
+        enemyButton.image.sprite = _enemyButtonOrig;
     }
 
     void SuperGuns()
@@ -65,6 +103,12 @@ public class MainMenuInfo : MonoBehaviour
         buildsInfo.SetActive(false);
         gunsInfo.SetActive(false);
         superGunsInfo.SetActive(true);
+
+        controlsButton.image.sprite = _controlsButtonOrig;
+        buildsButton.image.sprite = _buildsButtonOrig;
+        gunsButton.image.sprite = _gunsButtonOrig;
+        superGunsButton.image.sprite = superGunsButtonPressed;
+        enemyButton.image.sprite = _enemyButtonOrig;
     }
 
     void Enemy()
@@ -74,6 +118,11 @@ public class MainMenuInfo : MonoBehaviour
         gunsInfo.SetActive(false);
         superGunsInfo.SetActive(false);
         enemyInfo.SetActive(true);
+        controlsButton.image.sprite = _controlsButtonOrig;
+        buildsButton.image.sprite = _buildsButtonOrig;
+        gunsButton.image.sprite = _gunsButtonOrig;
+        superGunsButton.image.sprite = _superGunsButtonOrig;
+        enemyButton.image.sprite = enemyButtonPressed;
     }
 
     void BackToMainMenu()
