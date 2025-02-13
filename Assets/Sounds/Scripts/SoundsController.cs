@@ -61,7 +61,7 @@ public class SoundsController : MonoBehaviour
 
     public void PlayGunSound(int index)
     {
-       // audioSource.clip = GunSounds[index];
+      
         audioSource.PlayOneShot(GunSounds[index]);
     }
 
@@ -71,14 +71,12 @@ public class SoundsController : MonoBehaviour
         float maxDistance = soundsDistance;
         float volume = Mathf.Clamp01(1 - distance / maxDistance);
 
-        // Создание временного объекта для воспроизведения звука
         GameObject tempSound = new GameObject("TempSound");
         AudioSource tempAudioSource = tempSound.AddComponent<AudioSource>();
         tempAudioSource.clip = EnemyDeathSounds[index];
-        tempAudioSource.volume = volume;
+        tempAudioSource.volume = audioSource.volume * volume;
         tempAudioSource.Play();
 
-        // Удаление временного объекта после окончания звука
         Destroy(tempSound, EnemyDeathSounds[index].length);
     }
 
@@ -92,15 +90,13 @@ public class SoundsController : MonoBehaviour
         float distance = Vector2.Distance(playerPosition.transform.position, soundPosition);
         float maxDistance = soundsDistance;
         float volume = Mathf.Clamp01(1 - distance / maxDistance);
-
-        // Создание временного объекта для воспроизведения звука
+       
         GameObject tempSound = new GameObject("TempSound");
         AudioSource tempAudioSource = tempSound.AddComponent<AudioSource>();
         tempAudioSource.clip = BuildsSounds[index];
-        tempAudioSource.volume = volume;
+        tempAudioSource.volume = audioSource.volume * volume;
         tempAudioSource.Play();
-
-        // Удаление временного объекта после окончания звука
+      
         Destroy(tempSound, BuildsSounds[index].length);
     }
 
@@ -119,15 +115,13 @@ public class SoundsController : MonoBehaviour
         float distance = Vector2.Distance(playerPosition.transform.position, soundPosition);
         float maxDistance = soundsDistance;
         float volume = Mathf.Clamp01(1 - distance / maxDistance);
-
-        // Создание временного объекта для воспроизведения звука
+       
         GameObject tempSound = new GameObject("TempSound");
         AudioSource tempAudioSource = tempSound.AddComponent<AudioSource>();
         tempAudioSource.clip = TurretShots[index];
-        tempAudioSource.volume = volume;
+        tempAudioSource.volume = audioSource.volume * volume;
         tempAudioSource.Play();
-
-        // Удаление временного объекта после окончания звука
+     
         Destroy(tempSound, TurretShots[index].length);
     }
 
@@ -137,14 +131,12 @@ public class SoundsController : MonoBehaviour
         float maxDistance = soundsDistance;
         float volume = Mathf.Clamp01(1 - distance / maxDistance);
 
-        // Создание временного объекта для воспроизведения звука
         GameObject tempSound = new GameObject("TempSound");
         AudioSource tempAudioSource = tempSound.AddComponent<AudioSource>();
         tempAudioSource.clip = Hit[index];
-        tempAudioSource.volume = volume;
+        tempAudioSource.volume = audioSource.volume * volume;
         tempAudioSource.Play();
 
-        // Удаление временного объекта после окончания звука
         Destroy(tempSound, Hit[index].length);
     }
 
@@ -154,14 +146,13 @@ public class SoundsController : MonoBehaviour
         float maxDistance = soundsDistance;
         float volume = Mathf.Clamp01(1 - distance / maxDistance);
 
-        // Создание временного объекта для воспроизведения звука
+        
         GameObject tempSound = new GameObject("TempSound");
         AudioSource tempAudioSource = tempSound.AddComponent<AudioSource>();
         tempAudioSource.clip = SuperWeaponSounds[index];
-        tempAudioSource.volume = volume;
+        tempAudioSource.volume = audioSource.volume * volume;
         tempAudioSource.Play();
-
-        // Удаление временного объекта после окончания звука
+       
         Destroy(tempSound, SuperWeaponSounds[index].length);
     }
 
@@ -170,5 +161,3 @@ public class SoundsController : MonoBehaviour
         audioSource.PlayOneShot(OtherSounds[index]);
     }
 }
-// audioSource.clip = GunSounds[index];
-//audioSource.Play(); - PlayOneTime
