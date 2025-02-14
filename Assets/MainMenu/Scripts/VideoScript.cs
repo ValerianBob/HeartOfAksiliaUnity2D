@@ -10,7 +10,6 @@ public class VideoScript : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
         if (videoPlayer == null )
         {
             Debug.LogError("Video Player не назначен!");
@@ -20,6 +19,7 @@ public class VideoScript : MonoBehaviour
         gameObject.SetActive(false);
         if (OptionsConfig.Instance.firstEnterGame != true)
         {
+            Cursor.visible = false;
             gameObject.SetActive(true);
             videoPlayer.Play();
             OptionsConfig.Instance.firstEnterGame = true;
